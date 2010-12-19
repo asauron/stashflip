@@ -1,28 +1,26 @@
 <html>
 
 <head>
-	<title>Beatmap</title>
+	<title>Stashflip - Make it easy to buy and resell</title>
 	<link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 
 <body>
 	<div id="search_bar">
-		<%= render :partial => 'searchbar' %>
+		<%= render :partial => 'navbar' %>
+		
+		<form name="post_deal" id="post_deal" class="post_deal" method="post" action="/deals/post_deal">  
+			<!--need this for auth -->
+            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>" /> 
+		 <%= submit_tag("Post deal", :id => "post_deal", :title => "post_deal", :name => "post_deal", :class => "red awesome medium button")%>
+		 </form>
+		 
 	</div>
 	
 	<div id="maincontent">
 
 			<div id="main_top">
-				<div id="find_new_friends">
-					<div id="maincontent_friendsmaps_text">
-						<div style="margin-left:20px;">
-							<%= render :partial => 'friendship/random_users'%>
-						</div>
-					</div>
-				</div>
-				<div id="main_top_middle">
-						<%= render :partial => 'website/slideshow' %>	
-				</div>
+				<%= render :partial => '/deals/latest_passwird' %>
 			</div>      	        	  	
 		
 			<div id="main_bottom">

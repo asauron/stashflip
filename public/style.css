@@ -22,6 +22,16 @@ BODY {
   margin-right:auto;  	
 }
 
+#site_nav {
+  height:20px;
+  width:980px;
+  margin-left:350px;
+  margin-right:auto; 
+  margin-top:15px;
+  clear:both;	
+  float:left;
+}
+
 #topinfoblock{
   background-image:url(images/topbg.png);
   background-repeat: repeat;

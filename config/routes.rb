@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :deals
+
 
   map.connect '/maps/save', :controller => 'maps', :action => 'save'
   map.connect '/maps/add', :controller => 'maps', :action => 'add'

@@ -9,7 +9,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101123044042) do
+ActiveRecord::Schema.define(:version => 20101219094909) do
+
+  create_table "deals", :force => true do |t|
+    t.string   "title"
+    t.string   "description"
+    t.decimal  "price",       :precision => 8, :scale => 2, :default => 0.0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "eventful_delegates", :force => true do |t|
     t.datetime "created_at"
@@ -69,6 +77,11 @@ ActiveRecord::Schema.define(:version => 20101123044042) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.decimal  "rating_average", :precision => 6, :scale => 2, :default => 0.0
+  end
+
+  create_table "passwird_delegates", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "rates", :force => true do |t|
