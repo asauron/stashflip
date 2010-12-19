@@ -1,12 +1,12 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :deals
-
 
   map.connect '/maps/save', :controller => 'maps', :action => 'save'
   map.connect '/maps/add', :controller => 'maps', :action => 'add'
   map.connect '/maps/exclude', :controller => 'maps', :action => 'exclude'
   map.connect '/maps/save_favorite', :controller => 'maps', :action => 'save_favorite'
-  
+
+  map.resources :deals
+    
   map.resources :maps
   
   map.resources :favorite_maps
@@ -20,7 +20,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :user_sessions
 
   map.resources :users
-
+  
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:
