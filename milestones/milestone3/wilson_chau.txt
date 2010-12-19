@@ -1,0 +1,4 @@
+http://deep-sunset-45.heroku.com/
+https://github.com/jackywu07/Debate
+
+I wanted to talk about the creating a new debate feature. Overall I really like the app it is very well made and easy to navigate as well as pretty cool. I like that there is a pro and con stance you can take. The code that I looked at looks very clean overall, I even noticed that they made good use of partials in their project. From what I see it looks like their login process is very similar to what we did for our project. The logic of the controllers and the way the different models interact is very easy to understand and makes a lot of sense.

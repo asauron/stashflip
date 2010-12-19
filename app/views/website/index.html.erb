@@ -1,0 +1,81 @@
+<html>
+
+<head>
+	<title>Beatmap</title>
+	<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body>
+	<div id="search_bar">
+		<%= render :partial => 'searchbar' %>
+	</div>
+	
+	<div id="maincontent">
+
+			<div id="main_top">
+				<div id="find_new_friends">
+					<div id="maincontent_friendsmaps_text">
+						<div style="margin-left:20px;">
+							<%= render :partial => 'friendship/random_users'%>
+						</div>
+					</div>
+				</div>
+				<div id="main_top_middle">
+						<%= render :partial => 'website/slideshow' %>	
+				</div>
+			</div>      	        	  	
+		
+			<div id="main_bottom">
+				
+				<div id="main_bottom_info">
+				<div id="main_bottom_info_left">
+					<div class="main_title">
+					Search for restaurants and venues in color.
+					</div>
+					<div class="main_text"><br/>
+					Beatmap aggregates data from Yelp and Eventful and attaches meaningful information to it. Visualize the ratings and value of the restaurants based on criteria you pick. As the colors vary from blue to red to green, you can get rich information at a glance.	
+					</div>
+				</div>
+				<div ="main_bottom_info_right">
+					<img src="/images/featureinfo1.png" />
+				</div>
+				</div>
+				
+				<div id="main_bottom_info">
+				<div id="main_bottom_info_left">
+					<div class="main_title">
+					Build up maps collaboratively with your friends.
+					</div>
+					<div class="main_text"><br/>
+					Customize the maps to your heart's content. Add in places that you love to go to, and your friends can do the same. By harnessing the power of the crowd, you end up with a map fit for a daring adventurer.
+					</div>
+				</div>
+				<div ="main_bottom_info_right">
+					<img src="/images/featureinfo2.png" />
+				</div>
+				</div>
+				
+				<div id="main_bottom_info">
+				<div id="main_bottom_info_left">
+					<div class="main_title">
+					Share your maps with the world.
+					</div>
+					<div class="main_text"><br/>
+					Take advantage of social networking and share your perfect day out in the city. Share maps with your friends on Beatmap and Facebook, and save your favorite maps. Love something? Rate it up. As maps build up ratings, they appear on the front page.
+					</div>
+				</div>
+				<div ="main_bottom_info_right">
+					<img src="/images/featureinfo3.png" />
+				</div>
+				</div>
+								
+			</div> <!-- end of main_bottom -->
+
+		<%= render :partial => 'website/footer' %>
+
+	</div><!--end maincontent-->
+
+
+
+</body>
+

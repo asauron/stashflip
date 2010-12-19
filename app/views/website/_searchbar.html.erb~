@@ -1,0 +1,106 @@
+    <div id="top_bar">
+      <div id="topinfoblock">
+        <a href="/"><div id="logo">
+        </div></a> <!--end logo-->
+
+        <div id="searchbar">
+          <form name="search" id="search" class="search" method="post" action="/maps/search">  
+            <!--need this for auth -->
+            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>" /> 
+            <!--end -->
+            <div id="search_menu">
+              <label class="yellow awesome medium button"><font color="black">Search for</font> </label>
+                <input type="text" name="query" tabindex="1" value="<%= "#{@query}" %>" />  
+              <
+              <label class="yellow awesome medium button"><font color="black">Near</font> </label> 
+                <input type="text"  name="location" tabindex="1" value="<%= "#{@location}" %>" />  
+              </label>
+              <%= image_submit_tag("/images/searchbutton.png", :id => "submit", :title => "submit", :name => "submit")%>
+
+              <% if false %>
+                <%= submit_tag("Search", :id => "submit", :title => "submit", :name => "submit", :class => "awesome large button")%>
+              <% end %>
+
+              <!-- old code <input type="image" title="Submit" value="Submit" id="submit" class="button" name="submit" src="/images/searchbutton.png"> -->
+            </div>
+
+            <div id="category_menu">
+              
+              <label for="default"> 
+                <input type="checkbox" name="default" id="default" 
+                	<% unless @category.nil? %>
+                		<%= if (@category.empty?); "checked"; end %>
+                	<% end %>
+                /> Default
+              </label> 
+              
+              <label for="restaurants"> 
+                <input type="checkbox" name="restaurants" id="restaurants"
+                	<%= if (@category =~ /restaurants/); "checked"; end %>
+                /> Restaurants
+              </label>                
+              
+              <label for="shopping"> 
+                <input type="checkbox" name="shopping" id="shopping"
+                	<%= if (@category =~ /shopping/); "checked"; end %>
+                /> Shopping
+              </label>  
+              
+              <label for="events"> 
+                <input type="checkbox" name="events" id="events"
+                	<%= if (@category =~ /events/); "checked"; end %>
+                /> Events
+              </label> 
+              
+              <label for="nightlife"> 
+                <input type="checkbox" name="nightlife" id="nightlife"
+                	<%= if (@category =~ /nightlife/); "checked"; end %>
+                /> Nightlife
+              </label>                              		             		             		             
+
+            </div>
+
+			<div id="soft_filter_menu">                      
+			      <ul>
+
+				Number of Ratings
+				<%= select_tag "num_ratings_weight", 
+               options_for_select([["Negligible", 1], 
+                  ["Trivial", 2], 
+                  ["Relevant", 3],
+                  ["Important", 4],
+                  ["Crucial", 5]], 
+                 [ 3 ]), {:multiple => false} %>
+
+				Average Ratings	
+				<%= select_tag "avg_rating_weight", 
+               options_for_select([["Negligible", 1], 
+                  ["Trivial", 2], 
+                  ["Relevant", 3],
+                  ["Important", 4],
+                  ["Crucial", 5]], 
+                 [ 3 ]), {:multiple => false} %>
+                
+                Cheapness	 
+				<%= select_tag "cheapness_weight", 
+               options_for_select([["Negligible", 1], 
+                  ["Trivial", 2], 
+                  ["Relevant", 3],
+                  ["Important", 4],
+                  ["Crucial", 5]], 
+                 [ 3 ]), {:multiple => false} %>
+
+				</ul>				
+			</div>	
+				
+				
+          </form>
+        </div> <!--end searchbar-->
+
+
+      </div> <!--end topinfoblock-->
+      <div id="under_topinfoblock">
+      </div>
+    </div> <!--end topblue-->
+
+    

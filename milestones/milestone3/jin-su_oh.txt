@@ -1,0 +1,4 @@
+I checked out rottenCucumber's homepage code.
+I was shocked to see their new member or old member selection process.
+It is really neat and clean compared to how my group's application is logging in and signing up users. I thought I really need to learn the javascript and implement these kinds of selection process to my application.
+Also, rottenCucumber's group does not have many codes in each of the files. I don't need to scroll down as much as my application's code files to see what's going on. Seeing rottenCucumber's application design and implementation, I realize that I need to simplify things with javascript and refactor ruby codes.

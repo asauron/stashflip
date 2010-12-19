@@ -1,0 +1,15 @@
+<html>
+  <head>
+    <title>Beatmap search function</title>
+    <%= GMap.header %>
+    <%= @map.to_html %>
+  </head>
+  <body>
+
+    <h1>Where's Waldo?? </h1>
+
+    <%#= @out %>
+    <p> search for <%= @query %> </p>
+    <%= @map.div(:width => 400, :height => 300) %>
+  </body>
+</html>

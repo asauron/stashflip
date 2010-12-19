@@ -1,0 +1,18 @@
+<p>
+  <b>Map:</b>
+  <%=h @filter.map_id %>
+</p>
+
+<p>
+  <b>Query:</b>
+  <%=h @filter.query %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%=h @filter.category %>
+</p>
+
+
+<%= link_to 'Edit', edit_filter_path(@filter) %> |
+<%= link_to 'Back', filters_path %>

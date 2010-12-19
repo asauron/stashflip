@@ -1,0 +1,187 @@
+(in C:/Users/NAM/Documents/CS 169/project/beatmap)
+------------------------------------------
+IMPORTANT: AjaxfulRating has been updated to v2.2.x and some options changed.Please read the changelog at http://github.com/edgarjs/ajaxful-rating/blob/master/CHANGELOG
+------------------------------------------
+------------------------------------------
+IMPORTANT: AjaxfulRating has been updated to v2.2.x and some options changed.Please read the changelog at http://github.com/edgarjs/ajaxful-rating/blob/master/CHANGELOG
+------------------------------------------
+FavoriteMapsController
+  GET index
+    assigns all favorite_maps as @favorite_maps
+  GET show
+    assigns the requested favorite_map as @favorite_map
+  GET new
+    assigns a new favorite_map as @favorite_map
+  GET edit
+    assigns the requested favorite_map as @favorite_map
+  POST create
+    with valid params
+      assigns a newly created favorite_map as @favorite_map
+      redirects to the created favorite_map
+    with invalid params
+      assigns a newly created but unsaved favorite_map as @favorite_map
+      re-renders the 'new' template
+  PUT update
+    with valid params
+      updates the requested favorite_map
+      assigns the requested favorite_map as @favorite_map
+      redirects to the favorite_map
+    with invalid params
+      updates the requested favorite_map
+      assigns the favorite_map as @favorite_map
+      re-renders the 'edit' template
+  DELETE destroy
+    destroys the requested favorite_map
+    redirects to the favorite_maps list
+FriendshipController
+  should be able to request a friendship
+  should be able to accept a friendship
+  should be able to decline a friendship
+  should be able to cancel a pending friendship
+  should be able to remove an existing friendship
+MapsController
+  GET index
+    assigns all maps as @maps
+  GET show
+    assigns the requested map as @map
+  GET new
+    assigns a new map as @map
+  GET edit
+    assigns the requested map as @map
+  POST create
+    with valid params
+      assigns a newly created map as @map
+      redirects to the created map
+    with invalid params
+      assigns a newly created but unsaved map as @map
+      re-renders the 'new' template
+  PUT update
+    with valid params
+      updates the requested map
+      assigns the requested map as @map
+      redirects to the map
+    with invalid params
+      updates the requested map
+      assigns the map as @map
+      re-renders the 'edit' template
+  DELETE destroy
+    destroys the requested map
+    redirects to the maps list
+  search
+    searches for restaurants using Yelp Delegate
+    searches for events using Eventful Delegate
+    searches for shopping using Yelp Delegate
+    searches for nightlife using Yelp Delegate
+  save
+    saves the map
+  save favorite
+    favorites the map
+  add
+    adds a new venue to the map with the first use of add_node
+    adds a new venue to the map with more than 1 use of add_node
+MapFiltersController
+  GET index
+    assigns all map_filters as @map_filters
+  GET show
+    assigns the requested map_filter as @map_filter
+  GET new
+    assigns a new map_filter as @map_filter
+  GET edit
+    assigns the requested map_filter as @map_filter
+  POST create
+    with valid params
+      assigns a newly created map_filter as @map_filter
+      redirects to the created map_filter
+    with invalid params
+      assigns a newly created but unsaved map_filter as @map_filter
+      re-renders the 'new' template
+  PUT update
+    with valid params
+      updates the requested map_filter
+      assigns the requested map_filter as @map_filter
+      redirects to the map_filter
+    with invalid params
+      updates the requested map_filter
+      assigns the map_filter as @map_filter
+      re-renders the 'edit' template
+  DELETE destroy
+    destroys the requested map_filter
+    redirects to the map_filters list
+InfoController
+  show should create user info if it doesn't exist
+FavoriteMapsHelper
+  is included in the helper object
+MapsHelper
+  is included in the helper object
+MapFiltersHelper
+  is included in the helper object
+UsersHelper
+  is included in the helper object
+EventfulDelegate
+  should substitute spaces with + for generating search params
+  should limit the number of results from Eventful to 15
+  should perform a search using the eventful API
+  should perform a search using the eventful API and return nil if there are no results
+FavoriteMap
+  should create a new instance given valid attributes
+Friendship
+  should initiate a friend request and have the friendship table set pending for the first user and requested for the second user
+  should accept a friend request and have the friendship table set accepted for the first user and accepted for the second user
+  should remove a friendship and have the friendship table remove the friendship
+Info
+  should create a new instance given valid attributes
+MapFilter
+  should create a new instance given valid attributes
+  should append restaurants if params has restaurants
+  should append events if params has events
+  should append shopping if params has shopping
+  should append nightlife if params has nightlife
+  should append restaurants and events if params has restaurants and events
+  should append restaurants, events, and shopping if params has restaurants, events, and shopping
+  should append restaurants, events, shopping, and nightlife if params has restaurants, events, shopping, and nightlife
+Map
+  should create a new instance given valid attributes
+  should return top rated maps
+  should return top maps in restaurants
+  should return top maps in events
+  should return 1 random map from each of your friends
+FavoriteMapsController
+  routing
+    recognizes and generates #index
+    recognizes and generates #new
+    recognizes and generates #show
+    recognizes and generates #edit
+    recognizes and generates #create
+    recognizes and generates #update
+    recognizes and generates #destroy
+MapsController
+  routing
+    recognizes and generates #index
+    recognizes and generates #new
+    recognizes and generates #show
+    recognizes and generates #edit
+    recognizes and generates #create
+    recognizes and generates #update
+    recognizes and generates #destroy
+MapFiltersController
+  routing
+    recognizes and generates #index
+    recognizes and generates #new
+    recognizes and generates #show
+    recognizes and generates #edit
+    recognizes and generates #create
+    recognizes and generates #update
+    recognizes and generates #destroy
+UsersController
+  routing
+    recognizes and generates #index
+    recognizes and generates #new
+    recognizes and generates #show
+    recognizes and generates #edit
+    recognizes and generates #create
+    recognizes and generates #update
+    recognizes and generates #destroy
+
+Finished in 19.484131 seconds
+
+116 examples, 0 failures

@@ -1,0 +1,10 @@
+one:
+  username: randomuser1
+  email: ran@dom1.com
+  password_salt: letmein
+
+two:
+  username: randomuser2
+  email: ran@dom2.com
+  password_salt: letmein
+  

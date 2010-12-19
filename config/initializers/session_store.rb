@@ -5,8 +5,8 @@
 # Make sure the secret is at least 30 characters and all random, 
 # no regular words or you'll be exposed to dictionary attacks.
 ActionController::Base.session = {
-  :key         => '_stashflip_session',
-  :secret      => 'f2b31677d8ad4ff80aaff6577232b627334f7d4622e31a32859312cf11807ab2f5bc10a37a853fcc36205121c87b3549bea75bb3be6e075811718a2fa969c259'
+  :key         => '_beatmap_session',
+  :secret      => '72a345b5870b3d24610cb4a4eaa11d90e05b97324c19be9e812003d41a9184dbb33df4c790ce8aaaa51db6280e05dfc29b5042f1bcf7e0e6d07213e8891efa65'
 }
 
 # Use the database for sessions instead of the cookie-based default,

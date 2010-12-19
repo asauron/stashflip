@@ -1,0 +1,12 @@
+<h1>Editing map_filter</h1>
+
+<% form_for(@map_filter) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @map_filter %> |
+<%= link_to 'Back', map_filters_path %>

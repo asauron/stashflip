@@ -1,0 +1,395 @@
+BODY {
+  background-color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  color : #000000;
+  font-size: 0.8em;
+}
+.clear {
+  clear:both;
+}
+
+#top_bar{
+  height:100px;
+  background-image:url(images/basicbg.png);
+  background-repeat: repeat;
+}
+
+#topinfoblock{
+  background-image:url(images/topbg.png);
+  background-repeat: repeat;
+  height: 42px;
+  width:auto;
+  margin-left:auto;
+  margin-right:auto;
+  padding-left:30px;
+}
+#under_topinfoblock{
+
+}
+
+form.search {    
+  color: #de6464;   
+  font-family: Arial, Verdana, Helvetica, sans-serif;  
+  font-size: 12px;
+  height:42px;
+  }
+
+span.bmap_text {
+  color : #de6464;   
+  font-family: Arial, Verdana, Helvetica, sans-serif;  
+
+}
+
+#logo{
+  background-image:url(images/logo.png);
+  background-repeat: no-repeat;
+  width: 96px;
+  height: 41px;
+  float:left;
+}
+
+a, a:link, a:visited, a:hover {
+  color:#de6464;
+}
+
+#main_top a,
+#main_top a:link,
+#main_top a:visited,
+#main_top a:hover,
+#main_friendsmaps a,
+#main_friendsmaps a:link,
+#main_friendsmaps a:visited,
+#main_friendsmaps a:hover,
+#main_restaurants a,
+#main_restaurants a:link,
+#main_restaurants a:visited,
+#main_restaurants a:hover,
+#main_shopping a,
+#main_shopping a:link,
+#main_shopping a:visited,
+#main_shopping a:hover,
+#main_events a,
+#main_events a:link,
+#main_events a:visited,
+#main_events a:hover,
+#main_nightlife a,
+#main_nightlife a:link,
+#main_nightlife a:visited,
+#main_nightlife a:hover{
+  color:#f8f0d0;	
+}
+
+a:hover{
+  background-color:#000000;
+}
+
+#nav_home{
+  background-image:url(images/navbutton1.png);
+  background-repeat: no-repeat;
+  width: 51px;
+  height: 30px;
+  float:left;
+  margin-left: 0px;
+}
+
+#nav_profile{
+  background-image:url(images/navbutton2.png);
+  background-repeat: no-repeat;
+  width: 57px;
+  height: 30px;
+  float:left;
+  margin-left: 0px;
+}
+
+#nav_account{
+  background-image:url(images/navbutton3.png);
+  background-repeat: no-repeat;
+  width: 80px;
+  height: 30px;
+  float:left;
+  margin-left: 0px;
+}
+
+#searchbar{
+  width:700px;
+  height:100px;
+  margin-top:0px;
+  margin-left:200px;
+  float:left;	
+}
+
+#search_menu {
+
+  height:42px;
+}
+
+#searchbar input {
+    vertical-align:middle;
+  margin-top: 8px;
+
+  width:160px;
+}
+#searchbar label{
+  vertical-align:middle;
+
+}
+
+#searchtext {
+  margin-top:0px;
+  float:left;
+}
+
+#searchbutton{
+  margin-top:0px;
+  float:left;	
+}
+
+#basicbg{
+  background-image:url(images/basicbg.png);
+  background-repeat: repeat;
+  height:30px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+#maincontent{
+  width:1181px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+#find_new_friends{
+  color: #de6464;  
+  font-family: Arial, Helvetica, sans-serif;
+  width:50px;
+  height:50px;
+  margin-left:100px;
+  margin-right:auto;
+  float: left;
+}
+
+#maincontent_left{
+  width:181px;
+  height:600px;
+  float:left;
+}
+
+#map_content_top input{
+  margin-left: 10px;
+  width: 400px;
+    
+}
+#map_content_top h1 {
+  float:left;
+  width:50%;
+}
+
+#map_info{
+  width:1200px;
+  height:600px;
+  float:left;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+#display_map{
+  float:left;
+  width:700px;
+  height:500px;
+}
+
+#map_save{
+  width:650px;
+  height:25px;
+  float: left;
+  clear: both;
+}
+
+#category_menu{
+  width:800px;	
+  height:25px;
+  float:left;
+  /*
+  margin-left: 0px;
+  margin-top:15px;
+  */
+
+  margin:auto;
+  clear:both;
+}
+
+#soft_filter_menu{
+  width:800px;	
+  height:20px;
+  float:left;
+  margin:auto;
+  margin-left: -35px;
+  clear:both;
+}
+#soft_filter_menu ul {
+  margin:auto;
+  list-style: none;
+}
+#soft_filter_menu ul li {
+  display: block;
+  float:left;
+  padding-right:5px;
+  margin:auto;
+}
+
+
+#restaurant_list{
+  width:400px;
+  height:450px;
+  float:left;
+  margin-left:10px;
+  
+
+}
+#social_box {
+  float:left;
+  margin-left:10px;
+}
+form#add {
+  float:left;
+  clear:both;
+}
+
+.result_info_box {
+  margin:10px, 10px, 10px, 10px;  
+  clear:both;
+}
+
+.result_info_box img{
+  float: left;
+  width: 100px;
+  
+}
+.result_info_box ul{
+  list-style-type: none;
+  float: left;
+width:250px;
+margin:auto;
+padding:auto;
+
+}
+.result_info_box ul li{
+  display:block;
+}
+
+#maincontent_right{
+  margin-left:100px;
+  width: 700px;
+  height: 2040px;
+  float:left;
+  outline:#de6464 solid 2px;
+}
+
+#main_top{
+  background-image:url(images/topmaps.png);
+  width: 700px;
+  height: 340px;	
+  float: left;
+  
+}
+
+#main_friendsmaps{
+  background-image:url(images/friends.png);
+  width: 700px;
+  height: 340px;	
+  float: left;
+}
+
+#main_restaurants{
+  background-image:url(images/restaurants.png);
+  width: 700px;
+  height: 340px;	
+  float: left;
+}
+
+#main_shopping{
+  background-image:url(images/shopping.png);
+  width: 700px;
+  height: 340px;	
+  float: left;
+}
+
+#main_events{
+  background-image:url(images/events.png);
+  width: 700px;
+  height: 340px;	
+  float: left;
+}
+
+#main_nightlife{
+  background-image:url(images/nightlife.png);
+  width: 700px;
+  height: 340px;	
+  float: left;
+}
+
+#maincontent_top_text{
+  font-family: Arial, Helvetica, sans-serif;
+  color : #ffffff;
+  font-size: 2.0em;
+  line-height: 1.0em;
+  margin-left:250px;
+  margin-top:100px;
+}
+
+#maincontent_friendsmaps_text{
+  font-family: Arial, Helvetica, sans-serif;
+  color : #ffffff;
+  font-size: 2.0em;
+  line-height: 1.0em;
+  margin-left:250px;
+  margin-top:100px;
+}
+
+#maincontent_text{
+  font-family: Arial, Helvetica, sans-serif;
+  color : #ffffff;
+  font-size: 2.0em;
+  line-height: 1.0em;
+  margin-left:250px;
+  margin-top:50px;
+}
+
+#footer{
+  width: 1000px;
+  height: 20px;
+  clear:both;
+  float:left;
+  margin-top:10px;
+  margin-left:200px;
+  color : #000000;
+  font-size: 0.8em;
+}
+
+#footerleft{
+  width: 200px;
+  height: 20px;
+  float:left;
+  margin-left:0px;
+}
+
+#footerright{
+  height: 20px;
+  float:left;
+  margin-left: 470px;
+}
+
+#myslide {width:700px;overflow:hidden;position: relative;height:340px;margin-bottom:20px}
+ 
+	#myslide .cover{
+		width:4200px; /*------- class mystuff width * number of mystuff divs (160 * 3 = 480)---------- */
+		position: absolute;
+		height:340px;
+	}
+ 
+	#myslide .mystuff {width:700px;float:left;padding:20px 0;}
+ 
+	.button1,.button2,.button3,.button4,.button5, .button6{background:#999;padding:6px;display:block;float:left;margin-right:5px;}
+	.active{background:#111;padding:6px;display:block;float:left;outline:none;}
+	.clear{clear:both;}
+

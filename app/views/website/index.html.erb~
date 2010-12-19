@@ -1,0 +1,68 @@
+<html>
+
+  <head>
+    <title>Beatmap</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+
+  <body>
+  	
+    <div id="maincontent">
+
+		
+	  </div> <!-- end top beatmaps -->
+      <div id="maincontent_left">
+      		<div id="find_new_friends">
+				<h3>Find some new Friends</h3>
+				<%= render :partial => 'friendship/random_users'%>
+			</div> <!-- end add some friends -->
+      </div><!--end maincontent_left-->
+      <div id="maincontent_right">
+      	<div id="main_top">
+      		<div id="maincontent_top_text">
+      			<%= render :partial => 'maps/top_rated_maps' %>	
+      		</div>
+      	</div>
+      	<div id="main_friendsmaps">
+      		<div id="maincontent_friendsmaps_text">
+      			<%= render :partial => 'maps/top_friends_maps' %>	
+      		</div>
+      	</div>      	
+      	<div id="main_restaurants">
+      		<div id="maincontent_text">
+      			<%= render :partial => 'maps/top_restaurant_maps' %>	
+      		</div>
+      	</div>    
+      	<div id="main_shopping">
+      		<div id="maincontent_text">
+      			<%= render :partial => 'maps/top_shopping_maps' %>	
+      		</div>
+      	</div>
+      	<div id="main_nightlife">
+      		<div id="maincontent_text">
+      			<%= render :partial => 'maps/top_nightlife_maps' %>	
+      		</div>
+      	</div>      	        	  	
+      </div><!--end maincontent_right-->
+      
+    <div id="footer">
+        <div id="footerleft">
+          Beatmap © 2010
+        </div>
+        <div id="footerright">
+          <a href="/">About</a> 
+          · <a href="/">Advertising</a>
+          · <a href="/">Developers</a>
+          · <a href="/">Careers</a> 
+          · <a href="/">Privacy</a> 
+          · <a href="/">Terms</a>
+          · <a href="/">Help</a>
+        </div>
+      </div>
+      
+    </div><!--end maincontent-->
+    
+    
+    
+  </body>
+

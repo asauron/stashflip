@@ -1,0 +1,10 @@
+<img src="/images/favoritemaps.png"/> 
+<br/>
+<% favorite_maps = FavoriteMap.find(:all, :conditions => {:user_id => [@user.id]})%> <br/>
+	  <% favorite_maps.each do |favorite_map| %>
+		<% favorite_map_url = '/maps/' + favorite_map.map_id.to_s %>
+		<% map_lookup = Map.find(:first, :conditions => {:id => favorite_map.map_id}) %>
+		<% favorite_map_title = map_lookup.title %>
+		<label class="red awesome medium button"><font color="black"><%= link_to favorite_map_title, favorite_map_url %></font> </label>
+		<br/>
+<% end %>

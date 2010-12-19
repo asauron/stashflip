@@ -1,4 +1,24 @@
 ActionController::Routing::Routes.draw do |map|
+
+  map.connect '/maps/save', :controller => 'maps', :action => 'save'
+  map.connect '/maps/add', :controller => 'maps', :action => 'add'
+  map.connect '/maps/exclude', :controller => 'maps', :action => 'exclude'
+  map.connect '/maps/save_favorite', :controller => 'maps', :action => 'save_favorite'
+  
+  map.resources :maps
+  
+  map.resources :favorite_maps
+  
+  map.resources :map_filters
+
+  #map.resources :maps
+
+  map.resources :maps, :member => {:rate => :post}
+  
+  map.resources :user_sessions
+
+  map.resources :users
+
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:
@@ -12,6 +32,7 @@ ActionController::Routing::Routes.draw do |map|
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   map.resources :products
 
+	
   # Sample resource route with options:
   #   map.resources :products, :member => { :short => :get, :toggle => :post }, :collection => { :sold => :get }
 
@@ -31,8 +52,14 @@ ActionController::Routing::Routes.draw do |map|
   #   end
 
   # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
-  # map.root :controller => "welcome"
-
+    map.root :controller => "website"
+	map.login "login", :controller => "user_sessions", :action => "new"
+	map.logout "logout", :controller => "user_sessions", :action => "destroy"
+	map.editprofile "/info/edit", :controller => "info", :action => "edit"
+	map.profile "/profile/:username", :controller => "profile", :action => "show"
+	map.mymap "/profile/show/:username/:mapid", :controller => "map", :action => "show"
+	map.privateprofile 'user', :controller => 'users', :action => 'index'
+	
   # See how all your routes lay out with "rake routes"
 
   # Install the default routes as the lowest priority.

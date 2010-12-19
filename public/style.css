@@ -1,0 +1,529 @@
+BODY {
+  font-family: Arial, Helvetica, sans-serif;
+  color : #000000;
+  font-size: 0.8em;
+}
+.clear {
+  clear:both;
+}
+
+#top_bar{
+  height:100px;
+  width:980px;
+  background-image:url(images/basicbg.png);
+  margin-left:auto;
+  margin-right:auto;  
+}
+
+#user_nav {
+  height:20px;
+  width:980px;
+  margin-left:auto;
+  margin-right:auto;  	
+}
+
+#topinfoblock{
+  background-image:url(images/topbg.png);
+  background-repeat: repeat;
+  height: 42px;
+  width:auto;
+  margin-left:auto;
+  margin-right:auto;
+  padding-left:30px;
+}
+#under_topinfoblock{
+
+}
+
+form.search {    
+  color: #de6464;   
+  font-family: Arial, Verdana, Helvetica, sans-serif;  
+  font-size: 12px;
+  height:42px;
+  }
+
+span.bmap_text {
+  color : #de6464;   
+  font-family: Arial, Verdana, Helvetica, sans-serif;  
+
+}
+
+#logo{
+  background-image:url(images/logo.png);
+  background-repeat: no-repeat;
+  width: 96px;
+  height: 41px;
+  float:left;
+}
+
+a, a:link, a:visited, a:hover {
+  color:#000000;
+}
+
+#main_top a,
+#main_top a:link,
+#main_top a:visited,
+#main_top a:hover,
+#main_friendsmaps a,
+#main_friendsmaps a:link,
+#main_friendsmaps a:visited,
+#main_friendsmaps a:hover,
+#main_restaurants a,
+#main_restaurants a:link,
+#main_restaurants a:visited,
+#main_restaurants a:hover,
+#main_shopping a,
+#main_shopping a:link,
+#main_shopping a:visited,
+#main_shopping a:hover,
+#main_events a,
+#main_events a:link,
+#main_events a:visited,
+#main_events a:hover,
+#main_nightlife a,
+#main_nightlife a:link,
+#main_nightlife a:visited,
+#main_nightlife a:hover{
+  color:#f8f0d0;	
+}
+
+a:hover{
+  background-color:#de6464;
+}
+
+#nav_home{
+  background-image:url(images/navbutton1.png);
+  background-repeat: no-repeat;
+  width: 51px;
+  height: 30px;
+  float:left;
+  margin-left: 0px;
+}
+
+#nav_profile{
+  background-image:url(images/navbutton2.png);
+  background-repeat: no-repeat;
+  width: 57px;
+  height: 30px;
+  float:left;
+  margin-left: 0px;
+}
+
+#nav_account{
+  background-image:url(images/navbutton3.png);
+  background-repeat: no-repeat;
+  width: 80px;
+  height: 30px;
+  float:left;
+  margin-left: 0px;
+}
+
+#searchbar{
+  width:700px;
+  height:100px;
+  margin-top:0px;
+  margin-left:100px;
+  float:left;	
+}
+
+#search_menu {
+margin-left:auto;
+  height:42px;
+}
+
+#searchbar input {
+    vertical-align:middle;
+  margin-top: 8px;
+
+  width:160px;
+}
+#searchbar label{
+  vertical-align:middle;
+
+}
+
+#searchtext {
+  margin-top:0px;
+  float:left;
+}
+
+#searchbutton{
+  margin-top:0px;
+  float:left;	
+}
+
+#basicbg{
+  background-image:url(images/basicbg.png);
+  background-repeat: repeat;
+  height:50px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+#maincontent{
+  margin-left:auto;
+  margin-right:auto;
+  width: 980px;
+  height: auto;
+}
+
+#map_content_top{
+  width:920px;
+  height:auto;
+  margin-left:auto;
+  margin-right:auto;
+  clear:both;		
+}
+
+#map_content_top input{
+  margin-left: 10px;
+  width: 300px;
+    
+}
+#map_content_top h1 {
+  float:left;
+  width:50%;
+}
+
+#map_page_content{
+  width:980px;
+  height:auto;
+  margin-left:auto;
+  margin-right:auto;
+  clear:both;	
+}
+#map_info{
+  width:1200px;
+  height:auto;
+  float:left;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+#display_map{
+  float:left;
+  width:700px;
+  height:500px;
+}
+
+#map_save{
+  width:650px;
+  height:25px;
+  float: left;
+  clear: both;
+}
+
+#category_menu{
+  width:600px;	
+  height:25px;
+  float:left;
+  margin:auto;
+  clear:both;
+}
+
+#map_title{
+	width:550px;	
+	  height:40px;
+	  float:left;
+	margin-bottom:10px;
+}
+
+#category_menu label{
+  padding: 20px;
+}
+
+#category_menu input{
+  width:0px;
+}
+
+#soft_filter_menu{
+  width:650px;	
+  height:20px;
+  float:left;
+  margin:auto;
+  margin-left: -45px;
+  clear:both;
+}
+#soft_filter_menu ul {
+  margin:auto;
+  list-style: none;
+}
+#soft_filter_menu ul li {
+  display: block;
+  float:left;
+  padding-right:5px;
+  margin:auto;
+}
+
+
+#restaurant_list{
+  width:400px;
+  height:auto;
+  float:left;
+  margin-left:10px;
+  font-size: 20px;
+
+}
+#social_box {
+  float:left;
+  margin-left:10px;
+}
+form#add {
+  float:left;
+  clear:both;
+}
+
+.result_info_box {
+  margin:10px, 10px, 10px, 10px;  
+  clear:both;
+}
+
+.result_info_box img{
+  float: left;
+  width: 100px;
+  
+}
+.result_info_box ul{
+  list-style-type: none;
+  float: left;
+width:250px;
+margin:auto;
+padding:auto;
+
+}
+.result_info_box ul li{
+  display:block;
+}
+
+#find_new_friends{
+  background-image:url(images/newfriends.png);
+  width: 190px;
+  height: 340px;	
+  float: left;
+}
+
+
+#main_top{
+  width: 980px;
+  height: 340px;	
+  float: left;
+  
+}
+
+#main_top_middle{
+  background-image:url(images/img/control_blank.jpg);	
+  width: 790px;
+  height: 340px;	
+  float: left;
+}
+
+#main_top_right{
+  background-image:url(images/friends.png);
+  width: 190px;
+  height: 340px;	
+  float: left;
+}
+
+#maincontent_top_text{
+  font-family: Arial, Helvetica, sans-serif;
+  color : #ffffff;
+  font-size: 2.0em;
+  line-height: 1.0em;
+  margin-left:0px;
+  margin-top:100px;
+}
+
+#maincontent_friendsmaps_text{
+  font-family: Arial, Helvetica, sans-serif;
+  color : #ffffff;
+  font-size: 2.0em;
+  line-height: 1.0em;
+  margin-left:0px;
+  margin-top:100px;
+}
+
+#maincontent_text{
+  font-family: Arial, Helvetica, sans-serif;
+  color : #ffffff;
+  font-size: 2.0em;
+  line-height: 1.0em;
+  margin-left:0px;
+  margin-top:50px;
+}
+
+#main_bottom{
+  width: 980px;
+  height: 700px;
+  margin-top: 40px;	
+  float: left;
+}
+
+#main_bottom_info{
+  width: 980px;
+  height: 200px;
+  margin-top: 20px;	
+  float: left;
+}
+
+#main_bottom_info_left{	
+  width: 630px;
+  height: 200px;	
+  float: left;
+}
+
+#main_bottom_info_right{
+  width: 350px;
+  height: 340px;	
+  float: left;
+}
+
+.main_title{
+  font-family: Arial, Helvetica, sans-serif;
+  color : #000000;
+  font-size: 2.0em;
+  line-height: 1.0em;
+}
+
+.main_text{
+  font-family: Arial, Helvetica, sans-serif;
+  color : #000000;
+  font-size: 1.1em;
+  line-height: 1.0em;
+}
+
+
+#footer{
+  width: 1000px;
+  height: 20px;
+  clear:both;
+  float:left;
+  margin-top:15px;
+  color : #000000;
+  font-size: 0.8em;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+#footerleft{
+  width: 200px;
+  height: 20px;
+  float:left;
+  margin-left:0px;
+}
+
+#footerright{
+  height: 20px;
+  float:left;
+  margin-left: 470px;
+}
+
+#profile_main_top{
+	width:600px;
+	height:200px;
+	margin-left:200px;
+	float:left;
+	clear:both;
+}
+#profile_main_content{
+	width:800px;
+	margin-top:100px;	
+	float:left;
+	clear:both;
+}
+
+#profile_main_content_friends{
+	width:250px;
+	float:left;
+}
+
+#profile_main_content_maps{
+	width:250px;
+	margin-left:25px;		
+	float:left;
+}
+
+#profile_main_content_favoritemaps{
+	width:250px;	
+	margin-left:25px;	
+	float:left;
+}
+
+
+#myslide {width:700px;overflow:hidden;position: relative;height:340px;margin-bottom:20px}
+ 
+	#myslide .cover{
+		width:4200px; /*------- class mystuff width * number of mystuff divs (160 * 3 = 480)---------- */
+		position: absolute;
+		height:340px;
+	}
+ 
+	#myslide .mystuff {width:700px;float:left;padding:20px 0;}
+ 
+	.button1,.button2,.button3,.button4,.button5, .button6{background:#999;padding:6px;display:block;float:left;margin-right:5px;}
+	.active{background:#111;padding:6px;display:block;float:left;outline:none;}
+	.clear{clear:both;}
+
+
+
+
+
+
+
+
+
+
+
+/** 
+ * Slideshow style rules.
+ */
+#slideshow {
+	margin:0 auto;
+	width:790px;
+	height:340px;
+	/**background:transparent url(/images/img/bg_slideshow.jpg) no-repeat 0 0;**/
+	background:transparent no-repeat 0 0;
+	position:relative;
+}
+#slideshow #slidesContainer {
+  margin:0 auto;
+  width:700px;
+  height:340px;
+  overflow:auto; /* allow scrollbar */
+  position:relative;
+}
+#slideshow #slidesContainer .slide {
+  margin:0 auto;
+  width:700px; /* reduce by 20 pixels of #slidesContainer to avoid horizontal scroll */
+  height:340px;
+}
+
+/** 
+ * Slideshow controls style rules.
+ */
+.control {
+  display:block;
+  width:39px;
+  height:340px;
+  text-indent:-10000px;
+  position:absolute;
+  cursor: pointer;
+}
+#leftControl {
+  top:0;
+  left:0;
+  background:transparent url(/images/img/control_left.jpg) no-repeat 0 0;
+}
+#rightControl {
+  top:0;
+  right:0;
+  background:transparent url(/images/img/control_right.jpg) no-repeat 0 0;
+}
+#slideshow_text1{
+	margin-left:300px;
+	margin-top:70px;
+}
+#slideshow_text2{
+	margin-left:300px;
+	margin-top:10px;
+}
+

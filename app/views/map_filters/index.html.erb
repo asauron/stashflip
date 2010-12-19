@@ -1,0 +1,18 @@
+<h1>Listing map_filters</h1>
+
+<table>
+  <tr>
+  </tr>
+
+<% @map_filters.each do |map_filter| %>
+  <tr>
+    <td><%= link_to 'Show', map_filter %></td>
+    <td><%= link_to 'Edit', edit_map_filter_path(map_filter) %></td>
+    <td><%= link_to 'Destroy', map_filter, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New map_filter', new_map_filter_path %>

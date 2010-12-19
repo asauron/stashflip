@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  user_id: 1
+  friend_id: 1
+  status: MyString
+  time_created: 2010-11-06 14:03:54
+  time_accepted: 2010-11-06 14:03:54
+
+two:
+  user_id: 1
+  friend_id: 1
+  status: MyString
+  time_created: 2010-11-06 14:03:54
+  time_accepted: 2010-11-06 14:03:54

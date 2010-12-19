@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html> 
+<html>
+  <head> 
+    <%= stylesheet_link_tag :all %> <%= javascript_include_tag :defaults %>
+    <%= javascript_include_tag :defaults %>
+    <%= ajaxful_rating_style %>
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <title>beatmap: <%= @map.title %></title>
+  </head> 
+
+  <body>
+    <div id="user_nav">
+      <% if current_user %>
+        <%= link_to "Home", root_path %> |
+    	<%= link_to "#{current_user.username}'s Profile", users_url %> |
+        <%= link_to "Edit Profile", editprofile_url %> |
+        <%= link_to "Logout", logout_path %>
+      <% else %>
+        <%= link_to "Register", new_user_path %> |
+        <%= link_to "Login", login_path %>
+      <% end %>
+    </div>
+
+    <div id="search_bar">
+      <%= render :partial => 'website/searchbar'%>       
+    </div>
+
+    <p style="color: green"><%= notice %></p>
+    <div id="map_content_top">
+      
+      <h1>search for 
+        <span class="beatmap awesome large button"><%= @mapfilter.query %></span> 
+        in <span class="beatmap awesome large button"><%= @mapfilter.location %></span>
+      </h1> 
+      
+      <h1><%=text_field_tag("my_address", 'YOUR ADDRESS', :id => 'input_address', :class => 'beatmap awesome button')%> </h1>
+    </div>
+    <div class="clear">
+    </div>
+
+    <%= yield %>
+
+  </body>
+</html>
+

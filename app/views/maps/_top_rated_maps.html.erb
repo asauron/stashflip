@@ -1,0 +1,13 @@
+<div id="slideshow_text1">
+<% best_maps = Map.top_rated_maps%>
+<% best_maps[0..4].each do |best_map| %>
+	<% if !(best_map.nil?)%>
+	<% best_map_url = '/maps/' + best_map.id.to_s %>
+	<% best_map_title = best_map.title %>
+	<label class="grey awesome large button"><font color="black">
+		<%= link_to best_map_title, best_map_url %>
+	</font></label>
+	<br/><br/>
+	<% end %>
+<% end %>	
+</div>

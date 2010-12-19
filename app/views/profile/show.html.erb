@@ -1,0 +1,37 @@
+<html>	
+	<head>
+		<title>Beatmap</title>
+		<link rel="stylesheet" type="text/css" href="/style.css" />
+	</head>
+	<body>
+	<div id="map_page_content">    
+	<div id="profile_main_top">
+		<img src="/images/profilepic.png"/>
+		<h1>
+			<%= @title %>
+		</h1>
+		<br />
+		<b>Name:</b> <%= @info.name%>
+		<br/>
+		<b>Location:</b> <%= @info.location%>
+		<br/>
+		<b>Tagline:</b> <%= @info.bio%>
+		<br/>
+	</div> <!-- end of profile_main_top -->
+			
+	<div id= "profile_main_content">
+			<div id="profile_main_content_friends">
+				<%= render :partial => 'friendship/publicfriendsdock' %>
+			</div>
+			<div id="profile_main_content_maps">
+				<%= render :partial => 'users/mapdock' %>
+			</div>
+			<div id="profile_main_content_favoritemaps">
+				<%= render :partial => 'users/favoritemapdock' %>
+			</div>			
+	</div> <!-- end of profile_main_content-->
+
+	  <%= render :partial => 'website/footer' %>
+    </div> <!--end of map_page_content-->	  
+    </body>
+</html>
