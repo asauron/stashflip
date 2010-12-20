@@ -94,7 +94,7 @@ a, a:link, a:visited, a:hover {
 #main_nightlife a:link,
 #main_nightlife a:visited,
 #main_nightlife a:hover{
-  color:#f8f0d0;	
+  color:#000000;	
 }
 
 a:hover{
@@ -315,7 +315,7 @@ padding:auto;
 
 #main_top{
   width: 980px;
-  height: 340px;	
+  height: auto;	
   float: left;
   
 }

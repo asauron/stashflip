@@ -14,7 +14,6 @@ ActiveRecord::Schema.define(:version => 20101219094909) do
   create_table "deals", :force => true do |t|
     t.string   "title"
     t.string   "description"
-    t.decimal  "price",       :precision => 8, :scale => 2, :default => 0.0
     t.datetime "created_at"
     t.datetime "updated_at"
   end

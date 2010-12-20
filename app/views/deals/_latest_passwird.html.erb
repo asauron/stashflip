@@ -1,1 +1,10 @@
-<%= @latest_deals %>
+hey
+<% @user = User.find(:first) %>
+<%= @user %>
+
+<% Deal.find(:all).map do |element| %>
+	<% unless element.nil? %>
+	<%= element.description %>
+	<% end %>
+	<br/>
+<% end %>
