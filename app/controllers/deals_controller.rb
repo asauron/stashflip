@@ -93,6 +93,6 @@ class DealsController < ApplicationController
   	  
   	  
 	  #redirect_to :root, :notice => "Posted new deal. #{@actual_header['location']} ~~~~~~ #{@latest_deals[0].to_s}"
-	  redirect_to :root, :notice => "{@latest_deals[0].to_s}"
+	  redirect_to :root, :notice => "#{@latest_deals[0].to_s}"
   end
 end
