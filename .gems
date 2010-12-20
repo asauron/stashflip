@@ -3,6 +3,6 @@ yelp
 hpricot
 ajaxful_rating
 eventfulapi
-net
+net-http
 open-uri
 uri
