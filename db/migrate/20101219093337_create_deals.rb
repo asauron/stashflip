@@ -2,7 +2,7 @@ class CreateDeals < ActiveRecord::Migration
   def self.up
     create_table :deals do |t|
       t.string :title
-      t.string :description
+      t.text :description
       t.timestamps
     end
   end
