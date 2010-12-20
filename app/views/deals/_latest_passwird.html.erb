@@ -1,10 +1,7 @@
 hey
-<% @user = User.find(:first) %>
-<%= @user %>
-
 <% Deal.find(:all).map do |element| %>
 	<% unless element.nil? %>
-	sup
+	<%= element.description %>
 	<% end %>
 	<br/>
 <% end %>
