@@ -83,17 +83,15 @@ class DealsController < ApplicationController
   
   def post_deal 	  
   	  @passwird_delegate = PasswirdDelegate.new
-  	  @latest_deals = @passwird_delegate.get_breaking_news(200)
+  	  @latest_deals = PasswirdDelegate.get_breaking_news(200)
   	  @latest_deals.map do |temp_deal|
   	  	temp_deal.save
   	  end
   	  
-  	  @actual_header = #PasswirdDelegate.fetch('http://www.passwird.com/redirect.php?linkID=46296')
-  	  #@actual_header = PasswirdDelegate.fetch('http://www.passwird.com/redirect.php?linkID=46268')
-  	  #@actual_header = PasswirdDelegate.fetch('http://www.ruby-lang.org')
+  	  #@actual_header = PasswirdDelegate.fetch('http://www.passwird.com/redirect.php?linkID=46308')
+  	  @actual_header = PasswirdDelegate.fetch('http://www.ruby-lang.org')
   	  
   	  
-	  redirect_to :root, :notice => "Posted new deal. #{@actual_header} ~~~~~~ #{@latest_deals[0].to_s}", :latest_deals => @latest_deals 
-	  #redirect_to :root, :notice => "Posted new deal. #{@actual_header.body}"
+	  redirect_to :root, :notice => "Posted new deal. #{@actual_header} ~~~~~~ #{@latest_deals[0].to_s}"
   end
 end
