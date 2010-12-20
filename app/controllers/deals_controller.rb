@@ -83,7 +83,7 @@ class DealsController < ApplicationController
   
   def post_deal 	  
   	  @passwird_delegate = PasswirdDelegate.new
-  	  #@latest_deals = PasswirdDelegate.get_breaking_news(200)
+  	  @latest_deals = PasswirdDelegate.get_breaking_news(200)
   	  #@latest_deals.map do |temp_deal|
   	  #	temp_deal.save
   	  #end
