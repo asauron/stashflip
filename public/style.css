@@ -70,37 +70,6 @@ a, a:link, a:visited, a:hover {
   color:#000000;
 }
 
-#main_top a,
-#main_top a:link,
-#main_top a:visited,
-#main_top a:hover,
-#main_friendsmaps a,
-#main_friendsmaps a:link,
-#main_friendsmaps a:visited,
-#main_friendsmaps a:hover,
-#main_restaurants a,
-#main_restaurants a:link,
-#main_restaurants a:visited,
-#main_restaurants a:hover,
-#main_shopping a,
-#main_shopping a:link,
-#main_shopping a:visited,
-#main_shopping a:hover,
-#main_events a,
-#main_events a:link,
-#main_events a:visited,
-#main_events a:hover,
-#main_nightlife a,
-#main_nightlife a:link,
-#main_nightlife a:visited,
-#main_nightlife a:hover{
-  color:#000000;	
-}
-
-a:hover{
-  background-color:#de6464;
-}
-
 #nav_home{
   background-image:url(images/navbutton1.png);
   background-repeat: no-repeat;

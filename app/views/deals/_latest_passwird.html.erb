@@ -7,11 +7,16 @@
 	<br/>
 	<b>Description:</b> <%= element.description %>
 	<br/>
-	<b>Price:</b> <%= element.cost %>
-	<br/>
-	<b>Retail Price:</b> <%= element.cost_retail %>
+	<b>Price:</b> $<%= element.cost %>
 	<br/>
 	<b>Profit Margin:</b> <label class="green awesome medium button"><font color="black">+$<%= element.profit_margin %></font></label> 
+	<br/>
+	<b>Sell:</b> <label class="blue awesome medium button"><font color="black"><%= link_to "EBAY", "http://sell.ebay.com/sell", :target => "_blank"
+%></font> </label> 
+	<label class="blue awesome medium button"><font color="black"><%= link_to "AMAZON", "http://www.amazon.com/gp/seller/sell-your-stuff.html?ie=UTF8&*Version*=1&*entries*=0", :target => "_blank"%></font> </label> 
+	<label class="blue awesome medium button"><font color="black"><%= link_to "CRAIGSLIST", "https://post.craigslist.org/", :target => "_blank"%></font> </label> 
+	
+	
 	<div class="hr"></div>
 	<br/><br/><br/>
 	<% end %>
