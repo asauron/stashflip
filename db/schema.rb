@@ -28,7 +28,9 @@ ActiveRecord::Schema.define(:version => 20101221030107) do
     t.string   "source"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.decimal  "cost",        :precision => 6, :scale => 2, :default => 0.0
+    t.decimal  "cost",          :precision => 6, :scale => 2, :default => 0.0
+    t.decimal  "cost_retail",   :precision => 6, :scale => 2, :default => 0.0
+    t.decimal  "profit_margin", :precision => 6, :scale => 2, :default => 0.0
   end
 
   create_table "eventful_delegates", :force => true do |t|

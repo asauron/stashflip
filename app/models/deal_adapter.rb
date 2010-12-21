@@ -13,6 +13,6 @@ class DealAdapter < ActiveRecord::Base
 		else
 			false
 		end	
-	end
+	end	
 
 end

@@ -85,9 +85,10 @@ class DealsController < ApplicationController
   	  @passwird_delegate = PasswirdDelegate.new  	  
   	  @latest_deals = BensbargainsDelegate.get_breaking_news(200)
   	  @latest_deals = @latest_deals + PasswirdDelegate.get_breaking_news(200)
+  	  
   	  @latest_deals.map do |latest_deal|
   	  	#If Deal is not already saved and Description contains [Compare] or Next lowest price on, then save it
-  	  	if Deal.find_by_guid(latest_deal.guid).nil? && DealAdapter.contains_price_comparison(latest_deal)
+  	  	if Deal.find_by_guid(latest_deal.guid).nil? && DealAdapter.contains_price_comparison(latest_deal) && latest_deal.cost_retail > 0 && latest_deal.profit_margin > 0
   	   		latest_deal.save
   	   	end
   	  end

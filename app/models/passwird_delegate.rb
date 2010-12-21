@@ -22,6 +22,10 @@ def self.get_breaking_news(min)
 	  temp_deal.description = (item/"description").inner_text
 	  temp_deal.guid = (item/"guid").inner_html
 	  temp_deal.cost = get_price(temp_deal.name)
+	  temp_deal.cost_retail = get_price_retail(temp_deal.description)
+	  unless temp_deal.cost_retail.nil? || temp_deal.cost.nil?
+	  	temp_deal.profit_margin = temp_deal.cost_retail - temp_deal.cost
+  	  end
 	  temp_deal.source = "passwird"
 	  breaking_news_array << temp_deal
 	end
@@ -30,14 +34,22 @@ def self.get_breaking_news(min)
 end
 
 def self.get_price(name)
-	cost = /\$(\d+\.\d+)/.match(name)
-	if cost.nil?
-	cost = /\$(\d+)/.match(name)
+	price = /\$(\d+\.\d+)/.match(name)
+	if price.nil?
+	price = /\$(\d+)/.match(name)
 	end	
-	unless cost.nil?
-	cost = cost[1].to_f
+	unless price.nil?
+	price_value = price[1].to_f
 	end
-	return cost
+	return price_value
+end
+
+def self.get_price_retail(description)
+	price_retail = /is \$(\d+\.\d+)./.match(description)
+	unless price_retail.nil?
+	price_retail_value = price_retail[1].to_f
+	end
+	return price_retail_value	
 end
 
 def self.contains_price_comparison(description)

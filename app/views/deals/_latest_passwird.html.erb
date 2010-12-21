@@ -1,15 +1,17 @@
 <% Deal.find(:all).map do |element| %>
 	<% unless element.nil? %>
 	
-	Source: <label class="blue awesome medium button"><font color="black"><%= element.source.humanize %></font> </label> 
+	Source: <label class="blue awesome medium button"><font color="black"><%= element.source.humanize %></font></label> 
 	<br/>
-	Title: <%= element.name%>
+	<b>Title:</b> <%= element.name%>
 	<br/>
-	Description: <%= element.description %>
+	<b>Description:</b> <%= element.description %>
 	<br/>
-	Price: <%= element.cost %>
+	<b>Price:</b> <%= element.cost %>
 	<br/>
-	guid: <%= element.guid %>	
+	<b>Retail Price:</b> <%= element.cost_retail %>
+	<br/>
+	<b>Profit Margin:</b> <label class="green awesome medium button"><font color="black">+$<%= element.profit_margin %></font></label> 
 	<br/><br/><br/>
 	<% end %>
 	<br/>
