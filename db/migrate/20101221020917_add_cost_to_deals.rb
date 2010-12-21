@@ -7,7 +7,7 @@ class AddCostToDeals < ActiveRecord::Migration
 
   def self.down
   	remove_column :deals, :cost
-  	remove_column :deals, :cost_retail
-  	remove_column :deals, :profit_margin
+  	#remove_column :deals, :cost_retail
+  	#remove_column :deals, :profit_margin
   end
 end
