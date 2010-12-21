@@ -1,6 +1,13 @@
 <% Deal.find(:all).map do |element| %>
 	<% unless element.nil? %>
-	<%= element.description %>
+	Title: <%= element.name%>
+	<br/>
+	Description: <%= element.description %>
+	<br/>
+	Price: <%= element.cost %>
+	<br/>
+	guid: <%= element.guid %>	
+	<br/><br/><br/>
 	<% end %>
 	<br/>
 <% end %>

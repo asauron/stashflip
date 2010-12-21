@@ -89,12 +89,7 @@ class DealsController < ApplicationController
   	   		latest_deal.save
   	   	end
   	  end
-	  
-  	  @deals = Deal.find(:all)
-  	  @deals.map do |element|
-  	  	@price = PasswirdDelegate.get_price(element.title)
-  	  end
   	  
-	  redirect_to :root, :notice => "Posted new deal. #{@price} ~~~~~~ #{@latest_deals[0].to_s}"
+	  redirect_to :root, :notice => "Posted new deal. #{"Norelco 7310XL Rechargable Cordless Men's Shaver $25.99 shipped at Amazon" =~ /\$(\d+\.\d+)/}~~~~~~ #{@latest_deals[0].to_s}"
   end
 end
