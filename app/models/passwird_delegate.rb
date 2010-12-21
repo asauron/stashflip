@@ -26,6 +26,10 @@ def self.get_breaking_news(min)
 	
 	return breaking_news_array
 end
+
+def self.get_price(title)
+	price = ( title =~ /\$(\d+\.\d+)/ )
+end
     
     def self.fetch(uri_str, limit = 10)
       # You should choose better exception.
