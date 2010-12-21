@@ -51,7 +51,7 @@ end
 
 def self.get_buy_link(description)
 	buy_link = /a href=\s*"([^"]*)/.match(description)
-	buy_link[-1]
+	buy_link[1]
 end
 
 def self.contains_price_comparison(description)
