@@ -4,6 +4,7 @@ class CreateDeals < ActiveRecord::Migration
       t.string :name
       t.text :description
       t.string :guid
+      t.string :source
       t.timestamps
     end
   end

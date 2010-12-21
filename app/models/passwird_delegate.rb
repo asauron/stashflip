@@ -22,6 +22,7 @@ def self.get_breaking_news(min)
 	  temp_deal.description = (item/"description").inner_text
 	  temp_deal.guid = (item/"guid").inner_html
 	  temp_deal.cost = get_price(temp_deal.name)
+	  temp_deal.source = "passwird"
 	  breaking_news_array << temp_deal
 	end
 	
@@ -38,8 +39,12 @@ def self.get_price(name)
 	end
 	return cost
 end
-    
-    def self.fetch(uri_str, limit = 10)
+
+def self.contains_price_comparison(description)
+	description =~ /Next lowest price on/
+end    
+
+def self.fetch(uri_str, limit = 10)
       # You should choose better exception.
       raise ArgumentError, 'HTTP redirect too deep' if limit == 0
 
@@ -52,6 +57,6 @@ end
       else
         response.error!
       end
-    end
+end
   
 end

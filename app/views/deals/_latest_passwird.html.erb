@@ -1,5 +1,8 @@
 <% Deal.find(:all).map do |element| %>
 	<% unless element.nil? %>
+	
+	Source: <label class="blue awesome medium button"><font color="black"><%= element.source.humanize %></font> </label> 
+	<br/>
 	Title: <%= element.name%>
 	<br/>
 	Description: <%= element.description %>

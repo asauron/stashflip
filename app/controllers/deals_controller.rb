@@ -82,14 +82,16 @@ class DealsController < ApplicationController
   end
   
   def post_deal 	  
-  	  @passwird_delegate = PasswirdDelegate.new
-  	  @latest_deals = PasswirdDelegate.get_breaking_news(200)
+  	  @passwird_delegate = PasswirdDelegate.new  	  
+  	  @latest_deals = BensbargainsDelegate.get_breaking_news(200)
+  	  @latest_deals = @latest_deals + PasswirdDelegate.get_breaking_news(200)
   	  @latest_deals.map do |latest_deal|
-  	  	if Deal.find_by_guid(latest_deal.guid).nil?
+  	  	#If Deal is not already saved and Description contains [Compare] or Next lowest price on, then save it
+  	  	if Deal.find_by_guid(latest_deal.guid).nil? && DealAdapter.contains_price_comparison(latest_deal)
   	   		latest_deal.save
   	   	end
   	  end
   	  
-	  redirect_to :root, :notice => "Posted new deal. #{"Norelco 7310XL Rechargable Cordless Men's Shaver $25.99 shipped at Amazon" =~ /\$(\d+\.\d+)/}~~~~~~ #{@latest_deals[0].to_s}"
+	  redirect_to :root, :notice => "Posted new deal. ~~~~~~ #{@latest_deals[0].to_s}"
   end
 end
