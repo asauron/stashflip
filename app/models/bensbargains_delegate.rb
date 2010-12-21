@@ -10,16 +10,15 @@ class BensbargainsDelegate < ActiveRecord::Base
 	cattr_accessor :result_array
 
 def self.get_breaking_news(min)
-	doc = open("http://bensbargains.net/rss.xml/") { |f| Hpricot(f) }
+	doc = Hpricot.XML(open("http://bensbargains.net/rss.xml/"))
 	
 	cutoff_time = Time.now - 60 * min
-	
-	breaking_news_array = []
 	
 	breaking_news = (doc/"item").map do |item|
 	  temp_deal = Deal.new
 	  temp_deal.name = (item/"title").inner_html
 	  temp_deal.description = (item/"description").inner_text
+	  temp_deal.buy_link = (item/"link").inner_html 
 	  temp_deal.guid = (item/"guid").inner_html
 	  temp_deal.cost = get_price(temp_deal.name)
 	  temp_deal.cost_retail = get_price_retail(temp_deal.description)
@@ -27,10 +26,8 @@ def self.get_breaking_news(min)
 	  	temp_deal.profit_margin = temp_deal.cost_retail - temp_deal.cost
   	  end
 	  temp_deal.source = "bensbargains"
-	  breaking_news_array << temp_deal
+	  temp_deal
 	end
-	
-	return breaking_news_array
 end
 
 def self.get_price(name)
@@ -51,8 +48,6 @@ def self.get_price_retail(description)
 		return 0
 	else
 	comparison_link = comparison_link_info[1]
-	
-	#raise ArgumentError, comparison_link if 1 == 1
 	
 	comparison_html = fetch(comparison_link).body	
 	

@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(:version => 20101221030107) do
     t.text     "description"
     t.string   "guid"
     t.string   "source"
+    t.string   "buy_link"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.decimal  "cost",          :precision => 6, :scale => 2, :default => 0.0

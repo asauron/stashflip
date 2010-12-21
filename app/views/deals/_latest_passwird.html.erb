@@ -2,16 +2,19 @@
 <% deals.map do |element| %>
 	<% unless element.nil? %>
 	
-	Source: <label class="orange awesome medium button"><font color="black"><%= element.source.humanize %></font></label> 
+	Source: <label class="blue awesome medium button"><font color="black"><%= element.source.humanize %></font></label> 
 	<br/>
 	<b>Title:</b> <%= element.name%>
 	<br/>
 	<b>Description:</b> <%= element.description %>
-	<br/>
+	<br/><br/>
 	<b>Price:</b> $<%= element.cost %>
 	<br/>
 	<b>Profit Margin:</b> <label class="blue awesome medium button"><font color="black">+$<%= element.profit_margin %></font></label> 
-	<br/>
+	<br/><br/>
+	<b>Buy:</b> <label class="orange awesome medium button"><font color="black"><%= link_to "BUY", element.buy_link, :target => "_blank"
+%></font> </label>
+	<br/><br/>
 	<b>Sell:</b> <label class="orange awesome medium button"><font color="black"><%= link_to "EBAY", "http://sell.ebay.com/sell", :target => "_blank"
 %></font> </label> 
 	<label class="orange awesome medium button"><font color="black"><a href="http://www.amazon.com/gp/redirect.html?ie=UTF8&location=http%3A%2F%2Fwww.amazon.com%2Fgp%2Fseller%2Fsell-your-stuff.html&tag=stashflip-20&linkCode=ur2&camp=1789&creative=390957" target="_blank">AMAZON</a><img src="https://www.assoc-amazon.com/e/ir?t=stashflip-20&l=ur2&o=1" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></font></label>

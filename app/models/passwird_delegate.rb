@@ -10,16 +10,15 @@ class PasswirdDelegate < ActiveRecord::Base
 	cattr_accessor :result_array
 
 def self.get_breaking_news(min)
-	doc = open("http://passwird.com/n/rss.xml") { |f| Hpricot(f) }
+	doc = Hpricot.XML(open("http://passwird.com/n/rss.xml"))
 	
 	cutoff_time = Time.now - 60 * min
-	
-	breaking_news_array = []
 	
 	breaking_news = (doc/"item").map do |item|
 	  temp_deal = Deal.new
 	  temp_deal.name = (item/"title").inner_html
 	  temp_deal.description = (item/"description").inner_text
+	  temp_deal.buy_link = get_buy_link(temp_deal.description) 
 	  temp_deal.guid = (item/"guid").inner_html
 	  temp_deal.cost = get_price(temp_deal.name)
 	  temp_deal.cost_retail = get_price_retail(temp_deal.description)
@@ -27,10 +26,8 @@ def self.get_breaking_news(min)
 	  	temp_deal.profit_margin = temp_deal.cost_retail - temp_deal.cost
   	  end
 	  temp_deal.source = "passwird"
-	  breaking_news_array << temp_deal
+	  temp_deal
 	end
-	
-	return breaking_news_array
 end
 
 def self.get_price(name)
@@ -50,6 +47,11 @@ def self.get_price_retail(description)
 	price_retail_value = price_retail[1].to_f
 	end
 	return price_retail_value	
+end
+
+def self.get_buy_link(description)
+	buy_link = /a href=\s*"([^"]*)/.match(description)
+	buy_link[-1]
 end
 
 def self.contains_price_comparison(description)
