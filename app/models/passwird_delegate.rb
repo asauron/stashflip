@@ -20,6 +20,7 @@ def self.get_breaking_news(min)
 	  temp_deal = Deal.new
 	  temp_deal.title = (item/"title").inner_html
 	  temp_deal.description = (item/"description").inner_text
+	  temp_deal.guid = (item/"guid").inner_html
 	  breaking_news_array << temp_deal
 	end
 	

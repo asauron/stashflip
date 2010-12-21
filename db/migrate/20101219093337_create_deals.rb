@@ -3,6 +3,7 @@ class CreateDeals < ActiveRecord::Migration
     create_table :deals do |t|
       t.string :title
       t.text :description
+      t.string :guid
       t.timestamps
     end
   end

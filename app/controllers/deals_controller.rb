@@ -85,7 +85,9 @@ class DealsController < ApplicationController
   	  @passwird_delegate = PasswirdDelegate.new
   	  @latest_deals = PasswirdDelegate.get_breaking_news(200)
   	  @latest_deals.map do |latest_deal|
-  	   	latest_deal.save
+  	  	if Deal.find_by_guid(latest_deal.guid).nil?
+  	   		latest_deal.save
+  	   	end
   	  end
   	  
   	  @actual_header = PasswirdDelegate.fetch('http://www.passwird.com/redirect.php?linkID=45080')
