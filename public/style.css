@@ -537,3 +537,9 @@ padding:auto;
 	margin-top:10px;
 }
 
+div.hr {
+	border-bottom: 1px dotted #BFBFBF;
+	margin: 0;
+	padding: 5px 0;
+	width: 450 px;
+}
