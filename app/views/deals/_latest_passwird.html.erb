@@ -1,7 +1,7 @@
 <% Deal.find(:all).map do |element| %>
 	<% unless element.nil? %>
 	
-	Source: <label class="blue awesome medium button"><font color="black"><%= element.source.humanize %></font></label> 
+	Source: <label class="orange awesome medium button"><font color="black"><%= element.source.humanize %></font></label> 
 	<br/>
 	<b>Title:</b> <%= element.name%>
 	<br/>
@@ -9,12 +9,12 @@
 	<br/>
 	<b>Price:</b> $<%= element.cost %>
 	<br/>
-	<b>Profit Margin:</b> <label class="green awesome medium button"><font color="black">+$<%= element.profit_margin %></font></label> 
+	<b>Profit Margin:</b> <label class="blue awesome medium button"><font color="black">+$<%= element.profit_margin %></font></label> 
 	<br/>
-	<b>Sell:</b> <label class="blue awesome medium button"><font color="black"><%= link_to "EBAY", "http://sell.ebay.com/sell", :target => "_blank"
+	<b>Sell:</b> <label class="orange awesome medium button"><font color="black"><%= link_to "EBAY", "http://sell.ebay.com/sell", :target => "_blank"
 %></font> </label> 
-	<label class="blue awesome medium button"><font color="black"><%= link_to "AMAZON", "http://www.amazon.com/gp/seller/sell-your-stuff.html?ie=UTF8&*Version*=1&*entries*=0", :target => "_blank"%></font> </label> 
-	<label class="blue awesome medium button"><font color="black"><%= link_to "CRAIGSLIST", "https://post.craigslist.org/", :target => "_blank"%></font> </label> 
+	<label class="orange awesome medium button"><font color="black"><%= link_to "AMAZON", "http://www.amazon.com/gp/seller/sell-your-stuff.html?ie=UTF8&*Version*=1&*entries*=0", :target => "_blank"%></font> </label> 
+	<label class="orange awesome medium button"><font color="black"><%= link_to "CRAIGSLIST", "https://post.craigslist.org/", :target => "_blank"%></font> </label> 
 	
 	
 	<div class="hr"></div>
