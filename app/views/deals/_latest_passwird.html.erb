@@ -1,4 +1,5 @@
-<% Deal.find(:all).map do |element| %>
+<% deals = Deal.find(:all, :order => 'id DESC')%>
+<% deals.map do |element| %>
 	<% unless element.nil? %>
 	
 	Source: <label class="orange awesome medium button"><font color="black"><%= element.source.humanize %></font></label> 
