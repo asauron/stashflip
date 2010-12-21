@@ -42,6 +42,8 @@ def self.get_price(name)
 end
 
 def self.get_price_retail(description)
+	
+	price_retail_value = 0
 	expression_for_link = /href=\"([^\"]*)\"[^>]*>Compare<\/a>/
 	comparison_link_info = expression_for_link.match(description)
 	if comparison_link_info.nil?
@@ -51,12 +53,9 @@ def self.get_price_retail(description)
 	
 	comparison_html = fetch(comparison_link).body	
 	
-if comparison_html =~ /Sorry/
-		return 0
-else
-	#comparison_html = fetch("http://bensbargains.net/link.php?threadid=172265&linkid=0").body
-	#comparison_html = fetch("http://bensbargains.nextag.com/8GB-SDHC-Class-4/zzbensbargainszB1z0--search-html").body
-	#comparison_html = fetch("http://bensbargains.nextag.com/MSI-Microstar-GT660-R004US/zzbensbargainszB1z0--search-html").body
+	if comparison_html =~ /Sorry/
+		return price_retail_value
+	else
 
 	expression_for_lowest_price = /\$([0-9,]+\.[0-9]{2}?)/
 	extracted_prices = expression_for_lowest_price.match(comparison_html)
@@ -68,8 +67,11 @@ else
 	end
 	
 	#change 1,400.00 to 1400.00
+	
+	if !extracted_prices.nil?
 	price_retail_string = (extracted_prices[1]).gsub(/,/, '')
 	price_retail_value = price_retail_string.to_f
+	end
 
 	return price_retail_value	
 end
