@@ -82,10 +82,8 @@ class DealsController < ApplicationController
   end
   
   def post_deal 	   	  
-  	  #@latest_deals = BensbargainsDelegate.get_breaking_news(200)
-  	  #@latest_deals = @latest_deals + PasswirdDelegate.get_breaking_news(200)
-  	  
-  	  @latest_deals = PasswirdDelegate.get_breaking_news(200)
+  	  @latest_deals = BensbargainsDelegate.get_breaking_news(200)
+  	  @latest_deals = @latest_deals + PasswirdDelegate.get_breaking_news(200)
   	  
   	  @latest_deals.map do |latest_deal|
   	  	#If Deal is not already saved and Description contains [Compare] or Next lowest price on, then save it
