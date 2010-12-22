@@ -21,8 +21,10 @@
 	
 	<div id="maincontent">		 
 			<div id="main_top">
-				<%= render :partial => '/deals/latest_sponsored' %>				
-				<%= render :partial => '/deals/latest_passwird' %>
+				<a name="internaldeals"></a> 
+				<%= render :partial => '/deals/latest_sponsored' %>	
+				<a name="externaldeals"></a> 
+				<%= render :partial => '/deals/latest_passwird', :locals =>{:deals => @deals} %>			
 			</div> 
 			
 			<div id="main_right">

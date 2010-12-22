@@ -6,6 +6,9 @@ class DealsController < ApplicationController
   def index
     @deals = Deal.all
 
+	page = params[:page] || 1
+	@deals = Deal.paginate(:page=>page, :per_page=>20)
+	
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @deals }
@@ -16,7 +19,7 @@ class DealsController < ApplicationController
   # GET /deals/1.xml
   def show
     @deal = Deal.find(params[:id])
-
+	
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @deal }

@@ -1,8 +1,9 @@
-<% deals = Deal.find(:all, :order => 'id DESC', :conditions => ['source != ?', 'stashflip'])%>
+<% #deals = Deal.find(:all, :order => 'id DESC', :conditions => ['source != ?', 'stashflip'])%>
+
 <% deals.map do |element| %>
 	<% unless element.nil? %>
 	
-	Source: <label class="grey awesome medium button"><font color="white"><%= element.source.humanize %></font></label> 
+	Source: <label class="black awesome medium button"><font color="white"><%= element.source.humanize %></font></label> 
 	<br/>
 	<b>Title:</b> <%= element.name%>
 	<br/>
@@ -27,3 +28,11 @@
 	<% end %>
 	<br/>
 <% end %>
+
+    <div class="stashflip_pagination">
+      <div class="page_info">
+        <%= page_entries_info deals %>
+      </div>
+      <%= will_paginate deals, :container => false, :params => {:anchor => "externaldeals" } %>
+    </div>
+
