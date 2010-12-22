@@ -6,13 +6,7 @@ ActionController::Routing::Routes.draw do |map|
   map.connect '/maps/save_favorite', :controller => 'maps', :action => 'save_favorite'
 
   map.resources :deals
-    
-  map.resources :maps
-  
-  map.resources :favorite_maps
-  
-  map.resources :map_filters
-
+        
   #map.resources :maps
 
   map.resources :maps, :member => {:rate => :post}
