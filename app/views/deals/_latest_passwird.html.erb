@@ -8,6 +8,18 @@
 	<b>Date:</b> <%= element.publish_date%>
 	<br/>
 	<b>Title:</b> <%= element.name%>
+	
+	<% if element.stashflip_status == 'stash'%>
+	<div style="clear:both; float:left;">
+	<img src="/images/stash.png"></img>
+	</div>
+	<% end %>
+	<% if element.stashflip_status == 'flip'%>
+	<div style="clear:both; float:left;">
+	<img src="/images/flip.png"></img>
+	</div>
+	<% end %>
+	
 	<br/>
 	<b>Description:</b><br/> <%= element.description %>
 	<br/><br/>

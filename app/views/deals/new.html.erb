@@ -22,7 +22,11 @@
   <p>
     <%= f.label :source %> (i.e. stashflip) <br />
     <%= select :deal,:source, {"Stashflip" => "stashflip", "Passwird" => "passwird", "Fatwallet" => "fatwallet"} %>
-  </p>    
+  </p>
+  <p>
+    <%= f.label :stashflip_status %> (i.e. stash, flip) <br />
+    <%= select :deal,:stashflip_status, {"None" => "none", "Stash" => "stash", "Flip" => "flip"} %>
+  </p>       
   <p>
     <%= f.label :buy_link %> (Insert affiliate link here)<br />
     <%= f.text_field :buy_link %>
