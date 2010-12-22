@@ -32,6 +32,16 @@ BODY {
   float:left;
 }
 
+#ad_navbar {
+  height:20px;
+  width:980px;
+  margin-left:70px;
+  margin-right:auto; 
+  margin-top:15px;
+  clear:both;	
+  float:left;
+}
+
 #topinfoblock{
   background-image:url(images/topbg.png);
   background-repeat: repeat;

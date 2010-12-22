@@ -1,2 +1,85 @@
-<h1>Website#about</h1>
-<p>Find me in app/views/website/about.html.erb</p>
+<html>
+
+<head>
+	<title>Stashflip - BUY AND RESELL</title>
+	<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body>
+	<div id="search_bar">
+		<%= render :partial => 'navbar' %>
+		
+		<form name="post_deal" id="post_deal" class="post_deal" method="post" action="/deals/post_deal">  
+			<!--need this for auth -->
+            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>" /> 
+		 <%= submit_tag("Post deal", :id => "post_deal", :title => "post_deal", :name => "post_deal", :class => "red awesome medium button")%> 
+		 </form>
+		 
+	</div>
+	
+	<div id="maincontent">
+
+			<div id="main_top">
+				<%= render :partial => '/deals/latest_sponsored' %>				
+				<%= render :partial => '/deals/latest_passwird' %>
+			</div> 
+			
+			<div id="main_right">
+				<a href="http://www.kqzyfj.com/click-4248767-10780924" target="_top">
+<img src="http://www.lduhtrp.net/image-4248767-10780924" width="120" height="450" alt="" border="0"/></a>
+			</div>     	        	  	
+		
+			<div id="main_bottom">
+				
+				<div id="main_bottom_info">
+				<div id="main_bottom_info_left">
+					<div class="main_title">
+					Search for restaurants and venues in color.
+					</div>
+					<div class="main_text"><br/>
+					Beatmap aggregates data from Yelp and Eventful and attaches meaningful information to it. Visualize the ratings and value of the restaurants based on criteria you pick. As the colors vary from blue to red to green, you can get rich information at a glance.	
+					</div>
+				</div>
+				<div ="main_bottom_info_right">
+					<img src="/images/featureinfo1.png" />
+				</div>
+				</div>
+				
+				<div id="main_bottom_info">
+				<div id="main_bottom_info_left">
+					<div class="main_title">
+					Build up maps collaboratively with your friends.
+					</div>
+					<div class="main_text"><br/>
+					Customize the maps to your heart's content. Add in places that you love to go to, and your friends can do the same. By harnessing the power of the crowd, you end up with a map fit for a daring adventurer.
+					</div>
+				</div>
+				<div ="main_bottom_info_right">
+					<img src="/images/featureinfo2.png" />
+				</div>
+				</div>
+				
+				<div id="main_bottom_info">
+				<div id="main_bottom_info_left">
+					<div class="main_title">
+					Share your maps with the world.
+					</div>
+					<div class="main_text"><br/>
+					Take advantage of social networking and share your perfect day out in the city. Share maps with your friends on Beatmap and Facebook, and save your favorite maps. Love something? Rate it up. As maps build up ratings, they appear on the front page.
+					</div>
+				</div>
+				<div ="main_bottom_info_right">
+					<img src="/images/featureinfo3.png" />
+				</div>
+				</div>
+								
+			</div> <!-- end of main_bottom -->
+
+
+		<%= render :partial => 'website/statcounter' %>
+		<%= render :partial => 'website/footer' %>
+
+	</div><!--end maincontent-->
+	
+</body>
+

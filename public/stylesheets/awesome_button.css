@@ -121,6 +121,9 @@ button.awesome.large:active, input.awesome.large:active, a.button.awesome.large:
 .grey.awesome, .grey.button.awesome {
   background-color:#252525; 
 }
+.white.awesome, .white.button.awesome {
+  background-color:#ffffff; 
+}
 .black.awesome, .black.button.awesome {
   background-color:#000000; 
 }
