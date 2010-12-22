@@ -352,14 +352,14 @@ padding:auto;
 }
 
 #main_bottom_info{
-  width: 980px;
+  width: 860px;
   height: 200px;
   margin-top: 20px;	
   float: left;
 }
 
 #main_bottom_info_left{	
-  width: 630px;
+  width: 510px;
   height: 200px;	
   float: left;
 }
