@@ -19,7 +19,7 @@ def self.get_breaking_news(min)
 	breaking_news = (doc/"item").map do |item|
 	  temp_deal = Deal.new
 	  temp_deal.name = (item/"title").inner_html
-	  temp_deal.description = (item/"description").inner_text
+	  temp_deal.description = remove_expired_text((item/"description").inner_text)
 	  temp_deal.buy_link = (item/"link").inner_html 
 	  temp_deal.guid = (item/"guid").inner_html
 	  temp_deal.cost = get_price(temp_deal.name)
@@ -27,6 +27,7 @@ def self.get_breaking_news(min)
 	  
 	  unless temp_deal.cost_retail.nil? || temp_deal.cost.nil?
 	  	temp_deal.profit_margin = temp_deal.cost_retail - temp_deal.cost
+	  	temp_deal.profit_margin = DealAdapter.adjust_profit_margin_by_retailer(temp_deal.profit_margin, temp_deal.name) - 8	  	
   	  end
 	    	  
 	  temp_deal.source = "fatwallet"
@@ -96,6 +97,10 @@ def self.fetch(uri_str, limit = 10)
       else
         response.error!
       end
+end
+
+def self.remove_expired_text (description)
+	  description.gsub(/This Deal Has Expired/, "")
 end
   
 end

@@ -20,11 +20,12 @@ def self.get_breaking_news(min)
 	  temp_deal.description = (item/"description").inner_text
 	  temp_deal.buy_link = get_buy_link(temp_deal.description) 
 	  temp_deal.guid = (item/"guid").inner_html
-	  temp_deal.cost = get_price(temp_deal.name)
+	  temp_deal.cost = get_price(temp_deal.name)  
 	  temp_deal.cost_retail = get_price_retail(temp_deal.description)
 	  
 	  unless temp_deal.cost_retail.nil? || temp_deal.cost.nil?
 	  	temp_deal.profit_margin = temp_deal.cost_retail - temp_deal.cost
+	  	temp_deal.profit_margin = DealAdapter.adjust_profit_margin_by_retailer(temp_deal.profit_margin, temp_deal.name) - 8
   	  end
 	    	  
 	  temp_deal.source = "passwird"

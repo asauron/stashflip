@@ -14,5 +14,29 @@ class DealAdapter < ActiveRecord::Base
 			false
 		end	
 	end	
+	
+	def self.adjust_profit_margin_by_retailer(profit, name)
+		case name
+		when /Amazon/ then profit-0
+		when /Lowe's/ then profit-6
+		when /Tiger/ then profit-4
+		when /TigerDirect/ then profit-4					
+		when /Dell/ then profit-0
+		when /Buy\.com/ then profit-0
+		when /Cowboom/ then profit-5
+		when /DailySteals\.com/ then profit-5	
+		when /Newegg/ then profit-5
+		when /Woot/ then profit-5
+		when /Walmart/ then profit-0
+		when /Deep Discount/ then profit-0
+		when /Office Depot/ then profit-0
+		when /Office Max/ then profit-0
+		when /Staples/ then profit-0
+		when /BestBuy/ then profit-6
+		when /Best Buy/ then profit-6							
+		else 
+			profit
+		end
+	end
 
 end
