@@ -16,8 +16,8 @@
     <%= f.text_field :guid %>
   </p>  
   <p>
-    <%= f.label :source %> (Type in your username i.e. Irvine) <br />
-    <%= f.text_field :source %>
+    <%= f.label :source %> (i.e. stashflip) <br />
+    <%= select :deal,:source, {"Stashflip" => "stashflip", "Passwird" => "passwird", "Bens Bargains" => "bensbargains"} %>
   </p>    
   <p>
     <%= f.label :buy_link %> (Insert affiliate link here)<br />
