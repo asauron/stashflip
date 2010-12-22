@@ -43,9 +43,9 @@ end
 def self.get_price_retail(description)
 	price_retail = /is \$(\d+\.\d+)./.match(description)
 	unless price_retail.nil?
-	price_retail_value = price_retail[1].to_f
+		price_retail_value = price_retail[1].to_f
 	end
-	return price_retail_value	
+	return price_retail_value 
 end
 
 def self.get_buy_link(description)
