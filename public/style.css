@@ -280,9 +280,14 @@ padding:auto;
   float: left;
 }
 
+#main_right{
+  width: 120px;	
+  height: auto;
+  float:left;
+}
 
 #main_top{
-  width: 980px;
+  width: 860px;
   height: auto;	
   float: left;
   
@@ -330,7 +335,7 @@ padding:auto;
 }
 
 #main_bottom{
-  width: 980px;
+  width: 860px;
   height: 700px;
   margin-top: 40px;	
   float: left;
