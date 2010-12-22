@@ -7,6 +7,10 @@
     <%= f.label :name %> (Title of the deal)<br />
     <%= f.text_field :name %>
   </p>
+  <p>
+  	<%= f.label :publish_date %><br />
+  	<%= datetime_select 'deal', 'publish_date' %>
+  </p>  
   <p> 
     <%= f.label :description %> (Use HTML for new lines i.e. br/ tags) <br />
     <%= f.text_area :description %>

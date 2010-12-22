@@ -3,6 +3,7 @@
 
 <table>
   <tr>
+  	<td><b>DATE</b></td>
   	<td><b>NAME</b></td>
   	<td><b>SOURCE</b></td>
   	<td><b>BUY_LINK</b></td>
@@ -15,6 +16,7 @@
 
 <% @deals.each do |deal| %>
   <tr>
+  	<td><%= deal.publish_date %></td>
   	<td><%= deal.name %></td>
   	<td><%= deal.source %></td>
   	<td><%= deal.buy_link %></td>
