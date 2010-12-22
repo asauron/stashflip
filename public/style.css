@@ -10,7 +10,8 @@ BODY {
 #top_bar{
   height:100px;
   width:980px;
-  background-image:url(images/basicbg.png);
+  background-image:url(images/banner.jpg);
+  background-repeat:repeat;
   margin-left:auto;
   margin-right:auto;  
 }
