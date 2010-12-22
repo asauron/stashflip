@@ -2,8 +2,9 @@ class PasswirdDelegate < ActiveRecord::Base
 	require 'rubygems'
 	require 'hpricot'
 	require 'open-uri'
-	require 'net/http'
 	require 'uri'
+	require 'net/http'
+	require 'date'
 
 	
 	cattr_accessor :result_array
@@ -27,6 +28,8 @@ def self.get_breaking_news(min)
   	  end
 	    	  
 	  temp_deal.source = "passwird"
+	  temp_deal.publish_date = DateTime.parse((item/"pubDate").inner_html)
+	  
 	  temp_deal
 	end
 end

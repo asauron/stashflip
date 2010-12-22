@@ -1,9 +1,11 @@
-<% #deals = Deal.find(:all, :order => 'id DESC', :conditions => ['source != ?', 'stashflip'])%>
+<% #deals = Deal.find(:all, :order => 'publish_date DESC', :conditions => ['source != ?', 'stashflip'])%>
 
 <% deals.map do |element| %>
 	<% unless element.nil? %>
 	
 	Source: <label class="black awesome medium button"><font color="white"><%= element.source.humanize %></font></label> 
+	<br/>
+	<b>Date:</b> <%= element.publish_date%>
 	<br/>
 	<b>Title:</b> <%= element.name%>
 	<br/>

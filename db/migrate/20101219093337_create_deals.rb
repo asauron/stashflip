@@ -6,6 +6,7 @@ class CreateDeals < ActiveRecord::Migration
       t.string :guid
       t.string :source
       t.string :buy_link
+      t.datetime :publish_date
       t.timestamps
     end
   end
