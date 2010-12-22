@@ -2,7 +2,6 @@ class PasswirdDelegate < ActiveRecord::Base
 	require 'rubygems'
 	require 'hpricot'
 	require 'open-uri'
-	require "yelp"
 	require 'net/http'
 	require 'uri'
 
