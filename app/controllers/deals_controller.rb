@@ -112,8 +112,8 @@ class DealsController < ApplicationController
   	redirect_to deals_path
   end
   
-  def mark_no
-  	Deal.update_all(["stashflip_status=?", "no"], :id => params[:deal_ids])
+  def mark_none
+  	Deal.update_all(["stashflip_status=?", "none"], :id => params[:deal_ids])
   	params[:deal_ids]
   	redirect_to deals_path
   end    
