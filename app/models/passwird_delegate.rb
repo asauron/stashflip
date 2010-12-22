@@ -21,9 +21,11 @@ def self.get_breaking_news(min)
 	  temp_deal.guid = (item/"guid").inner_html
 	  temp_deal.cost = get_price(temp_deal.name)
 	  temp_deal.cost_retail = get_price_retail(temp_deal.description)
+	  
 	  unless temp_deal.cost_retail.nil? || temp_deal.cost.nil?
 	  	temp_deal.profit_margin = temp_deal.cost_retail - temp_deal.cost
   	  end
+	    	  
 	  temp_deal.source = "passwird"
 	  temp_deal
 	end
@@ -41,10 +43,18 @@ def self.get_price(name)
 end
 
 def self.get_price_retail(description)
-	price_retail = /is \$(\d+\.\d+)./.match(description)
+	#Next lowest price on PriceGrabber is $29.22 shipped.
+	price_retail = /is \$(\d+\.\d+)/.match(description)
+	#Comparatively, Microsoft Store sells it for $129.99. 
+	if price_retail.nil?
+	price_retail = /for \$(\d+\.\d+)\./.match(description)
+	end
+	
+	
 	unless price_retail.nil?
 		price_retail_value = price_retail[1].to_f
 	end
+		
 	return price_retail_value 
 end
 
@@ -54,7 +64,7 @@ def self.get_buy_link(description)
 end
 
 def self.contains_price_comparison(description)
-	description =~ /Next lowest price on/
+	description =~ /Next lowest price on/ || /Comparatively/
 end    
 
 def self.fetch(uri_str, limit = 10)
