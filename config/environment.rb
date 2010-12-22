@@ -23,6 +23,7 @@ Rails::Initializer.run do |config|
 
 	HTML_TEXT_LENGTH = 200
 	DATABASE_STRING_LENGTH = 200
+	ADMIN_ACCOUNT ="irvine"
 	
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named

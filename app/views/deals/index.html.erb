@@ -1,11 +1,25 @@
-<h1>Listing deals</h1>
+<div id="maincontent">
+<h1>Deal Database</h1>
 
 <table>
   <tr>
+  	<td><b>NAME</b></td>
+  	<td><b>SOURCE</b></td>
+  	<td><b>BUY_LINK</b></td>
+  	<td><b>COST</b></td>
+  	<td><b>COST_RETAIL</b></td>
+  	<td><b>PROFIT_MARGIN</b></td>  	
   </tr>
+
 
 <% @deals.each do |deal| %>
   <tr>
+  	<td><%= deal.name %></td>
+  	<td><%= deal.source %></td>
+  	<td><%= deal.buy_link %></td>
+  	<td><%= deal.cost %></td>
+  	<td><%= deal.cost_retail %></td>
+  	<td><label class="blue awesome medium button"><font color="black"><%= deal.profit_margin %></font></label></td></font></label>
     <td><%= link_to 'Show', deal %></td>
     <td><%= link_to 'Edit', edit_deal_path(deal) %></td>
     <td><%= link_to 'Destroy', deal, :confirm => 'Are you sure?', :method => :delete %></td>
@@ -16,3 +30,4 @@
 <br />
 
 <%= link_to 'New deal', new_deal_path %>
+</div>

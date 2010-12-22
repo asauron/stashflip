@@ -27,4 +27,11 @@ class ApplicationController < ActionController::Base
 	  return @current_user if defined?(@current_user)
 	  @current_user = current_user_session && current_user_session.record
 	end  
+	
+	def ensure_authenticated 
+	   unless (!current_user.nil?) and (current_user.username == ADMIN_ACCOUNT)
+		flash[:notice] = "NOT AUTHORIZED"
+		redirect_to :root
+	   end
+    end
 end

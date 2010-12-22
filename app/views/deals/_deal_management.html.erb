@@ -1,0 +1,9 @@
+		<form name="post_deal" id="post_deal" class="post_deal" method="post" action="/deals/post_deal">  
+			<!--need this for auth -->
+            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>" /> 
+		 <%= submit_tag("Refresh Deals from RSS", :id => "post_deal", :title => "post_deal", :name => "post_deal", :class => "red awesome medium button")%> 
+		 </form>
+		<br/><br/>
+		<label class="red awesome medium button"><font color="black"><%= link_to 'Post New Deal', new_deal_path %></font></label>
+		<br/><br/>
+		<label class="red awesome medium button"><font color="black"><%= link_to 'Manage All Deals', deals_path %></font></label>

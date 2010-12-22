@@ -1,4 +1,6 @@
 class DealsController < ApplicationController
+  before_filter :ensure_authenticated, :only => [:index, :show, :new, :edit, :create, :update, :destroy]
+  
   # GET /deals
   # GET /deals.xml
   def index
