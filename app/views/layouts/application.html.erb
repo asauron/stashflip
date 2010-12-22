@@ -5,18 +5,23 @@
 	<link rel="stylesheet" type="text/css" href="/style.css" />
 </head> 
 	<body> 
+		
 	<div id="user_nav">
 	  <% if current_user %>
 	  	<%= link_to "Home", root_path %> |
-	  	<%#= link_to "My Profile", myprofile_url(:username => current_user.username) %>
+	  	<%= link_to 'Post Deal', new_deal_path %> |
+	  	<%= link_to 'Manage Deals', deals_path %> |
 	  	<%= link_to "#{current_user.username}'s Profile", users_url %> |
 	    <%= link_to "Edit Profile", editprofile_url %> |
+	    <%= link_to "About", "/website/about" %> |
+	    <%= link_to "Blog", "http://stashflip.tumblr.com/" %> |	    
 	    <%= link_to "Logout", logout_path %>
 	  <% else %>
-	    <%= link_to "Register", new_user_path %> |
-	    <%= link_to "Login", login_path %>
+	    <%= link_to "Home", root_path %> |
+	    <%= link_to "About", "/website/about" %> |
+	    <%= link_to "Blog", "http://stashflip.tumblr.com/" %> 
 	  <% end %>
-        </div>
+    </div>
         
 	<p style="color: green"><%= notice %></p>
 	

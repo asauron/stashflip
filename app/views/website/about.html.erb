@@ -7,30 +7,12 @@
 
 <body>
 	<div id="search_bar">
-		<%= render :partial => 'navbar' %>
-		
-		<form name="post_deal" id="post_deal" class="post_deal" method="post" action="/deals/post_deal">  
-			<!--need this for auth -->
-            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>" /> 
-		 <%= submit_tag("Post deal", :id => "post_deal", :title => "post_deal", :name => "post_deal", :class => "red awesome medium button")%> 
-		 </form>
-		 
+		<%= render :partial => 'searchbar' %>		 
 	</div>
 	
 	<div id="maincontent">
 
 			<div id="main_top">
-				<%= render :partial => '/deals/latest_sponsored' %>				
-				<%= render :partial => '/deals/latest_passwird' %>
-			</div> 
-			
-			<div id="main_right">
-				<a href="http://www.kqzyfj.com/click-4248767-10780924" target="_top">
-<img src="http://www.lduhtrp.net/image-4248767-10780924" width="120" height="450" alt="" border="0"/></a>
-			</div>     	        	  	
-		
-			<div id="main_bottom">
-				
 				<div id="main_bottom_info">
 				<div id="main_bottom_info_left">
 					<div class="main_title">
@@ -72,9 +54,11 @@
 					<img src="/images/featureinfo3.png" />
 				</div>
 				</div>
-								
-			</div> <!-- end of main_bottom -->
-
+			</div> 
+			
+			<div id="main_right">
+				<%= render :partial => '/deals/adroll' %>
+			</div>           	  	
 
 		<%= render :partial => 'website/statcounter' %>
 		<%= render :partial => 'website/footer' %>
