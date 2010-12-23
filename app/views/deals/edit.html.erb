@@ -4,10 +4,6 @@
 <% form_for @deal, :html => { :multipart => true } do |f| %>
   <%= f.error_messages %>
   <p>
-    <%= f.label :photo %> (Does not automatically resize. Upload an image 50x50 up to 140x140.) <br />
-    <%= f.file_field :photo %>
-  </p>
-  <p>
     <%= f.label :name %> (Title of the deal)<br />
     <%= f.text_field :name %>
   </p>
