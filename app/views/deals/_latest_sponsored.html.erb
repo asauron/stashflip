@@ -2,11 +2,10 @@
 <% deals.map do |element| %>
 	<% unless element.nil? %>
 	
-	Source: <label class="black awesome medium button"><font color="orange"><%= element.source.humanize %></font></label> 
+	<b><%= element.name%></b>
 	<br/>
-	<b>Date:</b> <%= element.publish_date%>
+	<%= element.publish_date%>
 	<br/>
-	<b>Title:</b> <%= element.name%>
 	
 	<% if element.stashflip_status == 'stash'%>
 	<div style="clear:both; float:left;">
@@ -18,9 +17,7 @@
 	<img src="/images/flip.png"></img>
 	</div>
 	<% end %>
-	
-	<br/>
-	<b>Description:</b><br/> <%= element.description %>
+	<%= element.description %>
 	<br/><br/>
 	<b>Price:</b> $<%= element.cost %>
 	<br/>

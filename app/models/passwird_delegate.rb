@@ -25,7 +25,8 @@ def self.get_breaking_news(min)
 	  
 	  unless temp_deal.cost_retail.nil? || temp_deal.cost.nil?
 	  	temp_deal.profit_margin = temp_deal.cost_retail - temp_deal.cost
-	  	temp_deal.profit_margin = DealAdapter.adjust_profit_margin_by_retailer(temp_deal.profit_margin, temp_deal.name) - 8
+	  	#Lower profit margin to make a more conservative estimate
+	  	#temp_deal.profit_margin = DealAdapter.adjust_profit_margin_by_retailer(temp_deal.profit_margin, temp_deal.name) - 8
   	  end
 	    	  
 	  temp_deal.source = "passwird"

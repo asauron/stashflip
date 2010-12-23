@@ -9,9 +9,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101222104231) do
+ActiveRecord::Schema.define(:version => 20101223025633) do
 
   create_table "bensbargains_delegates", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "bfads_delegates", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -33,6 +33,14 @@ BODY {
   float:left;
 }
 
+#ad_navbar_top {
+  height:20px;
+  width:874px;
+  margin-left:10px;
+  margin-top:15px;
+  float:left;
+}
+
 #ad_navbar {
   height:20px;
   width:980px;
@@ -50,9 +58,6 @@ BODY {
   width:auto;
   margin-left:auto;
   margin-right:auto;
-}
-#under_topinfoblock{
-
 }
 
 form.search {    
@@ -78,6 +83,17 @@ span.bmap_text {
 
 a, a:link, a:visited, a:hover {
   color:#000000;
+}
+
+#ad_navbar_top a,
+#ad_navbar_top a:link,
+#ad_navbar_top a:visited,
+#ad_navbar_top a:hover,
+#ad_navbar a,
+#ad_navbar a:link,
+#ad_navbar a:visited,
+#ad_navbar a:hover{
+  color:#ffffff;	
 }
 
 #nav_home{
