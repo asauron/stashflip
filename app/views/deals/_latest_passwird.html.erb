@@ -2,24 +2,37 @@
 
 <% deals.map do |element| %>
 	<% unless element.nil? %>
-	
-	<b><%= element.name%></b>
-	<br/>
-	<%= element.publish_date%>
-	<br/>
-	
+
 	<% if element.stashflip_status == 'stash'%>
 	<div style="clear:both; float:left;">
-	<img src="/images/stash.png"></img>
+	<img src="/images/stash.png" width="40px;" height="40px;"></img>
 	</div>
 	<% end %>
 	<% if element.stashflip_status == 'flip'%>
 	<div style="clear:both; float:left;">
-	<img src="/images/flip.png"></img>
+	<img src="/images/flip.png" width="40px;" height="40px;"></img>
 	</div>
 	<% end %>
-	<%= element.description %>
+		
+	<b><%= element.name%></b>
+	<br/>
+	<%= element.publish_date%>
 	<br/><br/>
+	
+
+	<div style = "width:860px;">
+	<div style = "width:700px; clear:both; float:left;">
+	<%= element.description %>
+	</div>
+	
+	<div style = "margin-left: 20px; float:left;">
+	<% if element.photo.file?%>
+	<%= image_tag element.photo.url %>
+	<% end %>
+	</div>
+	</div>
+	
+	<div style = "clear:both;">
 	<b>Price:</b> $<%= element.cost %>
 	<br/>
 	<b>Profit Margin:</b> <label class="yellow awesome medium button"><font color="black">+$<%= element.profit_margin %></font></label> 
@@ -30,8 +43,7 @@
 	<b>Sell:</b> <label class="orange awesome medium button"><font color="black"><%= link_to "EBAY", "http://sell.ebay.com/sell", :target => "_blank"
 %></font> </label> 
 	<label class="orange awesome medium button"><font color="black"><a href="http://www.amazon.com/gp/redirect.html?ie=UTF8&location=http%3A%2F%2Fwww.amazon.com%2Fgp%2Fseller%2Fsell-your-stuff.html&tag=stashflip-20&linkCode=ur2&camp=1789&creative=390957" target="_blank">AMAZON</a><img src="https://www.assoc-amazon.com/e/ir?t=stashflip-20&l=ur2&o=1" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></font></label>
-	
-	<label class="orange awesome medium button"><font color="black"><%= link_to "CRAIGSLIST", "https://post.craigslist.org/", :target => "_blank"%></font> </label> 
+	<label class="orange awesome medium button"><font color="black"><%= link_to "CRAIGSLIST", "https://post.craigslist.org/", :target => "_blank"%></font> </label> 	</div>
 	
 	<br/>
 	<div class="hr"></div>

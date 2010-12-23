@@ -317,21 +317,6 @@ padding:auto;
   width: 860px;
   height: auto;	
   float: left;
-  
-}
-
-#main_top_middle{
-  background-image:url(images/img/control_blank.jpg);	
-  width: 790px;
-  height: 340px;	
-  float: left;
-}
-
-#main_top_right{
-  background-image:url(images/friends.png);
-  width: 190px;
-  height: 340px;	
-  float: left;
 }
 
 #maincontent_top_text{

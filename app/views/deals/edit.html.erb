@@ -1,8 +1,12 @@
 <div id="maincontent">
 <h1>Editing deal</h1>
 
-<% form_for(@deal) do |f| %>
+<% form_for @deal, :html => { :multipart => true } do |f| %>
   <%= f.error_messages %>
+  <p>
+    <%= f.label :photo %> (Does not automatically resize. Upload an image 50x50 up to 140x140.) <br />
+    <%= f.file_field :photo %>
+  </p>
   <p>
     <%= f.label :name %> (Title of the deal)<br />
     <%= f.text_field :name %>
@@ -16,7 +20,7 @@
     <%= f.text_area :description %>
   </p>
   <p>
-    <%= f.label :guid %> (Type in something unique here i.e. 1, 2, 3) <br />
+    <%= f.label :guid %> (Type in something unique here i.e. 1, 2, 3.) <br />
     <%= f.text_field :guid %>
   </p>  
   <p>
@@ -24,25 +28,29 @@
     <%= select :deal,:source, {"Stashflip" => "stashflip", "Passwird" => "passwird", "Black Friday Ads" => "bfads", "Fatwallet" => "fatwallet"} %>
   </p> 
   <p>
-    <%= f.label :stashflip_status %> (i.e. stash, flip) <br />
+    <%= f.label :stashflip_status %> (i.e. none, stash, flip) <br />
     <%= select :deal,:stashflip_status, {"None" => "none", "Stash" => "stash", "Flip" => "flip"} %>
   </p>           
   <p>
-    <%= f.label :buy_link %> (Insert affiliate link here)<br />
+    <%= f.label :buy_link %> (Insert affiliate link here.)<br />
     <%= f.text_field :buy_link %>
   </p>
   <p>
-    <%= f.label :cost %> (Cost of the product)<br />
+    <%= f.label :cost %> (Sale price) <br />
     <%= f.text_field :cost %>
   </p>  
   <p>
-    <%= f.label :cost_retail %> (How much does it cost normally) <br />
+    <%= f.label :cost_retail %> (Retail price) <br />
     <%= f.text_field :cost_retail %>
   </p>  
   <p>
-    <%= f.label :profit_margin %> (Cost_Retail - Cost) <br />
+    <%= f.label :profit_margin %> (Estimate how much profit you can make.) <br />
     <%= f.text_field :profit_margin %>
-  </p>   
+  </p> 
+  <p>
+    <%= f.label :photo %> (Does not automatically resize. Upload an image 50x50 up to 140x140.) <br />
+    <%= f.file_field :photo %>
+  </p>     
   <p>
     <%= f.submit 'Update' %>
   </p>
