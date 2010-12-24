@@ -13,8 +13,7 @@ ssh_options[:forward_agent] = true
 
 set :branch, "master"
 set :scm_verbose, true
-set :deploy_via, :remote_cache
-set :copy_cache, true
+#set :deploy_via, :remote_cache
 
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
