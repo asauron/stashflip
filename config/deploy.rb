@@ -1,7 +1,7 @@
 set :application, "stashflip"
 
 default_run_options[:pty] = true
-set :repository,  "git@173.255.219.178:git/stashflip.git"
+set :repository,  "git@173.255.219.178:stashflip.git"
 
 set :scm, "git"
 set :user, "deploy"  # The server's user for deploys
