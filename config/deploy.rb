@@ -4,7 +4,7 @@ default_run_options[:pty] = true
 default_run_options[:shell] = false
 
 #set :repository,  "git@173.255.219.178/home/git/repositories/stashflip.git"
-set :repository, "git@github.com:namtsui/stashfli.git"
+set :repository, "git@github.com:namtsui/stashflip.git"
 set :scm, "git"
 set :user, "root"  # The server's user for deploys
 set :scm_passphrase, "workher1"  # The deploy user's password
