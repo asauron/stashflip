@@ -9,7 +9,7 @@ set :user, "root"  # The server's user for deploys
 set :scm_passphrase, "workher1"  # The deploy user's password
 set :use_sudo, false
 
-ssh-add ~/.ssh/id_rsa
+#ssh-add ~/.ssh/id_rsa
 ssh_options[:forward_agent] = true
 
 set :branch, "master"
