@@ -7,6 +7,7 @@ set :user, "root"  # The server's user for deploys
 set :scm_passphrase, "workher1"  # The deploy user's password
 
 set :branch, "master"
+set :scm_verbose, true
 set :deploy_via, :remote_cache
 
 
