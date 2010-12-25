@@ -16,10 +16,18 @@
 	    <%= link_to "About", "/website/about" %> |
 	    <%= link_to "Blog", "http://stashflip.tumblr.com/" %> |	    
 	    <%= link_to "Logout", logout_path %>
+	    <div style="float:right;">
+	    <img src="/images/stash.png" width="20px;" height="20px;"></img> <%= link_to "Stash", "/website/stashindex" %> |
+	    <img src="/images/flip.png" width="20px;" height="20px;"></img> <%= link_to "Flip", "/website/flipindex" %>
+	    </div>
 	  <% else %>
 	    <%= link_to "Home", root_path %> |
 	    <%= link_to "About", "/website/about" %> |
 	    <%= link_to "Blog", "http://stashflip.tumblr.com/" %> 
+	    <div style="float:right;">
+	    <img src="/images/stash.png" width="20px;" height="20px;"></img> <%= link_to "Stash", "/website/stashindex" %> |
+	    <img src="/images/flip.png" width="20px;" height="20px;"></img> <%= link_to "Flip", "/website/flipindex" %>
+	    </div>
 	  <% end %>
     </div>
 
