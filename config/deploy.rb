@@ -9,6 +9,7 @@ set :branch, "master"
 set :scm_verbose, true
 #set :deploy_via, :remote_cache
 default_run_options[:pty] = true
+set :rake, "/var/lib/gems/1.8" 
 
 role :web, "173.255.219.178"                          # Your HTTP server, Apache/etc
 role :app, "173.255.219.178"                          # This may be the same as your `Web` server
