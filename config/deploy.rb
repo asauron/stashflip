@@ -36,3 +36,11 @@ role :db,  "173.255.219.178"
     run "cd #{current_path} && #{sudo} rake RAILS_ENV=production gems:install"
   end
   end
+  
+  namespace :rake do  
+  desc "Run a task on a remote server."  
+  # run like: cap staging rake:invoke task=a_certain_task  
+  task :invoke do  
+    run("cd #{deploy_to}/current; /usr/bin/env rake #{ENV['task']} RAILS_ENV=#{rails_env}")  
+  end  
+end
