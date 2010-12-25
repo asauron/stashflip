@@ -11,8 +11,8 @@ set :scm_verbose, true
 default_run_options[:pty] = true
 
 role :web, "173.255.219.178"                          # Your HTTP server, Apache/etc
-role :app, "173.255.219.178"                          # This may be the same as your `Web` server
-role :db,  "173.255.219.178", :primary => true # This is where Rails migrations will run
+role :app, "173.255.219.178", :primary => true                          # This may be the same as your `Web` server
+role :db,  "173.255.219.178", :primary => true, :norelease => true # This is where Rails migrations will run
 role :db,  "173.255.219.178"
 
 # If you are using Passenger mod_rails uncomment this:
@@ -25,9 +25,16 @@ role :db,  "173.255.219.178"
    task :restart, :roles => :app, :except => { :no_release => true } do
      run "#{try_sudo} touch {File.join(current_path,'tmp','restart.txt')}"
    end
+   
+	   task :migrate, :roles => :app, :only => { :primary => true } do
+	  directory = case migrate_target.to_sym
+	  when :current then current_path
+	  when :latest  then current_release
+	  else
+	    raise ArgumentError, "you must specify one of current or latest for migrate_target"
+	  end
+	  run "cd #{directory} && #{rake} RAILS_ENV=#{rails_env} #{migrate_env} db:migrate"
+	end
+
+
  end
- 
- #set :ssh_options, {:forward_agent => true} 
- #on :start do 
-# 	'ssh-add'
-# end 
