@@ -26,3 +26,5 @@ role :db,  "173.255.219.178"
      run "#{try_sudo} touch {File.join(current_path,'tmp','restart.txt')}"
    end
  end
+ 
+ set :ssh_options, {:forward_agent => true} on :start do `ssh-add` end 
