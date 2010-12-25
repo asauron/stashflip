@@ -27,3 +27,13 @@ role :db,  "173.255.219.178"
      run "#{try_sudo} touch {File.join(current_path,'tmp','restart.txt')}"
    end
  end
+ 
+ namespace :gems do
+  desc "Install gems"
+  task :install, :roles => :app do
+    run "cd #{current_path} && #{sudo} rake RAILS_ENV=production gems:install"
+  end
+  end
+
+class CustomRenderer < WillPaginate::LinkRenderer
+end if defined?(WillPaginate)  # avoid catch 22 with "rake gems:install"
