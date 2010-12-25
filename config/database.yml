@@ -23,9 +23,10 @@ test: &test
 
 production:
   adapter: mysql
-  database: rails_production
+  database: stashflip_production
   username: root
   password: workher1
+  socket: /var/run/mysqld/mysqld.sock
   
 cucumber:
   <<: *test
