@@ -34,6 +34,3 @@ role :db,  "173.255.219.178"
     run "cd #{current_path} && #{sudo} rake RAILS_ENV=production gems:install"
   end
   end
-
-class CustomRenderer < WillPaginate::LinkRenderer
-end if defined?(WillPaginate)  # avoid catch 22 with "rake gems:install"
