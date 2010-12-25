@@ -29,5 +29,5 @@ role :db,  "173.255.219.178"
  
  set :ssh_options, {:forward_agent => true} 
  on :start do 
- 	`ssh-add` 
+ 	'ssh-add'
  end 
