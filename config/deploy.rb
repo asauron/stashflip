@@ -26,7 +26,7 @@ role :db,  "173.255.219.178"
    task :start do ; end
    task :stop do ; end
    task :restart, :roles => :app, :except => { :no_release => true } do
-     run "#{try_sudo} touch {File.join(current_path,'tmp','restart.txt')}"
+     run "#{try_sudo} touch {File.join current_path,'tmp','restart.txt' }"
    end
  end
  
