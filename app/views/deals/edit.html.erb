@@ -16,10 +16,6 @@
     <%= f.text_area :description %>
   </p>
   <p>
-    <%= f.label :guid %> (Type in something unique here i.e. 1, 2, 3.) <br />
-    <%= f.text_field :guid %>
-  </p>  
-  <p>
     <%= f.label :source %> (i.e. stashflip) <br />
     <%= select :deal,:source, {"Stashflip" => "stashflip", "Passwird" => "passwird", "Black Friday Ads" => "bfads", "Fatwallet" => "fatwallet"} %>
   </p> 
@@ -31,6 +27,10 @@
     <%= f.label :buy_link %> (Insert affiliate link here.)<br />
     <%= f.text_field :buy_link %>
   </p>
+  <p>
+    <%= f.label :guid %> (Type in something unique here i.e. 1, 2, 3.) <br />
+    <%= f.text_field :guid %>
+  </p>    
   <p>
     <%= f.label :cost %> (Sale price) <br />
     <%= f.text_field :cost %>

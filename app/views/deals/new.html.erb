@@ -14,33 +14,33 @@
   <p> 
     <%= f.label :description %> (Use HTML for new lines i.e. br/ tags) <br />
     <%= f.text_area :description %>
-  </p>
-  <p>
-    <%= f.label :guid %> (Type in something unique here i.e. 1, 2, 3) <br />
-    <%= f.text_field :guid %>
-  </p>  
+  </p> 
   <p>
     <%= f.label :source %> (i.e. stashflip) <br />
     <%= select :deal,:source, {"Stashflip" => "stashflip", "Passwird" => "passwird", "Black Friday Ads" => "bfads", "Fatwallet" => "fatwallet"} %>
   </p>
   <p>
-    <%= f.label :stashflip_status %> (i.e. stash, flip) <br />
+    <%= f.label :stashflip_status %> (i.e. none, stash, flip) <br />
     <%= select :deal,:stashflip_status, {"None" => "none", "Stash" => "stash", "Flip" => "flip"} %>
   </p>       
   <p>
-    <%= f.label :buy_link %> (Insert affiliate link here)<br />
+    <%= f.label :buy_link %> (Insert affiliate link here.)<br />
     <%= f.text_field :buy_link %>
   </p>
   <p>
-    <%= f.label :cost %> (Cost of the product)<br />
+    <%= f.label :guid %> (Type in something unique here i.e. 1, 2, 3.) <br />
+    <%= f.text_field :guid %>
+  </p>   
+  <p>
+    <%= f.label :cost %> (Sale price)<br />
     <%= f.text_field :cost %>
   </p>  
   <p>
-    <%= f.label :cost_retail %> (How much does it cost normally) <br />
+    <%= f.label :cost_retail %> (Retail price) <br />
     <%= f.text_field :cost_retail %>
   </p>  
   <p>
-    <%= f.label :profit_margin %> (Cost_Retail - Cost) <br />
+    <%= f.label :profit_margin %> (Estimate how much profit you can make.) <br />
     <%= f.text_field :profit_margin %>
   </p> 
   <p>
