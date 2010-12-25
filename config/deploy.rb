@@ -7,7 +7,7 @@ set :user, "deploy"
 set :scm_passphrase, "workher1"
 set :branch, "master"
 set :scm_verbose, true
-set :deploy_via, :remote_cache
+#set :deploy_via, :remote_cache
 
 
 role :web, "173.255.219.178"                          # Your HTTP server, Apache/etc
