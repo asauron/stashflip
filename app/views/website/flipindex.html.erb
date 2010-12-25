@@ -1,0 +1,38 @@
+<html>
+
+<head>
+	<title>Stashflip - BUY AND RESELL</title>
+	<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body>		
+	<% if (!current_user.nil?) and (current_user.username == ADMIN_ACCOUNT) %>
+	<div style="clear:both; float:left;">
+	    	  	<form name="post_deal" id="post_deal" class="post_deal" method="post" action="/deals/post_deal">  
+			<!--need this for auth -->
+            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>" /> 
+		 <%= submit_tag("Refresh Deals (RSS)", :id => "post_deal", :title => "post_deal", :name => "post_deal", :class => "red awesome small button")%> 
+		</div>
+	<% end %>
+		
+	<div id="search_bar">
+		<%= render :partial => 'searchbar' %>		 
+	</div>
+	
+	<div id="maincontent">		 
+			<div id="main_top">
+				<a name="internaldeals"></a> 
+				<%= render :partial => '/deals/latest_flip', :locals =>{:deals => @deals}  %>				
+			</div> 
+			
+			<div id="main_right">
+				<%= render :partial => '/deals/adroll' %>
+			</div>     	        	  	
+
+		<%= render :partial => 'website/statcounter' %>
+		<%= render :partial => 'website/footer' %>
+
+	</div><!--end maincontent-->
+	
+</body>
+
