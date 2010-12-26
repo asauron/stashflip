@@ -22,20 +22,11 @@ role :db,  "173.255.219.178"
 # if you're still using the script/reapear helper you will need
 # these http://github.com/rails/irs_process_scripts
 
- after "deploy:symlink", "deploy:update_crontab"
- 
  namespace :deploy do
    task :start do ; end
    task :stop do ; end
-#   task :restart, :roles => :app, :except => { :no_release => true } do
-#     run "#{try_sudo} touch {File.join current_path,'tmp','restart.txt' }"
-#end
   task :restart do
     run "touch #{current_path}/tmp/restart.txt"
-  end
-  desc "Update the crontab file"
-  task :update_crontab, :roles => :db do
-    run "cd #{release_path} && whenever --update-crontab #{application}"
   end
  end
  

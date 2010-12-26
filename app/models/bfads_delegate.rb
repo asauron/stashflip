@@ -32,6 +32,7 @@ def self.get_breaking_news(min)
 	  temp_deal.source = "bfads"
 	  temp_deal.publish_date = DateTime.parse((item/"pubDate").inner_html)
 	  temp_deal.stashflip_status = "none"
+	  temp_deal.permadeal = "no"
 	  temp_deal
 	end
 end

@@ -1,6 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
 
-  map.resources :deals, :collection => { :mark_stash => :put, :mark_flip => :put, :mark_none => :put }
+  map.resources :deals, :collection => { :mark_stash => :put, :mark_flip => :put, :mark_none => :put, :mark_permadeal => :put, :mark_permadeal_remove => :put }
  
   map.resources :user_sessions
 

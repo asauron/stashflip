@@ -8,6 +8,7 @@ class CreateDeals < ActiveRecord::Migration
       t.string :buy_link
       t.datetime :publish_date
       t.string :stashflip_status
+      t.string :permadeal
       t.timestamps
     end
   end

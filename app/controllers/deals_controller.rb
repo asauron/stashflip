@@ -117,5 +117,17 @@ class DealsController < ApplicationController
   	Deal.update_all(["stashflip_status=?", "none"], :id => params[:deal_ids])
   	params[:deal_ids]
   	redirect_to deals_path
-  end    
+  end  
+  
+  def mark_permadeal
+  	Deal.update_all(["permadeal=?", "yes"], :id => params[:deal_ids])
+  	params[:deal_ids]
+  	redirect_to deals_path
+  end 
+  
+  def mark_permadeal_remove
+  	Deal.update_all(["permadeal=?", "no"], :id => params[:deal_ids])
+  	params[:deal_ids]
+  	redirect_to deals_path
+  end     
 end
