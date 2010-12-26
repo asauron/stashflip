@@ -15,27 +15,27 @@ class DealAdapter < ActiveRecord::Base
 		end	
 	end	
 	
-	def self.adjust_profit_margin_by_retailer(profit, name)
+	def self.get_shipping_cost(name)
 		case name
-		when /Amazon/ then profit-0
-		when /Lowe's/ then profit-6
-		when /Tiger/ then profit-4
-		when /TigerDirect/ then profit-4					
-		when /Dell/ then profit-0
-		when /Buy\.com/ then profit-0
-		when /Cowboom/ then profit-5
-		when /DailySteals\.com/ then profit-5	
-		when /Newegg/ then profit-5
-		when /Woot/ then profit-5
-		when /Walmart/ then profit-0
-		when /Deep Discount/ then profit-0
-		when /Office Depot/ then profit-0
-		when /Office Max/ then profit-0
-		when /Staples/ then profit-0
-		when /BestBuy/ then profit-6
-		when /Best Buy/ then profit-6							
+		when /Amazon/ then 0
+		when /Lowe's/ then 6
+		when /Tiger/ then 4
+		when /TigerDirect/ then 4					
+		when /Dell/ then 0
+		when /Buy\.com/ then 0
+		when /Cowboom/ then 5
+		when /DailySteals\.com/ then 5	
+		when /Newegg/ then 5
+		when /Woot/ then 5
+		when /Walmart/ then 0
+		when /Deep Discount/ then 0
+		when /Office Depot/ then 0
+		when /Office Max/ then 0
+		when /Staples/ then 0
+		when /BestBuy/ then 6
+		when /Best Buy/ then 6							
 		else 
-			profit
+			0
 		end
 	end
 

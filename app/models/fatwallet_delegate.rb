@@ -14,8 +14,6 @@ def self.get_breaking_news(min)
 	
 	cutoff_time = Time.now - 60 * min
 	
-	
-#if contains_price_comparison((item/"title").inner_html) && !check_expired((item/"description").inner_html)
 	breaking_news = (doc/"item").map do |item|
 	  temp_deal = Deal.new
 	  temp_deal.name = (item/"title").inner_html
@@ -26,9 +24,9 @@ def self.get_breaking_news(min)
 	  temp_deal.cost_retail = get_price_retail(temp_deal.name)
 	  
 	  unless temp_deal.cost_retail.nil? || temp_deal.cost.nil?
-	  	temp_deal.profit_margin = temp_deal.cost_retail - temp_deal.cost
 	  	#Lower profit margin to make a more conservative estimate
-	  	#temp_deal.profit_margin = DealAdapter.adjust_profit_margin_by_retailer(temp_deal.profit_margin, temp_deal.name) - 8	  	
+	  	#PROFIT MARGIN = 0.4 * (RETAIL PRICE - BUY PRICE) - SHIPPING
+	  	temp_deal.profit_margin = 0.4 * (temp_deal.cost_retail - temp_deal.cost) - DealAdapter.get_shipping_cost(temp_deal.name)
   	  end
 	    	  
 	  temp_deal.source = "fatwallet"

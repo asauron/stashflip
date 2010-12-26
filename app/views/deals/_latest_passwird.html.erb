@@ -33,9 +33,9 @@
 	</div>
 	
 	<div style = "clear:both;">
-	<b>Price:</b> $<%= element.cost %>
+	<b>Price:</b> <%=number_to_currency(element.cost, :unit => "$") %>
 	<br/>
-	<b>Profit Margin:</b> <label class="yellow awesome medium button"><font color="black">+$<%= element.profit_margin %></font></label> 
+	<b>Profit Margin:</b> <label class="yellow awesome medium button"><font color="black">+<%= number_to_currency(element.profit_margin, :unit => "$") %></font></label> 
 	<br/><br/>
 	<b>Buy:</b> <label class="orange awesome medium button"><font color="black"><%= link_to "BUY", element.buy_link, :target => "_blank"
 %></font> </label>
