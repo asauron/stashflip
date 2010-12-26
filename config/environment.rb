@@ -21,6 +21,7 @@ Rails::Initializer.run do |config|
   # config.gem "aws-s3", :lib => "aws/s3"
 	config.gem "authlogic"
 	config.gem 'mislav-will_paginate', :lib => 'will_paginate', :source => 'http://gems.github.com'
+	config.gem 'javan-whenever', :lib => false, :source => 'http://gems.github.com'
 
 	HTML_TEXT_LENGTH = 200
 	DATABASE_STRING_LENGTH = 200

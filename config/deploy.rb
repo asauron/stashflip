@@ -22,6 +22,8 @@ role :db,  "173.255.219.178"
 # if you're still using the script/reapear helper you will need
 # these http://github.com/rails/irs_process_scripts
 
+ after "deploy:symlink", "deploy:update_crontab"
+ 
  namespace :deploy do
    task :start do ; end
    task :stop do ; end
@@ -30,6 +32,9 @@ role :db,  "173.255.219.178"
 #end
   task :restart do
     run "touch #{current_path}/tmp/restart.txt"
+  desc "Update the crontab file"
+  task :update_crontab, :roles => :db do
+    run "cd #{release_path} && whenever --update-crontab #{application}"
   end
  end
  
