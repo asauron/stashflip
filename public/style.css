@@ -7,6 +7,11 @@ BODY {
   clear:both;
 }
 
+img	{
+border-style: none;
+text-decoration: none;
+} 
+
 #top_bar{
   height:100px;
   width:980px;
