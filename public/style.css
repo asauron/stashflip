@@ -366,13 +366,13 @@ padding:auto;
 }
 
 #main_bottom_info_left{	
-  width: 470px;
+  width: 510px;
   height: 200px;	
   float: left;
 }
 
 #main_bottom_info_right{
-  width: 350px;
+  width: 300px;
   height: 340px;	
   float: left;
 }
