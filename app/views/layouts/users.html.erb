@@ -18,25 +18,35 @@
 	    <%= link_to "Blog", "http://stashflip.tumblr.com/" %> |
 	    <%= link_to "Submit Deal", "http://stashflip.tumblr.com/ask", :target => "_blank" %> |		    
 	    <%= link_to "Logout", logout_path %>
+	    
 	    <div style="float:right;">
 	    <img src="/images/stash.png" width="20px;" height="20px;"></img> <%= link_to "Stash", "/website/stashindex" %> |
 	    <img src="/images/flip.png" width="20px;" height="20px;"></img> <%= link_to "Flip", "/website/flipindex" %>
 	    </div>
+	    
+	    <div style="float:right;">
+	    	    	    	<iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.stashflip.com&amp;layout=standard&amp;show_faces=false&amp;width=450&amp;action=like&amp;colorscheme=light&amp;height=35" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:200px; height:35px;" allowTransparency="true"></iframe>     
+		</div>
+			    
 	  <% else %>
 	    <%= link_to "Home", root_path %> |
 	    <%= link_to "About", "/website/about" %> |
 	    <%= link_to "Blog", "http://stashflip.tumblr.com/" %> |
-	    <%= link_to "Submit Deal", "http://stashflip.tumblr.com/ask", :target => "_blank" %>	     
-	    <div style="float:right;">
+	    <%= link_to "Submit Deal", "http://stashflip.tumblr.com/ask", :target => "_blank" %>	
+		
+	    <div style="float:right;">	    	
 	    <img src="/images/stash.png" width="20px;" height="20px;"></img> <%= link_to "Stash", "/website/stashindex" %> |
 	    <img src="/images/flip.png" width="20px;" height="20px;"></img> <%= link_to "Flip", "/website/flipindex" %>
 	    </div>
+	    
+	    <div style="float:right;">
+	    	    	    	<iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.stashflip.com&amp;layout=standard&amp;show_faces=false&amp;width=450&amp;action=like&amp;colorscheme=light&amp;height=35" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:200px; height:35px;" allowTransparency="true"></iframe>     
+		</div>
+			    
 	  <% end %>
     </div>
 
-    <div id="search_bar">
-      <%= render :partial => 'website/searchbar'%>       
-    </div>
+      <%= render :partial => '/website/searchbar'%>       
 
     <p style="color: green"><%= notice %></p>
 	
