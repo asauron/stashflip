@@ -4,7 +4,7 @@
 	position: relative;
 }
 #Head {
-	background: #3B5998;
+	background: #000000;
 	padding:0;
 	margin: 20px 20px 0;
 	text-align: left;
@@ -14,8 +14,8 @@ div.Popup h1,
 div.Popup h2,
 div.Connect h1,
 div.Connect h2 {
-	background: #3b5998;
-	border-bottom: 1px solid #3b5998;
+	background: #000000;
+	border-bottom: 1px solid #000000;
 }
 .Banner {
 	padding: 10px;
@@ -23,7 +23,7 @@ div.Connect h2 {
 	position: relative;
 }
 .Banner ul {
-	background: #3B5998;
+	background: #000000;
 	padding: 0;
 	margin: 0;
 }
@@ -40,7 +40,7 @@ div.Connect h2 {
 	display: inline-block;
 }
 .Banner ul li a:hover {
-	background: #4b67a1;
+	background: #ff9535;
 }
 .Banner ul li a.SignOut {
 	font-weight: normal;
@@ -355,6 +355,6 @@ body#dashboard_entrycontroller_signin div.Box {
    background: #5670a6;
 }
 .ac_over {
-   background: #3b5998;
+   background: #000000;
    color: #fff;
 }
