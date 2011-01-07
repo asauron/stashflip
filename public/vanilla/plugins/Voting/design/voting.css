@@ -124,6 +124,7 @@ ul.DataList div.Meta strong {
 }
 ul.MessageList li.Item {
 	background: #fff;
+	margin-left: 18px;
 }
 ul.MessageList div.Meta {
 	position: relative;
@@ -132,7 +133,7 @@ ul.MessageList div.Meta span.Votes {
 	text-align: center;
 	display: block;
 	position: absolute;
-	right: 684px;
+	left: -40px; !CHANGED; 
 	line-height: normal;
 	padding: 0;
 }
@@ -151,7 +152,7 @@ span.Votes span {
 	padding: 0 4px !important;
 	background: #0065CE;
 	color: #99E2FE !important;
-	min-width: 36px;
+	min-width: 25px;
 }
 span.Votes a {
 	color: #99E2FE;
