@@ -35,7 +35,7 @@ div.HeadingTabs div.SubTab {
 }
 
 .StatBox {
-	background: #004C9B;
+	background: #ff9535;
 	padding: 5px 5px 0;
 	float: right;
 	height: 38px;
@@ -54,7 +54,7 @@ div.HeadingTabs div.SubTab {
 }
 .StatBox,
 .StatBox a {
-	color: #99e2fe;
+	color: #ffffff;
 	display: block;
 }
 .StatBox a {
@@ -65,10 +65,10 @@ div.HeadingTabs div.SubTab {
 	color: #fff;
 	text-shadow: 0 0px 5px #fff;
 }
-.ViewsBox { background: #0065CE; }
-.FollowsBox { background: #0053A9; }
+.ViewsBox { background: #000000; }
+.FollowsBox { background: #fa6405; }
 .AnswersBox {
-	background: #0053A9;
+	background: #fa6405;
 	margin-right: 4px;
    border-top-right-radius: 2px;
    border-bottom-right-radius: 2px;
@@ -77,7 +77,7 @@ div.HeadingTabs div.SubTab {
 	-moz-border-radius-topright: 2px;
 	-moz-border-radius-bottomright: 2px;
 }
-.HasAnswersBox { background: #013b76; }
+.HasAnswersBox { background: #fa6405; }
 .HasAnswersBox a { color: #fff; }
 .VotesBox {
 	margin-left: 4px;
@@ -150,13 +150,13 @@ ul.MessageList div.Meta span.Votes span {
 }
 span.Votes span {
 	padding: 0 4px !important;
-	background: #0065CE;
-	color: #99E2FE !important;
+	background: #000000;
+	color: #ffffff !important;
 	min-width: 25px;
 }
 span.Votes a {
-	color: #99E2FE;
-	background: #004C9B;
+	color: #ffffff;
+	background: #ff9535;
 }
 span.Votes a.VoteUp {
 	padding: 5px 4px 3px;
@@ -171,7 +171,7 @@ span.Votes a.VoteDown {
    line-height: 100%;
 }
 span.Votes a:hover {
-	background: #013B76;
+	background: #fa6405;
 	color: #fff;
 	text-shadow: 0 0px 5px #fff;	
 }

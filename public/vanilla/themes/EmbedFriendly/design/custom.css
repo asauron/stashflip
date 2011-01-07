@@ -152,7 +152,7 @@ div.Tabs li a:visited {
    -moz-border-radius: 0;
    -webkit-border-radius: 0;
    background: none;
-   color: #1E79A7;
+   color: #000000;
    text-decoration: none;
    padding: 8px 10px;
 	line-height: 11px;
@@ -187,8 +187,8 @@ div.Tabs li a span {
    -webkit-border-radius: 3px;
    -moz-border-radius: 3px;
    font-weight: normal;
-	background: #E3F4FF;
-   color: #70727C;
+	background: #ff9535;
+   color: #000000;
    margin: 0 0 0 4px;
 }
 div.DiscussionsTabs div.SubTab {
@@ -197,7 +197,7 @@ div.DiscussionsTabs div.SubTab {
 	-moz-border-radius: 0;
 	-webkit-border-radius: 0;
 	border-top: 1px solid #aaa;
-	background: #f3f3f3;
+	background: #ffffcc;
 	margin:0;
 	padding:4px 8px;
 }
@@ -227,7 +227,7 @@ div.MorePager a:hover {
 	-webkit-border-radius: 0;
 	background: none;
 	border: none;
-	color: #1e79a7;
+	color: #000000;
 	line-height: 1;
 	padding: 0;
 	text-decoration: none;	
