@@ -15,8 +15,7 @@
 	  	<%= link_to "#{current_user.username}'s Profile", users_url %> |
 	    <%= link_to "Edit Profile", editprofile_url %> |
 	    <%= link_to "About", "/website/about" %> |
-	    <%= link_to "Blog", "http://stashflip.tumblr.com/", :target => "_blank" %> |
-	    <%= link_to "Submit Deal", "http://stashflip.tumblr.com/ask", :target => "_blank" %> |		    
+	    <%= link_to "Submit Deal", "/website/forum" %> |		    
 	    <%= link_to "Logout", logout_path %>
 	    
 	    <div style="float:right;">
@@ -31,8 +30,7 @@
 	  <% else %>
 	    <%= link_to "Home", root_path %> |
 	    <%= link_to "About", "/website/about" %> |
-	    <%= link_to "Blog", "http://stashflip.tumblr.com/", :target => "_blank" %> |
-	    <%= link_to "Submit Deal", "http://stashflip.tumblr.com/ask", :target => "_blank" %>	
+	    <%= link_to "Submit Deal", "/website/forum" %>	
 		
 	    <div style="float:right;">	    	
 	    <img src="/images/stash.png" width="20px;" height="20px;"></img> <%= link_to "Stash", "/website/stashindex" %> |
