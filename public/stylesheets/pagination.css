@@ -107,7 +107,7 @@
     border: 1px solid #2E6AB1; }
   .stashflip_pagination a {
     text-decoration: none;
-    color: #105CB6;
+    color: #000000;
     border: 1px solid #000000; }
     .stashflip_pagination a:hover, .stashflip_pagination a:focus {
       color: #003;

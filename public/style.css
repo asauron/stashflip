@@ -98,7 +98,9 @@ a.nav:hover { font-family: verdana; font-size: 10pt; color: #ff9535; font-weight
 
 
 a.actionbutton,
-a.actionbutton:hover{
+a.actionbutton:hover,
+#footer a,
+#footer a:hover{
 	color:#000000;
 }
 
@@ -189,141 +191,6 @@ margin-left:auto;
   height: auto;
 }
 
-#map_content_top{
-  width:920px;
-  height:auto;
-  margin-left:auto;
-  margin-right:auto;
-  clear:both;		
-}
-
-#map_content_top input{
-  margin-left: 10px;
-  width: 300px;
-    
-}
-#map_content_top h1 {
-  float:left;
-  width:50%;
-}
-
-#map_page_content{
-  width:980px;
-  height:auto;
-  margin-left:auto;
-  margin-right:auto;
-  clear:both;	
-}
-#map_info{
-  width:1200px;
-  height:auto;
-  float:left;
-  margin-left:auto;
-  margin-right:auto;
-}
-
-#display_map{
-  float:left;
-  width:700px;
-  height:500px;
-}
-
-#map_save{
-  width:650px;
-  height:25px;
-  float: left;
-  clear: both;
-}
-
-#category_menu{
-  width:600px;	
-  height:25px;
-  float:left;
-  margin:auto;
-  clear:both;
-}
-
-#map_title{
-	width:550px;	
-	  height:40px;
-	  float:left;
-	margin-bottom:10px;
-}
-
-#category_menu label{
-  padding: 20px;
-}
-
-#category_menu input{
-  width:0px;
-}
-
-#soft_filter_menu{
-  width:650px;	
-  height:20px;
-  float:left;
-  margin:auto;
-  margin-left: -45px;
-  clear:both;
-}
-#soft_filter_menu ul {
-  margin:auto;
-  list-style: none;
-}
-#soft_filter_menu ul li {
-  display: block;
-  float:left;
-  padding-right:5px;
-  margin:auto;
-}
-
-
-#restaurant_list{
-  width:400px;
-  height:auto;
-  float:left;
-  margin-left:10px;
-  font-size: 20px;
-
-}
-#social_box {
-  float:left;
-  margin-left:10px;
-}
-form#add {
-  float:left;
-  clear:both;
-}
-
-.result_info_box {
-  margin:10px, 10px, 10px, 10px;  
-  clear:both;
-}
-
-.result_info_box img{
-  float: left;
-  width: 100px;
-  
-}
-.result_info_box ul{
-  list-style-type: none;
-  float: left;
-width:250px;
-margin:auto;
-padding:auto;
-
-}
-.result_info_box ul li{
-  display:block;
-}
-
-#find_new_friends{
-  background-image:url(images/newfriends.png);
-  width: 190px;
-  height: 340px;	
-  float: left;
-}
-
 #main_right{
   width: 160px;	
   height: auto;
@@ -405,28 +272,13 @@ padding:auto;
 
 
 #footer{
-  width: 1000px;
-  height: 20px;
   clear:both;
   float:left;
   margin-top:15px;
   color : #000000;
-  font-size: 0.8em;
+  font-size: 0.9em;
   margin-left:auto;
   margin-right:auto;
-}
-
-#footerleft{
-  width: 200px;
-  height: 20px;
-  float:left;
-  margin-left:0px;
-}
-
-#footerright{
-  height: 20px;
-  float:left;
-  margin-left: 470px;
 }
 
 
