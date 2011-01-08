@@ -2,6 +2,8 @@
 	<title>Stashflip - Deal Database</title>
 </head>
 
+<% if (!current_user.nil?) and (current_user.username == ADMIN_ACCOUNT) %>
+	
 <div id="maincontent">
 <h1>Deal Database</h1>
 
@@ -109,3 +111,5 @@
 <% end %>
 
 </div>
+
+<% end %>

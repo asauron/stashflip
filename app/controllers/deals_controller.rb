@@ -1,5 +1,5 @@
 class DealsController < ApplicationController
-  before_filter :ensure_authenticated, :only => [:index, :new, :edit, :create, :update, :destroy]
+  before_filter :ensure_authenticated, :only => [:new, :edit, :create, :update, :destroy]
   
   # GET /deals
   # GET /deals.xml
