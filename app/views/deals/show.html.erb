@@ -1,50 +1,88 @@
-<div id="maincontent">
+<html>
 
-	<% if @deal.stashflip_status == 'stash'%>
-	<div style="clear:both; float:left;">
-	<img src="/images/stash.png" width="40px;" height="40px;"></img>
-	</div>
-	<% end %>
-	<% if @deal.stashflip_status == 'flip'%>
-	<div style="clear:both; float:left;">
-	<img src="/images/flip.png" width="40px;" height="40px;"></img>
-	</div>
-	<% end %>
+<head>
+	<title>Stashflip - <%= @deal.name %></title>
+	<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body>
+	
+	<div id="maincontent">
+
+			<div id="main_top">
+				
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-2997897620024642";
+/* Deals Main */
+google_ad_slot = "6106647356";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script><br/>
+				
+				<div id="main_bottom_info">
+
+				<% if @deal.stashflip_status == 'stash'%>
+				<div style="clear:both; float:left;">
+				<img src="/images/stash.png" width="40px;" height="40px;"></img>
+				</div>
+				<% end %>
+				<% if @deal.stashflip_status == 'flip'%>
+				<div style="clear:both; float:left;">
+				<img src="/images/flip.png" width="40px;" height="40px;"></img>
+				</div>
+				<% end %>
+						
+				<b><%= @deal.name%></b>
+				<br/>
+				<%= @deal.publish_date%>
+				<br/>
 			
-	<b><%= @deal.name%></b>
-	<br/>
-	<%= @deal.publish_date%>
-	<br/>
+				<div style = "width:820px;">
+				<div style = "width:660px; clear:both; float:left;">
+				<%= @deal.description %>
+				</div>
+				
+				<div style = "margin-left: 20px; float:left;">
+				<% if @deal.photo.file?%>
+				<%= image_tag @deal.photo.url %>
+				<% end %>
+				</div>
+				</div>
+					
+				<div style = "clear:both;">
+				<b>Price:</b> <%=number_to_currency(@deal.cost, :unit => "$") %>
+				<br/>
+				<b>Profit Margin:</b> <label class="yellow awesome medium button"><font color="black">+<%= number_to_currency(@deal.profit_margin, :unit => "$") %></font></label> 
+				<br/><br/>
+				<b>Buy:</b> <label class="orange awesome medium button"><font color="black"><%= link_to "BUY", @deal.buy_link, :target => "_blank"
+			%></font> </label>
+				<br/><br/>
+				<b>Sell:</b> <label class="orange awesome medium button"><font color="black"><%= link_to "EBAY", "http://sell.ebay.com/sell", :target => "_blank"
+			%></font> </label> 
+				<label class="orange awesome medium button"><font color="black"><a href="http://www.amazon.com/gp/redirect.html?ie=UTF8&location=http%3A%2F%2Fwww.amazon.com%2Fgp%2Fseller%2Fsell-your-stuff.html&tag=stashflip-20&linkCode=ur2&camp=1789&creative=390957" target="_blank">AMAZON</a><img src="https://www.assoc-amazon.com/e/ir?t=stashflip-20&l=ur2&o=1" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></font></label>
+				<label class="orange awesome medium button"><font color="black"><%= link_to "CRAIGSLIST", "http://sfbay.craigslist.org/", :target => "_blank"%></font> </label> 
+				</div>
+				
+				<br/>
+				<div id ="disqus_thread">
+				  <%= disqus_thread %>
+				</div>
+					
+				</div>
+				
+			</div> 
+			
+			<div id="main_right">
+				<%= render :partial => '/deals/adroll' %>
+			</div>           	  	
 
-	<div style = "width:820px;">
-	<div style = "width:660px; clear:both; float:left;">
-	<%= @deal.description %>
-	</div>
-	
-	<div style = "margin-left: 20px; float:left;">
-	<% if @deal.photo.file?%>
-	<%= image_tag @deal.photo.url %>
-	<% end %>
-	</div>
-	</div>
-		
-	<div style = "clear:both;">
-	<b>Price:</b> <%=number_to_currency(@deal.cost, :unit => "$") %>
-	<br/>
-	<b>Profit Margin:</b> <label class="yellow awesome medium button"><font color="black">+<%= number_to_currency(@deal.profit_margin, :unit => "$") %></font></label> 
-	<br/><br/>
-	<b>Buy:</b> <label class="orange awesome medium button"><font color="black"><%= link_to "BUY", @deal.buy_link, :target => "_blank"
-%></font> </label>
-	<br/><br/>
-	<b>Sell:</b> <label class="orange awesome medium button"><font color="black"><%= link_to "EBAY", "http://sell.ebay.com/sell", :target => "_blank"
-%></font> </label> 
-	<label class="orange awesome medium button"><font color="black"><a href="http://www.amazon.com/gp/redirect.html?ie=UTF8&location=http%3A%2F%2Fwww.amazon.com%2Fgp%2Fseller%2Fsell-your-stuff.html&tag=stashflip-20&linkCode=ur2&camp=1789&creative=390957" target="_blank">AMAZON</a><img src="https://www.assoc-amazon.com/e/ir?t=stashflip-20&l=ur2&o=1" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></font></label>
-	<label class="orange awesome medium button"><font color="black"><%= link_to "CRAIGSLIST", "http://sfbay.craigslist.org/", :target => "_blank"%></font> </label> 
-	</div>
-	
-	<br/>
-<div id ="disqus_thread">
-  <%= disqus_thread %>
-</div>
+		<%= render :partial => 'website/statcounter' %>
+		<%= render :partial => 'website/footer' %>
 
-</div>
+	</div><!--end maincontent-->
+	
+</body>
