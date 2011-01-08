@@ -9,7 +9,7 @@ xml.rss :version => "2.0" do
       xml.item do
         xml.title deal.name
         xml.description deal.description
-        xml.pubDate deal.publish_date
+        xml.pubDate deal.created_at.to_s(:rfc822)
         xml.link formatted_deal_url(deal)
         xml.guid formatted_deal_url(deal)
         xml.stashflip_status deal.stashflip_status
