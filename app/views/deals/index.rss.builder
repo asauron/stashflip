@@ -7,15 +7,12 @@ xml.rss :version => "2.0" do
     
     for deal in Deal.all
       xml.item do
-        xml.title deal.name
+      	temp_name = deal.name + ' ' + '[+'+ number_to_currency(deal.profit_margin, :unit => "$") + ']'
+        xml.title temp_name
         xml.description deal.description
         xml.pubDate deal.created_at.to_s(:rfc822)
         xml.link formatted_deal_url(deal)
         xml.guid formatted_deal_url(deal)
-        xml.stashflip_status deal.stashflip_status
-        xml.cost deal.cost
-        xml.cost_retail deal.cost_retail
-        xml.profit_margin deal.profit_margin
       end
     end
   end
