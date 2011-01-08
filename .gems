@@ -2,3 +2,4 @@ authlogic
 hpricot
 ajaxful_rating
 mislav-will_paginate -v 2.3.8 -s gems.github.com
+disqus

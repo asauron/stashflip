@@ -1,33 +1,50 @@
 <div id="maincontent">
 
-<table>
-  <tr>
-  	<td><b>DATE</b></td>
-  	<td><b>NAME</b></td>
-  	<td><b>SOURCE</b></td>
-  	<td><b>BUY_LINK</b></td>
-  	<td><b>STATUS</b></td>  	
-  	<td><b>PERMADEAL</b></td>
-  	<td><b>COST</b></td>
-  	<td><b>COST_RETAIL</b></td>
-  	<td><b>PROFIT_MARGIN</b></td>  	  	
-  	<td><b>DESCRIPTION</b></td>
-  </tr>
+	<% if @deal.stashflip_status == 'stash'%>
+	<div style="clear:both; float:left;">
+	<img src="/images/stash.png" width="40px;" height="40px;"></img>
+	</div>
+	<% end %>
+	<% if @deal.stashflip_status == 'flip'%>
+	<div style="clear:both; float:left;">
+	<img src="/images/flip.png" width="40px;" height="40px;"></img>
+	</div>
+	<% end %>
+			
+	<b><%= @deal.name%></b>
+	<br/>
+	<%= @deal.publish_date%>
+	<br/>
 
-  <tr>
-  	<td><%= @deal.publish_date %></td>
-  	<td><%= @deal.name %></td>
-  	<td><%= @deal.source %></td>	
-  	<td><%= @deal.buy_link %></td>
-  	<td><%= @deal.stashflip_status %></td>    	
-  	<td><%= @deal.permadeal %></td>
-   	<td><%= number_to_currency(@deal.cost, :unit => "$") %></td>
-  	<td><%= number_to_currency(@deal.cost_retail, :unit => "$") %></td>
-  	<td><label class="yellow awesome medium button"><font color="black"><%= number_to_currency(@deal.profit_margin, :unit => "$") %></font></label></td>
-  	<td><%= @deal.description %></td>
-    <td><%= link_to 'Show', @deal %></td>
-    <td><%= link_to 'Edit', edit_deal_path(@deal) %></td>
-    <td><%= link_to 'Destroy', @deal, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-</table>
+	<div style = "width:820px;">
+	<div style = "width:660px; clear:both; float:left;">
+	<%= @deal.description %>
+	</div>
+	
+	<div style = "margin-left: 20px; float:left;">
+	<% if @deal.photo.file?%>
+	<%= image_tag @deal.photo.url %>
+	<% end %>
+	</div>
+	</div>
+		
+	<div style = "clear:both;">
+	<b>Price:</b> <%=number_to_currency(@deal.cost, :unit => "$") %>
+	<br/>
+	<b>Profit Margin:</b> <label class="yellow awesome medium button"><font color="black">+<%= number_to_currency(@deal.profit_margin, :unit => "$") %></font></label> 
+	<br/><br/>
+	<b>Buy:</b> <label class="orange awesome medium button"><font color="black"><%= link_to "BUY", @deal.buy_link, :target => "_blank"
+%></font> </label>
+	<br/><br/>
+	<b>Sell:</b> <label class="orange awesome medium button"><font color="black"><%= link_to "EBAY", "http://sell.ebay.com/sell", :target => "_blank"
+%></font> </label> 
+	<label class="orange awesome medium button"><font color="black"><a href="http://www.amazon.com/gp/redirect.html?ie=UTF8&location=http%3A%2F%2Fwww.amazon.com%2Fgp%2Fseller%2Fsell-your-stuff.html&tag=stashflip-20&linkCode=ur2&camp=1789&creative=390957" target="_blank">AMAZON</a><img src="https://www.assoc-amazon.com/e/ir?t=stashflip-20&l=ur2&o=1" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></font></label>
+	<label class="orange awesome medium button"><font color="black"><%= link_to "CRAIGSLIST", "http://sfbay.craigslist.org/", :target => "_blank"%></font> </label> 
+	</div>
+	
+	<br/>
+<div id ="disqus_thread">
+  <%= disqus_thread %>
+</div>
+
 </div>

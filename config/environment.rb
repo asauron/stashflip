@@ -21,6 +21,17 @@ Rails::Initializer.run do |config|
   # config.gem "aws-s3", :lib => "aws/s3"
 	config.gem "authlogic"
 	config.gem 'mislav-will_paginate', :lib => 'will_paginate', :source => 'http://gems.github.com'
+	config.gem "disqus"
+
+  config.after_initialize do
+    Disqus::defaults[:account] = "stashflip"
+    # so that the comments will load up in development environment
+    Disqus::defaults[:developer] = true 
+    Disqus::defaults[:container_id] = "disqus_thread"
+    Disqus::defaults[:show_powered_by] = false
+    Disqus::defaults[:api_key] = "GSqVhVYn0MidUcO3qee8XHNFxKV8qM3zJ6emfdUmRB4BcAK3LMKcQZDLYSXOGDxa"
+  end
+
 
 	HTML_TEXT_LENGTH = 200
 	DATABASE_STRING_LENGTH = 200
