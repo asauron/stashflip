@@ -9,10 +9,6 @@ class DealsController < ApplicationController
 	page = params[:page] || 1
 	@deals = Deal.paginate(:page=>page, :per_page=>20, :order => 'publish_date DESC')
 	
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @deals }
-    end
   end
 
   # GET /deals/1
