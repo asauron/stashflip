@@ -86,8 +86,20 @@ span.bmap_text {
   float:left;
 }
 
-a, a:link, a:visited, a:hover {
-  color:#000000;
+
+/* Links
+----------- */
+
+a { font-family: verdana; font-size: 8pt; color: #2020C6; font-weight: none; text-decoration: none; text-transform: none; }
+a:hover { font-family: verdana; font-size: 8pt; color: #840000; font-weight: none; text-decoration: underline; text-transform: none; }
+
+a.nav { font-family: verdana; font-size: 10pt; color: #000000; font-weight: bold; text-decoration: none; text-transform: none; }
+a.nav:hover { font-family: verdana; font-size: 10pt; color: #ff9535; font-weight: bold; text-decoration: underline; text-transform: none; }
+
+
+a.actionbutton,
+a.actionbutton:hover{
+	color:#000000;
 }
 
 #ad_navbar_top a,
@@ -99,7 +111,7 @@ a, a:link, a:visited, a:hover {
 #ad_navbar a:visited,
 #ad_navbar a:hover{
   color:#ffffff;	
-}
+} 
 
 #nav_home{
   background-image:url(images/navbutton1.png);
@@ -417,115 +429,6 @@ padding:auto;
   margin-left: 470px;
 }
 
-#profile_main_top{
-	width:600px;
-	height:200px;
-	margin-left:0px;
-	float:left;
-	clear:both;
-}
-#profile_main_content{
-	width:800px;
-	margin-top:100px;	
-	float:left;
-	clear:both;
-}
-
-#profile_main_content_friends{
-	width:250px;
-	float:left;
-}
-
-#profile_main_content_maps{
-	width:250px;
-	margin-left:25px;		
-	float:left;
-}
-
-#profile_main_content_favoritemaps{
-	width:250px;	
-	margin-left:25px;	
-	float:left;
-}
-
-
-#myslide {width:700px;overflow:hidden;position: relative;height:340px;margin-bottom:20px}
- 
-	#myslide .cover{
-		width:4200px; /*------- class mystuff width * number of mystuff divs (160 * 3 = 480)---------- */
-		position: absolute;
-		height:340px;
-	}
- 
-	#myslide .mystuff {width:700px;float:left;padding:20px 0;}
- 
-	.button1,.button2,.button3,.button4,.button5, .button6{background:#999;padding:6px;display:block;float:left;margin-right:5px;}
-	.active{background:#111;padding:6px;display:block;float:left;outline:none;}
-	.clear{clear:both;}
-
-
-
-
-
-
-
-
-
-
-
-/** 
- * Slideshow style rules.
- */
-#slideshow {
-	margin:0 auto;
-	width:790px;
-	height:340px;
-	/**background:transparent url(/images/img/bg_slideshow.jpg) no-repeat 0 0;**/
-	background:transparent no-repeat 0 0;
-	position:relative;
-}
-#slideshow #slidesContainer {
-  margin:0 auto;
-  width:700px;
-  height:340px;
-  overflow:auto; /* allow scrollbar */
-  position:relative;
-}
-#slideshow #slidesContainer .slide {
-  margin:0 auto;
-  width:700px; /* reduce by 20 pixels of #slidesContainer to avoid horizontal scroll */
-  height:340px;
-}
-
-/** 
- * Slideshow controls style rules.
- */
-.control {
-  display:block;
-  width:39px;
-  height:340px;
-  text-indent:-10000px;
-  position:absolute;
-  cursor: pointer;
-}
-#leftControl {
-  top:0;
-  left:0;
-  background:transparent url(/images/img/control_left.jpg) no-repeat 0 0;
-}
-#rightControl {
-  top:0;
-  right:0;
-  background:transparent url(/images/img/control_right.jpg) no-repeat 0 0;
-}
-#slideshow_text1{
-	margin-left:300px;
-	margin-top:70px;
-}
-#slideshow_text2{
-	margin-left:300px;
-	margin-top:10px;
-}
 
 div.hr {
 	border-bottom: 1px dotted #000000;

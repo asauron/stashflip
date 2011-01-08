@@ -6,6 +6,11 @@
 </head>
 
 <body>		
+	
+	<div id="search_bar">
+		<%= render :partial => '/website/searchbar' %>		 
+	</div>
+	
 	<% if (!current_user.nil?) and (current_user.username == ADMIN_ACCOUNT) %>
 	<div style="clear:both; float:left;">
 	    	  	<form name="post_deal" id="post_deal" class="post_deal" method="post" action="/deals/post_deal">  
@@ -14,12 +19,7 @@
 		 <%= submit_tag("Refresh Deals (RSS)", :id => "post_deal", :title => "post_deal", :name => "post_deal", :class => "red awesome small button")%> 
 		</div>
 	<% end %>
-	
-	<div id="search_bar">
-		<%= render :partial => '/website/searchbar' %>		 
-	</div>
-	
-	
+		
 	<div id="maincontent">		 
 			<div id="main_top">
 				

@@ -35,16 +35,17 @@
 	<br/>
 	<b>Profit Margin:</b> <label class="yellow awesome medium button"><font color="black">+<%= number_to_currency(element.profit_margin, :unit => "$") %></font></label> 
 	<br/><br/>
-	<b>Buy:</b> <label class="orange awesome medium button"><font color="black"><%= link_to "BUY", element.buy_link, :target => "_blank"
+	<b>Buy:</b> <label class="orange awesome medium button"><font color="black"><%= link_to "BUY", element.buy_link, :target => "_blank", :class => 'actionbutton'
 %></font> </label>
 	<br/><br/>
-	<b>Sell:</b> <label class="orange awesome medium button"><font color="black"><%= link_to "EBAY", "http://sell.ebay.com/sell", :target => "_blank"
+	<b>Sell:</b> <label class="orange awesome medium button"><font color="black"><%= link_to "EBAY", "http://sell.ebay.com/sell", :target => "_blank", :class => 'actionbutton'
 %></font> </label> 
-	<label class="orange awesome medium button"><font color="black"><a href="http://www.amazon.com/gp/redirect.html?ie=UTF8&location=http%3A%2F%2Fwww.amazon.com%2Fgp%2Fseller%2Fsell-your-stuff.html&tag=stashflip-20&linkCode=ur2&camp=1789&creative=390957" target="_blank">AMAZON</a><img src="https://www.assoc-amazon.com/e/ir?t=stashflip-20&l=ur2&o=1" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></font></label>
-	<label class="orange awesome medium button"><font color="black"><%= link_to "CRAIGSLIST", "http://sfbay.craigslist.org/", :target => "_blank"%></font> </label> 	</div>
+	<label class="orange awesome medium button"><font color="black"><a href="http://www.amazon.com/gp/redirect.html?ie=UTF8&location=http%3A%2F%2Fwww.amazon.com%2Fgp%2Fseller%2Fsell-your-stuff.html&tag=stashflip-20&linkCode=ur2&camp=1789&creative=390957" target="_blank" class='actionbutton'>AMAZON</a><img src="https://www.assoc-amazon.com/e/ir?t=stashflip-20&l=ur2&o=1" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></font></label>
+	<label class="orange awesome medium button"><font color="black"><%= link_to "CRAIGSLIST", "http://sfbay.craigslist.org/", :target => "_blank", :class => 'actionbutton'%></font> </label> 
+	</div>
 	
 	<br/>
-	<b>Discuss:</b> <label class="orange awesome medium button"><font color="black"><%= link_to 'DISCUSS', element %></font></label>
+	<b>Discuss:</b> <label class="orange awesome medium button"><font color="black"><%= link_to 'DISCUSS', element, :class => 'actionbutton'%></font></label>
 		
 	<br/>
 	<div class="hr"></div>

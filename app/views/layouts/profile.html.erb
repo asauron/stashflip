@@ -9,19 +9,19 @@
 		
 	<div id="user_nav">
 	  <% if current_user %>
-	  	<%= link_to "Home", root_path %> |
-	  	<%= link_to 'Post Deal', new_deal_path %> |
-	  	<%= link_to 'Manage Deals', deals_path %> |
-	  	<%= link_to "#{current_user.username}'s Profile", users_url %> |
-	    <%= link_to "Edit Profile", editprofile_url %> |
-	    <%= link_to "About", "/website/about" %> |
-	    <%= link_to "Blog", "http://stashflip.tumblr.com/" %> |
-	    <%= link_to "Submit Deal", "http://stashflip.tumblr.com/ask" %> |		    
-	    <%= link_to "Logout", logout_path %>
+	  	<%= link_to "Home", root_path, :class => 'nav' %> |
+	  	<%= link_to 'Post Deal', new_deal_path, :class => 'nav' %> |
+	  	<%= link_to 'Manage Deals', deals_path, :class => 'nav' %> |
+	  	<%= link_to "#{current_user.username}'s Profile", users_url, :class => 'nav' %> |
+	    <%= link_to "Edit Profile", editprofile_url, :class => 'nav' %> |
+	    <%= link_to "About", "/website/about", :class => 'nav' %> |
+	    <%= link_to "Blog", "http://stashflip.tumblr.com/", :class => 'nav' %> |
+	    <%= link_to "Submit Deal", "http://stashflip.tumblr.com/ask", :class => 'nav' %> |		    
+	    <%= link_to "Logout", logout_path, :class => 'nav' %>
 	    
 	    <div style="float:right;">
-	    <img src="/images/stash.png" width="20px;" height="20px;"></img> <%= link_to "Stash", "/website/stashindex" %> |
-	    <img src="/images/flip.png" width="20px;" height="20px;"></img> <%= link_to "Flip", "/website/flipindex" %>
+	    <img src="/images/stash.png" width="20px;" height="20px;"></img> <%= link_to "Stash", "/website/stashindex", :class => 'nav' %> |
+	    <img src="/images/flip.png" width="20px;" height="20px;"></img> <%= link_to "Flip", "/website/flipindex", :class => 'nav' %>
 	    </div>
 	    
 	    <div style="float:right;">
@@ -29,14 +29,14 @@
 		</div>
 			    
 	  <% else %>
-	    <%= link_to "Home", root_path %> |
-	    <%= link_to "About", "/website/about" %> |
-	    <%= link_to "Blog", "http://stashflip.tumblr.com/" %> |
-	    <%= link_to "Submit Deal", "http://stashflip.tumblr.com/ask" %>	
+	    <%= link_to "Home", root_path, :class => 'nav'%> |
+	    <%= link_to "About", "/website/about", :class => 'nav'%> |
+	    <%= link_to "Blog", "http://stashflip.tumblr.com/", :class => 'nav' %> |
+	    <%= link_to "Submit Deal", "http://stashflip.tumblr.com/ask", :class => 'nav' %>	
 		
 	    <div style="float:right;">	    	
-	    <img src="/images/stash.png" width="20px;" height="20px;"></img> <%= link_to "Stash", "/website/stashindex" %> |
-	    <img src="/images/flip.png" width="20px;" height="20px;"></img> <%= link_to "Flip", "/website/flipindex" %>
+	    <img src="/images/stash.png" width="20px;" height="20px;"></img> <%= link_to "Stash", "/website/stashindex", :class => 'nav' %> |
+	    <img src="/images/flip.png" width="20px;" height="20px;"></img> <%= link_to "Flip", "/website/flipindex", :class => 'nav' %>
 	    </div>
 	    
 	    <div style="float:right;">
