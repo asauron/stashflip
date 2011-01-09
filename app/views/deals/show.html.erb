@@ -27,56 +27,57 @@ google_ad_height = 90;
 src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </script><br/>
 				
-				<div id="main_bottom_info">
+	<div id="main_bottom_info">
 
-				<% if @deal.stashflip_status == 'stash'%>
-				<div style="clear:both; float:left;">
-				<img src="/images/stash.png" width="40px;" height="40px;"></img>
-				</div>
-				<% end %>
-				<% if @deal.stashflip_status == 'flip'%>
-				<div style="clear:both; float:left;">
-				<img src="/images/flip.png" width="40px;" height="40px;"></img>
-				</div>
-				<% end %>
-						
-				<b><%= @deal.name%></b>
-				<br/>
-				<%= @deal.publish_date%>
-				<br/>
+		<% if @deal.stashflip_status == 'stash'%>
+		<div style="clear:both; float:left;">
+		<img src="/images/stash.png" width="40px;" height="40px;"></img>
+		</div>
+		<% end %>
+		<% if @deal.stashflip_status == 'flip'%>
+		<div style="clear:both; float:left;">
+		<img src="/images/flip.png" width="40px;" height="40px;"></img>
+		</div>
+		<% end %>
 			
-				<div style = "width:820px;">
-				<div style = "width:660px; clear:both; float:left;">
-				<%= @deal.description %>
-				</div>
+		<b><%= @deal.name%></b>
+		<br/>
+		<%= @deal.publish_date.strftime("%m/%d/%Y") %>
+		<br/><br/>
+		
+	
+		<div style = "width:820px;">
+		<div style = "width:660px; clear:both; float:left;">
+		<%= @deal.description %>
+		</div>
+		
+		<div style = "margin-left: 20px; float:left;">
+		<% if @deal.photo.file?%>
+		<%= image_tag @deal.photo.url %>
+		<% end %>
+		</div>
+		</div>
+		
+		<div style = "clear:both;">
+		<b>Price:</b> <%=number_to_currency(@deal.cost, :unit => "$") %>
+		<br/>
+		<b>Profit Margin:</b> <label class="yellow awesome medium button"><font color="black">+<%= number_to_currency(@deal.profit_margin, :unit => "$") %></font></label> 
+		<br/><br/>
+		<b>Buy:</b> <label class="orange awesome medium button"><font color="black"><%= link_to "BUY", @deal.buy_link, :target => "_blank", :class => 'actionbutton'
+	%></font> </label>
+		<br/><br/>
+		<b>Sell:</b> <label class="orange awesome medium button"><font color="black"><%= link_to "EBAY", "http://sell.ebay.com/sell", :target => "_blank", :class => 'actionbutton'
+	%></font> </label> 
+		<label class="orange awesome medium button"><font color="black"><a href="http://www.amazon.com/gp/redirect.html?ie=UTF8&location=http%3A%2F%2Fwww.amazon.com%2Fgp%2Fseller%2Fsell-your-stuff.html&tag=stashflip-20&linkCode=ur2&camp=1789&creative=390957" target="_blank" class='actionbutton'>AMAZON</a><img src="https://www.assoc-amazon.com/e/ir?t=stashflip-20&l=ur2&o=1" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></font></label>
+		<label class="orange awesome medium button"><font color="black"><%= link_to "CRAIGSLIST", "http://sfbay.craigslist.org/", :target => "_blank", :class => 'actionbutton'%></font> </label> 
+		</div>
 				
-				<div style = "margin-left: 20px; float:left;">
-				<% if @deal.photo.file?%>
-				<%= image_tag @deal.photo.url %>
-				<% end %>
-				</div>
-				</div>
+		<br/>
+		<div id ="disqus_thread">
+		  <%= disqus_thread %>
+		</div>
 					
-				<div style = "clear:both;">
-				<b>Price:</b> <%=number_to_currency(@deal.cost, :unit => "$") %>
-				<br/>
-				<b>Profit Margin:</b> <label class="yellow awesome medium button"><font color="black">+<%= number_to_currency(@deal.profit_margin, :unit => "$") %></font></label> 
-				<br/><br/>
-				<b>Buy:</b> <label class="orange awesome medium button"><font color="black"><%= link_to "BUY", @deal.buy_link, :target => "_blank", :class => 'actionbutton'
-			%></font> </label>
-				<br/><br/>
-				<b>Sell:</b> <label class="orange awesome medium button"><font color="black"><%= link_to "EBAY", "http://sell.ebay.com/sell", :target => "_blank", :class => 'actionbutton'
-			%></font> </label> 
-				<label class="orange awesome medium button"><font color="black"><a href="http://www.amazon.com/gp/redirect.html?ie=UTF8&location=http%3A%2F%2Fwww.amazon.com%2Fgp%2Fseller%2Fsell-your-stuff.html&tag=stashflip-20&linkCode=ur2&camp=1789&creative=390957" target="_blank" class='actionbutton'>AMAZON</a><img src="https://www.assoc-amazon.com/e/ir?t=stashflip-20&l=ur2&o=1" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></font></label>
-				<label class="orange awesome medium button"><font color="black"><%= link_to "CRAIGSLIST", "http://sfbay.craigslist.org/", :target => "_blank", :class => 'actionbutton'%></font> </label> 
-				</div>
-				
-				<br/>
-				<div id ="disqus_thread">
-				  <%= disqus_thread %>
-				</div>
-					
-				</div>
+	</div>
 				
 			</div> 
 			

@@ -1,0 +1,38 @@
+	<div id="user_nav">
+	  <% if current_user %>
+	  	<%= link_to "Home", root_path, :class => 'nav' %> |
+	  	<%= link_to 'Post Deal', new_deal_path, :class => 'nav' %> |
+	  	<%= link_to 'Manage Deals', deals_path, :class => 'nav' %> |
+	  	<%= link_to "#{current_user.username}'s Profile", users_url, :class => 'nav' %> |
+	    <%= link_to "Edit Profile", editprofile_url, :class => 'nav' %> |
+	    <%= link_to "About", "/website/about", :class => 'nav' %> |
+	    <%= link_to "Submit Deal", "http://stashflip.tumblr.com/ask", :class => 'nav' %> |		    
+	    <%= link_to "Logout", logout_path, :class => 'nav' %>
+	    
+	    <div style="float:right;">	    	
+	    <a href="/website/stashindex"><img src="/images/stash.png" width="20px;" height="20px;"></img></a> <%= link_to "Stash", "/website/stashindex", :class => 'nav' %> |
+	    <a href="/website/flipindex"><img src="/images/flip.png" width="20px;" height="20px;"></img></a> <%= link_to "Flip", "/website/flipindex", :class => 'nav' %>
+	    </div>
+		
+		<div style="float:right; margin-right:10px; margin-top:2px;">
+	    <a href="http://www.facebook.com/pages/Stashflip/183785891639693"><img src="/images/facebook.png"></img></a>
+	    <a href="http://www.twitter.com/stashflip"><img src="/images/twitter.png"></img></a> 
+	    </div>
+			    
+	  <% else %>
+	    <%= link_to "Home", root_path, :class => 'nav'%> |
+	    <%= link_to "About", "/website/about", :class => 'nav'%> |
+	    <%= link_to "Submit Deal", "http://stashflip.tumblr.com/ask", :class => 'nav' %>	
+		
+	    <div style="float:right;">	    	
+	    <a href="/website/stashindex"><img src="/images/stash.png" width="20px;" height="20px;"></img></a> <%= link_to "Stash", "/website/stashindex", :class => 'nav' %> |
+	    <a href="/website/flipindex"><img src="/images/flip.png" width="20px;" height="20px;"></img></a> <%= link_to "Flip", "/website/flipindex", :class => 'nav' %>
+	    </div>
+		
+		<div style="float:right; margin-right:10px; margin-top:2px;">
+	    <a href="http://www.facebook.com/pages/Stashflip/183785891639693"><img src="/images/facebook.png"></img></a>
+	    <a href="http://www.twitter.com/stashflip"><img src="/images/twitter.png"></img></a> 
+	    </div>
+			    
+	  <% end %>
+    </div>
