@@ -49,7 +49,7 @@ text-decoration: none;
 #ad_navbar {
   height:20px;
   width:980px;
-  margin-left:5px;
+  margin-left:350px;
   margin-right:auto; 
   margin-top:15px;
   clear:both;	
@@ -107,11 +107,7 @@ a.actionbutton:hover,
 #ad_navbar_top a,
 #ad_navbar_top a:link,
 #ad_navbar_top a:visited,
-#ad_navbar_top a:hover,
-#ad_navbar a,
-#ad_navbar a:link,
-#ad_navbar a:visited,
-#ad_navbar a:hover{
+#ad_navbar_top a:hover{
   color:#ffffff;	
 } 
 

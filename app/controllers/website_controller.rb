@@ -16,4 +16,20 @@ class WebsiteController < ApplicationController
   	page = params[:page] || 1
 	@deals = Deal.paginate(:page=>page, :per_page=>20, :order => 'publish_date DESC', :conditions => ['stashflip_status = ?', 'flip'])  	
   end
+  
+  def laptopindex
+  	page = params[:page] || 1
+	@deals = Deal.paginate(:page=>page, :per_page=>20, :order => 'publish_date DESC', :conditions => ['source = ?', 'dealnewslaptop'])  	
+  end
+  
+  def videogamesindex
+  	page = params[:page] || 1
+	@deals = Deal.paginate(:page=>page, :per_page=>20, :order => 'publish_date DESC', :conditions => ['source = ?', 'dealnewsvideogames'])  	
+  end  
+
+  def hdtvindex
+  	page = params[:page] || 1
+	@deals = Deal.paginate(:page=>page, :per_page=>20, :order => 'publish_date DESC', :conditions => ['source = ?', 'dealnewshdtv'])  	
+  end    
+    
 end

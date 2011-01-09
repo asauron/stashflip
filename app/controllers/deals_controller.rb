@@ -86,7 +86,8 @@ class DealsController < ApplicationController
   	  @latest_deals1 = BfadsDelegate.get_breaking_news(200)
   	  @latest_deals2 = DealnewslaptopDelegate.get_breaking_news(200) 
   	  @latest_deals3 = DealnewsvideogamesDelegate.get_breaking_news(200) 	  
-  	  
+  	  @latest_deals4 = DealnewshdtvDelegate.get_breaking_news(200) 
+  	    	  
   	  @latest_deals1.map do |latest_deal|
   	  	#If Deal is not already saved then save it
   	  	if Deal.find_by_guid(latest_deal.guid).nil? 
@@ -107,6 +108,13 @@ class DealsController < ApplicationController
   	   		latest_deal.save
   	   	end
   	  end 
+  	  
+  	  @latest_deals4.map do |latest_deal|
+  	  	#If Deal is not already saved and dealnews hdtv has a profit then save it
+  	  	if Deal.find_by_guid(latest_deal.guid).nil? && latest_deal.profit_margin>0
+  	   		latest_deal.save
+  	   	end
+  	  end   	  
   	    	  
 	  redirect_to :root    
   end
