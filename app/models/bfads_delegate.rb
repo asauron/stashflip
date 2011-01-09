@@ -1,4 +1,4 @@
-class DailygameDelegate < ActiveRecord::Base
+class BfadsDelegate < ActiveRecord::Base
 	require 'rubygems'
 	require 'hpricot'
 	require 'open-uri'
