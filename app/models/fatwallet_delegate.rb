@@ -28,10 +28,28 @@ def self.get_breaking_news(min)
 	  	#PROFIT MARGIN = 0.4 * (RETAIL PRICE - BUY PRICE) - SHIPPING
 	  	temp_deal.profit_margin = 0.4 * (temp_deal.cost_retail - temp_deal.cost) - DealAdapter.get_shipping_cost(temp_deal.name)
   	  end
+  	  
+  	  #Reset retail cost and profit margin to 0	if there is no retail cost listed    	  
+  	  if temp_deal.cost_retail.nil? 
+  	  	temp_deal.cost_retail=0
+  	  	temp_deal.profit_margin=0
+  	  end
+  	  
+  	  #Reset profit margin to 0 if you cannot resell it
+      if temp_deal.profit_margin < 0
+      	temp_deal.profit_margin = 0	  
+  	  end  	  
 	    	  
 	  temp_deal.source = "fatwallet"
 	  temp_deal.publish_date = DateTime.parse((item/"pubDate").inner_html)
-	  temp_deal.stashflip_status = "none"
+
+	  #Stash if you make less than $7 on reselling. Flip if you make more than $7 on reselling.
+	  if temp_deal.profit_margin < 7
+	  temp_deal.stashflip_status = "stash"
+	  elsif temp_deal.profit_margin >= 7
+	  temp_deal.stashflip_status = "flip"
+      end
+      
 	  temp_deal.permadeal = "no"	  
 	  temp_deal	  
 	end
@@ -69,11 +87,6 @@ def self.get_price_retail(name)
 	price_retail_value = price[2].to_f
 	end
 	return price_retail_value
-end
-
-def self.get_buy_link(description)
-	buy_link = /a href=\s*"([^"]*)/.match(description)
-	buy_link[1]
 end
 
 def self.contains_price_comparison(name)

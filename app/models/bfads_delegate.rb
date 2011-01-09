@@ -1,4 +1,4 @@
-class BfadsDelegate < ActiveRecord::Base
+class DailygameDelegate < ActiveRecord::Base
 	require 'rubygems'
 	require 'hpricot'
 	require 'open-uri'
@@ -22,16 +22,34 @@ def self.get_breaking_news(min)
 	  temp_deal.guid = (item/"guid").inner_html
 	  temp_deal.cost = get_price(temp_deal.name)  
 	  temp_deal.cost_retail = get_price_retail(temp_deal.description)
-	  
+  	  
 	  unless temp_deal.cost_retail.nil? || temp_deal.cost.nil?
 	  	#Lower profit margin to make a more conservative estimate
 	  	#PROFIT MARGIN = 0.4 * (RETAIL PRICE - BUY PRICE) - SHIPPING
 	  	temp_deal.profit_margin = 0.4 * (temp_deal.cost_retail - temp_deal.cost) - DealAdapter.get_shipping_cost(temp_deal.name)
   	  end
-	    	  
+	  
+  	  #Reset retail cost and profit margin to 0	if there is no retail cost listed    	  
+  	  if temp_deal.cost_retail.nil? 
+  	  	temp_deal.cost_retail=0
+  	  	temp_deal.profit_margin=0
+  	  end
+  	  
+  	  #Reset profit margin to 0 if you cannot resell it
+      if temp_deal.profit_margin < 0
+      	temp_deal.profit_margin = 0	  
+  	  end
+  	  
 	  temp_deal.source = "bfads"
 	  temp_deal.publish_date = DateTime.parse((item/"pubDate").inner_html)
-	  temp_deal.stashflip_status = "none"
+
+	  #Stash if you make less than $7 on reselling. Flip if you make more than $7 on reselling.
+	  if temp_deal.profit_margin < 7
+	  temp_deal.stashflip_status = "stash"
+	  elsif temp_deal.profit_margin >= 7
+	  temp_deal.stashflip_status = "flip"
+      end
+  	  
 	  temp_deal.permadeal = "no"
 	  temp_deal
 	end

@@ -1,4 +1,4 @@
-class PasswirdDelegate < ActiveRecord::Base
+class DealnewsDelegate < ActiveRecord::Base
 	require 'rubygems'
 	require 'hpricot'
 	require 'open-uri'
@@ -10,7 +10,7 @@ class PasswirdDelegate < ActiveRecord::Base
 	cattr_accessor :result_array
 
 def self.get_breaking_news(min)
-	doc = Hpricot.XML(open("http://passwird.com/n/rss.xml"))
+	doc = Hpricot.XML(open("http://dealnews.com/rss/49"))
 	
 	cutoff_time = Time.now - 60 * min
 	
@@ -18,21 +18,39 @@ def self.get_breaking_news(min)
 	  temp_deal = Deal.new
 	  temp_deal.name = (item/"title").inner_html
 	  temp_deal.description = (item/"description").inner_text
-	  temp_deal.buy_link = get_buy_link(temp_deal.description) 
+	  temp_deal.buy_link = get_buy_link( (item/"link").inner_html )
 	  temp_deal.guid = (item/"guid").inner_html
 	  temp_deal.cost = get_price(temp_deal.name)  
-	  temp_deal.cost_retail = get_price_retail(temp_deal.description)
-	  
+	  temp_deal.cost_retail = get_price_retail(temp_deal.cost, temp_deal.description)
+  	  
 	  unless temp_deal.cost_retail.nil? || temp_deal.cost.nil?
 	  	#Lower profit margin to make a more conservative estimate
 	  	#PROFIT MARGIN = 0.4 * (RETAIL PRICE - BUY PRICE) - SHIPPING
 	  	temp_deal.profit_margin = 0.4 * (temp_deal.cost_retail - temp_deal.cost) - DealAdapter.get_shipping_cost(temp_deal.name)
   	  end
-	    	  
-	  temp_deal.source = "passwird"
+	  
+  	  #Reset retail cost and profit margin to 0	if there is no retail cost listed    	  
+  	  if temp_deal.cost_retail.nil? 
+  	  	temp_deal.cost_retail=0
+  	  	temp_deal.profit_margin=0
+  	  end
+  	  
+  	  #Reset profit margin to 0 if you cannot resell it
+      if temp_deal.profit_margin < 0
+      	temp_deal.profit_margin = 0	  
+  	  end
+  	  
+	  temp_deal.source = "dealnews"
 	  temp_deal.publish_date = DateTime.parse((item/"pubDate").inner_html)
-	  temp_deal.stashflip_status = "none"
-	  temp_deal.permadeal = "no"	  
+
+	  #Stash if you make less than $50 on reselling. Flip if you make more than $50 on reselling.
+	  if temp_deal.profit_margin < 50
+	  temp_deal.stashflip_status = "stash"
+  elsif temp_deal.profit_margin >= 50
+	  temp_deal.stashflip_status = "flip"
+      end
+  	  
+	  temp_deal.permadeal = "no"
 	  temp_deal
 	end
 end
@@ -48,25 +66,26 @@ def self.get_price(name)
 	return price_value
 end
 
-def self.get_price_retail(description)
-	#Next lowest price on PriceGrabber is $29.22 shipped.
-	price_retail = /is \$(\d+\.\d+)/.match(description)
-	#Comparatively, Microsoft Store sells it for $129.99. 
-	if price_retail.nil?
-	price_retail = /for \$(\d+\.\d+)\./.match(description)
-	end
-	
-	
+def self.get_price_retail(price_sale, description)
+	#With $5 for shipping, that's $136 under last month's mention (which had a smaller hard drive) and the lowest total price we could find by $126.
+	price_retail = /by \$(\d+)/.match(description)
+		
 	unless price_retail.nil?
 		price_retail_value = price_retail[1].to_f
 	end
-		
-	return price_retail_value 
+	
+	if price_retail_value.nil?
+	return 0
+	else
+	return price_retail_value + price_sale
+	end
+
 end
 
-def self.get_buy_link(description)
-	buy_link = /a href=\s*"([^"]*)/.match(description)
-	buy_link[1]
+def self.get_buy_link(rss_link)
+	dealnews_html = fetch(rss_link).body
+	expression_for_buy_link = /<a class="bgbn" href="([^"]+)" target="_blank"><em class="l"><\/em><em class="c">Shop Now!/
+	buy_link = expression_for_buy_link.match(dealnews_html)[1]
 end
 
 def self.contains_price_comparison(description)
