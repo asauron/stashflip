@@ -7,9 +7,9 @@ class DealAdapter < ActiveRecord::Base
 	
 	def self.contains_price_comparison(latest_deal)
 		case latest_deal.source
-		when "passwird" then PasswirdDelegate.contains_price_comparison(latest_deal.description)
 		when "bfads" then BfadsDelegate.contains_price_comparison(latest_deal.description)			
-		when "fatwallet" then FatwalletDelegate.contains_price_comparison(latest_deal.name)
+		when "dealnewslaptop" then DealnewslaptopDelegate.contains_price_comparison(latest_deal.name)
+		when "dealnewsvideogames" then DealnewsvideogamesDelegate.contains_price_comparison(latest_deal.name)			
 		else
 			false
 		end	

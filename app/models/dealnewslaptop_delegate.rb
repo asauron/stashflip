@@ -1,4 +1,4 @@
-class DealnewsDelegate < ActiveRecord::Base
+class DealnewslaptopDelegate < ActiveRecord::Base
 	require 'rubygems'
 	require 'hpricot'
 	require 'open-uri'
@@ -40,7 +40,7 @@ def self.get_breaking_news(min)
       	temp_deal.profit_margin = 0	  
   	  end
   	  
-	  temp_deal.source = "dealnews"
+	  temp_deal.source = "dealnewslaptop"
 	  temp_deal.publish_date = DateTime.parse((item/"pubDate").inner_html)
 
 	  #Stash if you make less than $50 on reselling. Flip if you make more than $50 on reselling.
