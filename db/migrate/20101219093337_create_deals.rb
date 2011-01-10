@@ -5,6 +5,7 @@ class CreateDeals < ActiveRecord::Migration
       t.text :description
       t.string :guid
       t.string :source
+      t.string :category
       t.string :buy_link
       t.datetime :publish_date
       t.string :stashflip_status

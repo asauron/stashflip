@@ -41,6 +41,7 @@ def self.get_breaking_news(min)
   	  end
   	  
 	  temp_deal.source = "bfads"
+	  temp_deal.category = "default"
 	  temp_deal.publish_date = DateTime.parse((item/"pubDate").inner_html)
 
 	  #Stash if you make less than $7 on reselling. Flip if you make more than $7 on reselling.

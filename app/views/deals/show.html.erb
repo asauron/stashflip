@@ -15,6 +15,18 @@
 
 			<div id="main_top">
 				
+<% if @deal.category == 'videogame'%>
+<OBJECT classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://fpdownload.macromedia.com/get/flashplayer/current/swflash.cab" id="Player_3beb30f8-90f4-4dd8-ad17-56e73e65a8dd"  WIDTH="468px" HEIGHT="60px"> <PARAM NAME="movie" VALUE="http://ws.amazon.com/widgets/q?ServiceVersion=20070822&MarketPlace=US&ID=V20070822%2FUS%2Fstashflip-20%2F8009%2F3beb30f8-90f4-4dd8-ad17-56e73e65a8dd&Operation=GetDisplayTemplate"><PARAM NAME="quality" VALUE="high"><PARAM NAME="bgcolor" VALUE="#FFFFFF"><PARAM NAME="allowscriptaccess" VALUE="always"><embed src="http://ws.amazon.com/widgets/q?ServiceVersion=20070822&MarketPlace=US&ID=V20070822%2FUS%2Fstashflip-20%2F8009%2F3beb30f8-90f4-4dd8-ad17-56e73e65a8dd&Operation=GetDisplayTemplate" id="Player_3beb30f8-90f4-4dd8-ad17-56e73e65a8dd" quality="high" bgcolor="#ffffff" name="Player_3beb30f8-90f4-4dd8-ad17-56e73e65a8dd" allowscriptaccess="always"  type="application/x-shockwave-flash" align="middle" height="60px" width="468px"></embed></OBJECT> <NOSCRIPT><A HREF="http://ws.amazon.com/widgets/q?ServiceVersion=20070822&MarketPlace=US&ID=V20070822%2FUS%2Fstashflip-20%2F8009%2F3beb30f8-90f4-4dd8-ad17-56e73e65a8dd&Operation=NoScript">Amazon.com Widgets</A></NOSCRIPT>
+<% end %>
+<% if @deal.category == 'laptop'%>
+<a href="http://www.anrdoezrs.net/click-4248767-10802644" target="_top">
+<img src="http://www.tqlkg.com/image-4248767-10802644" width="728" height="90" alt="Get a SquareTrade Warranty" border="0"/></a>
+<% end %>
+<% if @deal.category == 'hdtv'%>
+<a href="http://www.anrdoezrs.net/click-4248767-10802644" target="_top">
+<img src="http://www.tqlkg.com/image-4248767-10802644" width="728" height="90" alt="Get a SquareTrade Warranty" border="0"/></a>
+<% end %>	
+				
 <script type="text/javascript"><!--
 google_ad_client = "ca-pub-2997897620024642";
 /* Deals Main */
@@ -25,8 +37,8 @@ google_ad_height = 90;
 </script>
 <script type="text/javascript"
 src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-</script><br/>
-				
+</script>
+						
 	<div id="main_bottom_info">
 
 		<% if @deal.stashflip_status == 'stash'%>
@@ -61,7 +73,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 		<div style = "clear:both;">
 		<b>Price:</b> <%=number_to_currency(@deal.cost, :unit => "$") %>
 		<br/>
-		<b>Profit Margin:</b> <label class="yellow awesome medium button"><font color="black">+<%= number_to_currency(@deal.profit_margin, :unit => "$") %></font></label> 
+		<b>Profit Margin:</b> <label class="yellow awesome medium button"><font color="black">+<%= number_to_currency(@deal.profit_margin, :unit => "$") %></font></label> 		
 		<br/><br/>
 		<b>Buy:</b> <label class="orange awesome medium button"><font color="black"><%= link_to "BUY", @deal.buy_link, :class => 'actionbutton'
 	%></font> </label>
@@ -70,7 +82,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 	%></font> </label> 
 		<label class="orange awesome medium button"><font color="black"><a href="http://www.amazon.com/gp/redirect.html?ie=UTF8&location=http%3A%2F%2Fwww.amazon.com%2Fgp%2Fseller%2Fsell-your-stuff.html&tag=stashflip-20&linkCode=ur2&camp=1789&creative=390957" class='actionbutton'>AMAZON</a><img src="https://www.assoc-amazon.com/e/ir?t=stashflip-20&l=ur2&o=1" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></font></label>
 		<label class="orange awesome medium button"><font color="black"><%= link_to "CRAIGSLIST", "http://sfbay.craigslist.org/", :class => 'actionbutton'%></font> </label> 
-		</div>
+		</div>	
 				
 		<br/>
 		<div id ="disqus_thread">

@@ -19,17 +19,17 @@ class WebsiteController < ApplicationController
   
   def laptopindex
   	page = params[:page] || 1
-	@deals = Deal.paginate(:page=>page, :per_page=>20, :order => 'publish_date DESC', :conditions => ['source = ?', 'dealnewslaptop'])  	
+	@deals = Deal.paginate(:page=>page, :per_page=>20, :order => 'publish_date DESC', :conditions => ['category = ?', 'laptop'])  	
   end
   
   def videogamesindex
   	page = params[:page] || 1
-	@deals = Deal.paginate(:page=>page, :per_page=>20, :order => 'publish_date DESC', :conditions => ['source = ?', 'dealnewsvideogames'])  	
+	@deals = Deal.paginate(:page=>page, :per_page=>20, :order => 'publish_date DESC', :conditions => ['category = ?', 'videogame'])  	
   end  
 
   def hdtvindex
   	page = params[:page] || 1
-	@deals = Deal.paginate(:page=>page, :per_page=>20, :order => 'publish_date DESC', :conditions => ['source = ?', 'dealnewshdtv'])  	
+	@deals = Deal.paginate(:page=>page, :per_page=>20, :order => 'publish_date DESC', :conditions => ['category = ?', 'hdtv'])  	
   end    
     
 end

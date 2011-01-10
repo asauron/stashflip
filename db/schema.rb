@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(:version => 20101223043233) do
     t.text     "description"
     t.string   "guid"
     t.string   "source"
+    t.string   "category"
     t.string   "buy_link"
     t.datetime "publish_date"
     t.string   "stashflip_status"
