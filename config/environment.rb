@@ -22,6 +22,7 @@ Rails::Initializer.run do |config|
 	config.gem "authlogic"
 	config.gem 'mislav-will_paginate', :lib => 'will_paginate', :source => 'http://gems.github.com'
 	config.gem "disqus"
+	config.gem "twitter"
 
   config.after_initialize do
     Disqus::defaults[:account] = "stashflip"
