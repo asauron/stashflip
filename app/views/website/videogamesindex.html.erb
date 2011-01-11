@@ -37,9 +37,10 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 <br/>			
 				
 				<a name="internaldeals"></a> 
-				<%= render :partial => '/deals/latest_sponsored', :locals =>{:deals => @internal_deals}  %>	
+				<%= render :partial => '/deals/latest_sponsored', :locals => {:deals => Deal.find(:all, :order => 'publish_date DESC', :conditions => ['source = ? and category = ?', 'stashflip', 'videogame'])} %>				
+				<%= render :partial => '/deals/latest_sponsored', :locals => {:deals => Deal.find(:all, :order => 'publish_date DESC', :conditions => ['source = ? and category = ?', 'cheapgamedeals', 'videogame'])} %>	
 				<a name="externaldeals"></a>
-				<%= render :partial => '/deals/latest_passwird', :locals =>{:deals => @external_deals}  %>				
+				<%= render :partial => '/deals/latest_passwird', :locals =>{:deals => @deals}  %>				
 			</div> 
 			
 			<div id="main_right">
