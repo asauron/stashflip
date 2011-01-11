@@ -89,7 +89,10 @@ end
 def self.get_buy_link(rss_link)
 	dealnews_html = fetch(rss_link).body
 	expression_for_buy_link = /<a class="bgbn" href="([^"]+)" target="_blank"><em class="l"><\/em><em class="c">Shop Now!/
-	buy_link = expression_for_buy_link.match(dealnews_html)[1]
+	buy_link_result = expression_for_buy_link.match(dealnews_html)
+	unless  buy_link_result.nil?
+	buy_link = buy_link_result[1]
+	end
 end
 
 def self.contains_price_comparison(description)

@@ -44,7 +44,7 @@ def self.get_breaking_news(min)
 	  temp_deal.category = "hdtv"
 	  temp_deal.publish_date = DateTime.parse((item/"pubDate").inner_html)
 
-	  #Stash if you make less than $7 on reselling. Flip if you make more than $7 on reselling.
+	  #Stash if you make less than $100 on reselling. Flip if you make more than $100 on reselling.
 	  if temp_deal.profit_margin < 100
 	  temp_deal.stashflip_status = "stash"
 	  elsif temp_deal.profit_margin >= 100
@@ -96,7 +96,10 @@ end
 def self.get_buy_link(rss_link)
 	dealnews_html = fetch(rss_link).body
 	expression_for_buy_link = /<a class="bgbn" href="([^"]+)" target="_blank"><em class="l"><\/em><em class="c">Shop Now!/
-	buy_link = expression_for_buy_link.match(dealnews_html)[1]
+	buy_link_result = expression_for_buy_link.match(dealnews_html)
+	unless  buy_link_result.nil?
+	buy_link = buy_link_result[1]
+	end
 end
 
 def self.contains_price_comparison(description)

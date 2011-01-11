@@ -1,4 +1,3 @@
-<% deals = Deal.find(:all, :order => 'publish_date DESC', :conditions => ['source = ?', 'stashflip'])%>
 <% deals.map do |element| %>
 	<% unless element.nil? %>
 
