@@ -14,11 +14,21 @@
 	<div id="maincontent">
 
 			<div id="main_top">
-				
+
+<% if @deal.category == 'default' %>
+	<script type="text/javascript"><!--
+amazon_ad_tag = "stashflip-20"; amazon_ad_width = "728"; amazon_ad_height = "90"; amazon_ad_logo = "hide";//--></script>
+<script type="text/javascript" src="http://www.assoc-amazon.com/s/ads.js"></script>
+<% end %>					
 <% if @deal.category == 'videogame'%>
-<a href="http://www.tkqlhce.com/s265dlurlt8DBDHGFG8A9ECD9I9" target="_blank" onmouseover="window.status='http://www.gamefly.com';return true;" onmouseout="window.status=' ';return true;">
-<img src="http://www.tqlkg.com/ct70snrflj4979DCBC465A895E5" alt="" border="0"/></a>	
+	<iframe src="http://rcm.amazon.com/e/cm?t=stashflip-20&o=1&p=48&l=bn1&mode=videogames&browse=468642&fc1=000000&lt1=&lc1=3366FF&bg1=FFFFFF&f=ifr" marginwidth="0" marginheight="0" width="728" height="90" border="0" frameborder="0" style="border:none;" scrolling="no"></iframe>
 <% end %>
+<% if @deal.category == 'laptop'%>
+	<iframe src="http://rcm.amazon.com/e/cm?t=stashflip-20&o=1&p=48&l=bn1&mode=pc-hardware&browse=1232596011&fc1=000000&lt1=_blank&lc1=3366FF&bg1=FFFFFF&f=ifr" marginwidth="0" marginheight="0" width="728" height="90" border="0" frameborder="0" style="border:none;" scrolling="no"></iframe>
+<% end %>
+<% if @deal.category == 'hdtv'%>
+	<iframe src="http://rcm.amazon.com/e/cm?t=stashflip-20&o=1&p=48&l=bn1&mode=electronics&browse=1266092011&fc1=000000&lt1=_blank&lc1=3366FF&bg1=FFFFFF&f=ifr" marginwidth="0" marginheight="0" width="728" height="90" border="0" frameborder="0" style="border:none;" scrolling="no"></iframe>
+<% end %>	
 				
 <script type="text/javascript"><!--
 google_ad_client = "ca-pub-2997897620024642";
