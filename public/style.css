@@ -72,12 +72,6 @@ form.search {
   height:42px;
   }
 
-span.bmap_text {
-  color : #de6464;   
-  font-family: Arial, Verdana, Helvetica, sans-serif;  
-
-}
-
 #logo{
   background-image:url(images/logo.png);
   background-repeat: no-repeat;
@@ -110,33 +104,6 @@ a.actionbutton:hover,
 #ad_navbar_top a:hover{
   color:#ffffff;	
 } 
-
-#nav_home{
-  background-image:url(images/navbutton1.png);
-  background-repeat: no-repeat;
-  width: 51px;
-  height: 30px;
-  float:left;
-  margin-left: 0px;
-}
-
-#nav_profile{
-  background-image:url(images/navbutton2.png);
-  background-repeat: no-repeat;
-  width: 57px;
-  height: 30px;
-  float:left;
-  margin-left: 0px;
-}
-
-#nav_account{
-  background-image:url(images/navbutton3.png);
-  background-repeat: no-repeat;
-  width: 80px;
-  height: 30px;
-  float:left;
-  margin-left: 0px;
-}
 
 #searchbar{
   width:700px;
