@@ -11,4 +11,15 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </script>
 
 <br/><br/>
-<iframe src="http://rcm.amazon.com/e/cm?t=stashflip-20&o=1&p=14&l=bn1&mode=videogames&browse=468642&fc1=000000&lt1=&lc1=3366FF&bg1=FFFFFF&f=ifr" marginwidth="0" marginheight="0" width="160" height="600" border="0" frameborder="0" style="border:none;" scrolling="no"></iframe>
+<% if ad_type == 'default' %>
+	<iframe src="http://rcm.amazon.com/e/cm?t=stashflip-20&o=1&p=14&l=bn1&mode=videogames&browse=468642&fc1=000000&lt1=&lc1=3366FF&bg1=FFFFFF&f=ifr" marginwidth="0" marginheight="0" width="160" height="600" border="0" frameborder="0" style="border:none;" scrolling="no"></iframe>
+<% end %>					
+<% if ad_type == 'videogame'%>
+	<iframe src="http://rcm.amazon.com/e/cm?t=stashflip-20&o=1&p=14&l=bn1&mode=videogames&browse=468642&fc1=000000&lt1=&lc1=3366FF&bg1=FFFFFF&f=ifr" marginwidth="0" marginheight="0" width="160" height="600" border="0" frameborder="0" style="border:none;" scrolling="no"></iframe>
+<% end %>
+<% if ad_type == 'laptop'%>
+	<iframe src="http://rcm.amazon.com/e/cm?t=stashflip-20&o=1&p=14&l=bn1&mode=pc-hardware&browse=1232596011&fc1=000000&lt1=&lc1=3366FF&bg1=FFFFFF&f=ifr" marginwidth="0" marginheight="0" width="160" height="600" border="0" frameborder="0" style="border:none;" scrolling="no"></iframe>
+<% end %>
+<% if ad_type == 'hdtv'%>
+	<iframe src="http://rcm.amazon.com/e/cm?t=stashflip-20&o=1&p=14&l=bn1&mode=electronics&browse=1266092011&fc1=000000&lt1=&lc1=3366FF&bg1=FFFFFF&f=ifr" marginwidth="0" marginheight="0" width="160" height="600" border="0" frameborder="0" style="border:none;" scrolling="no"></iframe>
+<% end %>	
