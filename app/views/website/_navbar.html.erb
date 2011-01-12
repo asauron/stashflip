@@ -6,7 +6,7 @@
 	  	<%= link_to "#{current_user.username}'s Profile", users_url, :class => 'nav' %> |
 	    <%= link_to "Edit Profile", editprofile_url, :class => 'nav' %> |
 	    <%= link_to "About", "/website/about", :class => 'nav' %> |
-	    <%= link_to "Submit Deal", "http://stashflip.tumblr.com/ask", :class => 'nav' %> |		    
+	    <%= link_to "Submit Deal", "http://stashflip.tumblr.com/submit", :class => 'nav' %> |		    
 	    <%= link_to "Logout", logout_path, :class => 'nav' %>
 	    
 	    <div style="float:right;">	    	
@@ -21,7 +21,7 @@
 	  <% else %>
 	    <%= link_to "Home", root_path, :class => 'nav'%> |
 	    <%= link_to "About", "/website/about", :class => 'nav'%> |
-	    <%= link_to "Submit Deal", "http://stashflip.tumblr.com/ask", :class => 'nav' %>	
+	    <%= link_to "Submit Deal", "http://stashflip.tumblr.com/submit", :class => 'nav' %>	
 		
 	    <div style="float:right;">	    	
 	    <a href="/website/stashindex"><img src="/images/stash.png" width="20px;" height="20px;"></img></a> <%= link_to "Stash", "/website/stashindex", :class => 'nav' %> |
