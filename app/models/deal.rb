@@ -4,8 +4,4 @@ class Deal < ActiveRecord::Base
 	
 	has_attached_file :photo,	:url  => "/assets/deals/:id/:style/:basename.:extension",
                   				:path => ":rails_root/public/assets/deals/:id/:style/:basename.:extension"
- 	
-	def to_s
-		return "#{@title} #{@description}"
-	end
 end

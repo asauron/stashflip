@@ -9,7 +9,9 @@ class DealAdapter < ActiveRecord::Base
 		case latest_deal.source
 		when "bfads" then BfadsDelegate.contains_price_comparison(latest_deal.description)			
 		when "dealnewslaptop" then DealnewslaptopDelegate.contains_price_comparison(latest_deal.name)
-		when "dealnewsvideogames" then DealnewsvideogamesDelegate.contains_price_comparison(latest_deal.name)			
+		when "dealnewsvideogames" then DealnewsvideogamesDelegate.contains_price_comparison(latest_deal.name)
+		when "dealnewshdtv" then DealnewsvideogamesDelegate.contains_price_comparison(latest_deal.name)
+		when "cheapgamedeals" then DealnewsvideogamesDelegate.contains_price_comparison(latest_deal.name)			
 		else
 			false
 		end	

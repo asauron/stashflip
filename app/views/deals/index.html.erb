@@ -46,7 +46,17 @@
   </tr>
 <% end %>
 </table>
-    
+
+<h3>Refresh Deals</h3>
+<% form_tag post_deal_deals_path, :method => :get do %>
+<%= submit_tag "Refresh Deals"%>
+<% end %>	
+
+<h3>Delete Old Deals</h3>
+<% form_tag delete_old_deals_deals_path, :method => :put do %>
+<%= submit_tag "Delete Old Deals"%>
+<% end %>		  
+   
 <h3>Mark as Stash</h3>
 <% form_tag mark_stash_deals_path, :method => :put do %>
 <ul>

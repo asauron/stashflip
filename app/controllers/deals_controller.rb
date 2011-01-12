@@ -1,5 +1,5 @@
 class DealsController < ApplicationController
-  before_filter :ensure_authenticated, :only => [:new, :edit, :create, :update, :destroy]
+  before_filter :ensure_authenticated, :only => [:index, :new, :edit, :create, :update, :destroy]
   
   # GET /deals
   # GET /deals.xml
@@ -125,9 +125,21 @@ class DealsController < ApplicationController
   	   	end
   	  end  
   	      	  
-	  redirect_to :root    
+	  redirect_to :root, :notice => "Deals have been refreshed!"    
   end
   
+  def delete_old_deals
+	  # This script deletes all posts that are over 1 week old
+	  #deal_ids = Deal.find(:all, :conditions => ["created_at < ? and permadeal = ?", 7.days.ago, 'no'])
+	  deal_ids = Deal.find(:all, :conditions => ["created_at < ? and permadeal = ?", 5.minutes.ago, 'no'])
+	
+	  if deal_ids.size > 0
+	    Deal.destroy(deal_ids)
+	  end
+	  
+	  redirect_to :root, :notice => "#{deal_ids.size} deals have been deleted!"
+  end
+
   def mark_stash
   	Deal.update_all(["stashflip_status=?", "stash"], :id => params[:deal_ids])
   	params[:deal_ids]

@@ -1,9 +1,0 @@
-<% users = User.find(:all)%>
-<% @random_users = users.sort_by{ rand }.slice(0...4) %>
-<% @random_users.each do |user| %>
-<% friend_url = '/profile/' + user.username %>
-<label class="grey awesome medium button"><font color="black">
-<%= link_to user.username, friend_url %>
-</font></label>
-<br/>
-<% end %>

@@ -1,6 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
 
-  map.resources :deals, :collection => { :mark_stash => :put, :mark_flip => :put, :mark_none => :put, :mark_permadeal => :put, :mark_permadeal_remove => :put, :rss => :get }
+  map.resources :deals, :collection => { :mark_stash => :put, :mark_flip => :put, :mark_none => :put, :mark_permadeal => :put, :mark_permadeal_remove => :put, :rss => :get, :post_deal => :get, :delete_old_deals => :put }
  
   map.resources :user_sessions
 
@@ -42,10 +42,6 @@ ActionController::Routing::Routes.draw do |map|
     map.root :controller => "website"
 	map.login "login", :controller => "user_sessions", :action => "new"
 	map.logout "logout", :controller => "user_sessions", :action => "destroy"
-	map.editprofile "/info/edit", :controller => "info", :action => "edit"
-	map.profile "/profile/:username", :controller => "profile", :action => "show"
-	map.mymap "/profile/show/:username/:mapid", :controller => "map", :action => "show"
-	map.privateprofile 'user', :controller => 'users', :action => 'index'
 	
   # See how all your routes lay out with "rake routes"
 

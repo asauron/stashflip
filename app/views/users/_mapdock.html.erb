@@ -1,8 +1,0 @@
-<img src="/images/maps.png"/> 
-<br/>
-<% maps = Map.find(:all, :conditions => {:user_id => [@user.id]})%> <br/>
-	  <% maps.each do |map| %>
-		<% saved_map_url = '/maps/' + map.id.to_s %>
-		<label class="red awesome medium button"><font color="black"><%= link_to map.title, saved_map_url %></font> </label>
-		<br/>
-	<% end %>

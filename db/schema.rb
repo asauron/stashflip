@@ -64,27 +64,7 @@ ActiveRecord::Schema.define(:version => 20101223043233) do
     t.datetime "updated_at"
   end
 
-  create_table "friendships", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "friend_id"
-    t.string   "status"
-    t.datetime "time_created"
-    t.datetime "time_accepted"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "gmap_delegates", :force => true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "infos", :force => true do |t|
-    t.integer  "user_id",                    :null => false
-    t.string   "name",       :default => ""
-    t.string   "location",   :default => ""
-    t.string   "bio",        :default => ""
-    t.string   "saved_maps", :default => ""
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -109,26 +89,12 @@ ActiveRecord::Schema.define(:version => 20101223043233) do
     t.integer  "permission"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.decimal  "rating_average", :precision => 6, :scale => 2, :default => 0.0
   end
 
   create_table "passwird_delegates", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  create_table "rates", :force => true do |t|
-    t.integer  "rater_id"
-    t.integer  "rateable_id"
-    t.string   "rateable_type"
-    t.integer  "stars",         :null => false
-    t.string   "dimension"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "rates", ["rateable_id", "rateable_type"], :name => "index_rates_on_rateable_id_and_rateable_type"
-  add_index "rates", ["rater_id"], :name => "index_rates_on_rater_id"
 
   create_table "users", :force => true do |t|
     t.string   "username"

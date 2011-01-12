@@ -2,10 +2,7 @@ class UsersController < ApplicationController
 	
 	def index
 		@user = current_user
-		@username = @user.username
-		@title = "#{@username}'s Private Profile"		
-		@user.info ||= Info.new
-		@info = @user.info
+		@username = @user.username	
 	end
 	
 	def new
