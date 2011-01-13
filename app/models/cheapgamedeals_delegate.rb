@@ -29,7 +29,7 @@ def self.get_breaking_news(min)
   	  end
 	  
 	  #write description
-	  unless temp_deal.buy_link.nil?
+	  unless partial_name.nil? || temp_deal.cost.nil? || temp_deal.buy_link.nil?
 	  temp_deal.description = "Amazon has the " + partial_name + "for $" + sprintf("%.2f", temp_deal.cost) + ". <a href=" + temp_deal.buy_link + "><b>AMAZON</b></a>" 
   	  end
 	  
