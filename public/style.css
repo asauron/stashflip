@@ -3,6 +3,7 @@ BODY {
   color : #000000;
   font-size: 0.8em;
 }
+
 .clear {
   clear:both;
 }
@@ -175,14 +176,6 @@ margin-left:auto;
   margin-top:100px;
 }
 
-#maincontent_friendsmaps_text{
-  font-family: Arial, Helvetica, sans-serif;
-  color : #ffffff;
-  font-size: 2.0em;
-  line-height: 1.0em;
-  margin-left:0px;
-  margin-top:100px;
-}
 
 #maincontent_text{
   font-family: Arial, Helvetica, sans-serif;
