@@ -5,16 +5,7 @@
 	<link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 
-<body>		
-	<% if (!current_user.nil?) and (current_user.username == ADMIN_ACCOUNT) %>
-	<div style="clear:both; float:left;">
-	    	  	<form name="post_deal" id="post_deal" class="post_deal" method="post" action="/deals/post_deal">  
-			<!--need this for auth -->
-            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>" /> 
-		 <%= submit_tag("Refresh Deals (RSS)", :id => "post_deal", :title => "post_deal", :name => "post_deal", :class => "red awesome small button")%> 
-		</div>
-	<% end %>
-		
+<body>				
 	<div id="search_bar">
 		<%= render :partial => 'searchbar' %>		 
 	</div>
