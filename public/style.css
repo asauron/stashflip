@@ -89,7 +89,7 @@ a { font-family: verdana; font-size: 8pt; color: #2020C6; font-weight: none; tex
 a:hover { font-family: verdana; font-size: 8pt; color: #840000; font-weight: none; text-decoration: underline; text-transform: none; }
 
 a.nav { font-family: verdana; font-size: 10pt; color: #000000; font-weight: bold; text-decoration: none; text-transform: none; }
-a.nav:hover { font-family: verdana; font-size: 10pt; color: #ff9535; font-weight: bold; text-decoration: underline; text-transform: none; }
+a.nav:hover { font-family: verdana; font-size: 10pt; color: #000000; font-weight: bold; text-decoration: underline; text-transform: none; }
 
 
 a.actionbutton,
@@ -100,10 +100,12 @@ a.actionbutton:hover,
 }
 
 #ad_navbar_top a,
-#ad_navbar_top a:link,
-#ad_navbar_top a:visited,
-#ad_navbar_top a:hover{
+#ad_navbar_top a:link{
   color:#ffffff;	
+} 
+
+#ad_navbar_top a:hover{
+  color:#ff9535;	
 } 
 
 #searchbar{
