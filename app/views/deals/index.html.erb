@@ -3,6 +3,8 @@
 </head>
 
 <% if (!current_user.nil?) and (current_user.username == ADMIN_ACCOUNT) %>
+
+<%= render :partial => '/website/searchbar'%> 
 	
 <div id="maincontent">
 <h1>Deal Database</h1>
