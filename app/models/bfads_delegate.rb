@@ -172,7 +172,7 @@ end
 
 def self.remove_amazon_link(description)
 	#delivers fast response time. <b><a href="http://www.passwird.com/redirect.php?linkID=46965" target="_blank">AMAZON</A></B>
-	description.gsub (/<a href="(http:[\S]*)" target="_blank">AMAZON<\/A>/, "")
+	description.gsub(/<a href="(http:[\S]*)" target="_blank">AMAZON<\/A>/, "")
 end
 
 def self.contains_price_comparison(description)
