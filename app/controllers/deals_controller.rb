@@ -96,7 +96,7 @@ class DealsController < ApplicationController
   	   		latest_deal.save
   	   	end
   	  end
-  	  
+  	  	  
   	  @latest_deals2.map do |latest_deal|
   	  	#If Deal is not already saved and dealnews laptop has a profit then save it
   	  	if Deal.find_by_guid(latest_deal.guid).nil? && latest_deal.profit_margin>0
@@ -123,7 +123,7 @@ class DealsController < ApplicationController
   	  	if Deal.find_by_guid(latest_deal.guid).nil?
   	   		latest_deal.save
   	   	end
-  	  end  
+  	  end
   	      	  
 	  redirect_to :root, :notice => "Deals have been refreshed!"    
   end

@@ -120,11 +120,11 @@ def self.get_buy_link(dealtext)
 			
 			unless  buy_link_result.nil?
 				actual_buy_link = buy_link_result[1]
-				amazon_buy_link = change_affiliate(actual_buy_link)			
+				affiliate_link = change_affiliate(actual_buy_link)			
 			end	
 		end
 	end
-	amazon_buy_link
+	affiliate_link
 end
 
 def self.change_affiliate(actual_buy_link)	
