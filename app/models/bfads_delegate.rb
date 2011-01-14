@@ -54,7 +54,7 @@ def self.get_breaking_news(min)
 	  
 	  temp_deal.publish_date = DateTime.parse((item/"pubDate").inner_html)
 
-	  temp_deal.stashflip_status = get_stashflip_status(temp_deal.category)
+	  temp_deal.stashflip_status = get_stashflip_status(temp_deal.category, temp_deal.profit_margin)
       
 	  temp_deal.permadeal = "no"
 	  
@@ -80,18 +80,20 @@ def self.get_category(name)
   	  end
 end
 
-def self.get_stashflip_status(category)
+def self.get_stashflip_status(category, profit_margin)
 	  border_price = case category
   		when "laptop" then 50
   		when "hdtv" then 100
   		else 7
   	  end
+  	  stashflip_status = "none"
 	  #Stash if you make less than $7 on reselling. Flip if you make more than $7 on reselling.
-	  if temp_deal.profit_margin < border_price
+	  if profit_margin < border_price
 	  	stashflip_status = "stash"
-  	  elsif temp_deal.profit_margin >= border_price
+  	  elsif profit_margin >= border_price
 	  	stashflip_status = "flip"
       end
+      stashflip_status
 end
 
 def self.get_price(name)
