@@ -84,10 +84,10 @@ class DealsController < ApplicationController
   
   def post_deal 	
 	  post_deal_1
-	  #post_deal_2
-	  #post_deal_3
-	  #post_deal_4
-	  #post_deal_5	  	  	  	  
+	  post_deal_2
+	  post_deal_3
+	  post_deal_4
+	  post_deal_5	  	  	  	  
   	      	  
 	  redirect_to :root, :notice => "Deals have been refreshed!"    
   end
