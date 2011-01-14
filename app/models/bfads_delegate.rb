@@ -75,6 +75,10 @@ def self.get_category(name)
 	  #if title contains HDTV then tag as hdtv	  	
   	  elsif name =~ /HDTV/
   	  	category = "hdtv"
+  	  elsif name =~ /LCD/
+  	  	category = "hdtv"
+  	  elsif name =~ /LED/
+  	  	category = "hdtv"
   	  else  	  	
   	  	category = "default"
   	  end
