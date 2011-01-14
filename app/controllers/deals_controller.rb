@@ -83,49 +83,63 @@ class DealsController < ApplicationController
   end
   
   def post_deal 	
-  	   	  
-  	  @latest_deals1 = BfadsDelegate.get_breaking_news(200)
-  	  @latest_deals2 = DealnewslaptopDelegate.get_breaking_news(200) 
-  	  @latest_deals3 = DealnewsvideogamesDelegate.get_breaking_news(200) 	  
-  	  @latest_deals4 = DealnewshdtvDelegate.get_breaking_news(200)  	  
-  	  @latest_deals5 = CheapgamedealsDelegate.get_breaking_news(200) 
-  	  
-  	  @latest_deals1.map do |latest_deal|
+	  post_deal_1
+	  post_deal_2
+	  post_deal_3
+	  post_deal_4
+	  post_deal_5	  	  	  	  
+  	      	  
+	  redirect_to :root, :notice => "Deals have been refreshed!"    
+  end
+  
+  def post_deal_1
+	  @latest_deals = BfadsDelegate.get_breaking_news(200)
+	  @latest_deals.map do |latest_deal|
   	  	#If Deal is not already saved then save it
   	  	if Deal.find_by_guid(latest_deal.guid).nil? 
   	   		latest_deal.save
   	   	end
   	  end
-  	  	  
-  	  @latest_deals2.map do |latest_deal|
+  end
+  
+  def post_deal_2
+  	  @latest_deals = DealnewslaptopDelegate.get_breaking_news(200)
+  	  @latest_deals.map do |latest_deal|
   	  	#If Deal is not already saved and dealnews laptop has a profit then save it
   	  	if Deal.find_by_guid(latest_deal.guid).nil? && latest_deal.profit_margin>0
   	   		latest_deal.save
   	   	end
-  	  end  	  
-
-  	  @latest_deals3.map do |latest_deal|
+  	  end 
+  end
+  
+  def post_deal_3
+  	  @latest_deals = DealnewsvideogamesDelegate.get_breaking_news(200)
+  	  @latest_deals.map do |latest_deal|
   	  	#If Deal is not already saved then save it
   	  	if Deal.find_by_guid(latest_deal.guid).nil?
   	   		latest_deal.save
   	   	end
-  	  end 
-  	  
-  	  @latest_deals4.map do |latest_deal|
+  	  end  	     	
+  end
+  
+  def post_deal_4
+   	  @latest_deals = DealnewshdtvDelegate.get_breaking_news(200) 
+  	  @latest_deals.map do |latest_deal|
   	  	#If Deal is not already saved and dealnews hdtv has a profit then save it
   	  	if Deal.find_by_guid(latest_deal.guid).nil? && latest_deal.profit_margin>0
   	   		latest_deal.save
   	   	end
-  	  end   	   	
-
-	  @latest_deals5.map do |latest_deal|
+  	  end    	  
+  end
+  
+  def post_deal_5
+  	  @latest_deals = CheapgamedealsDelegate.get_breaking_news(200)
+	  @latest_deals.map do |latest_deal|
   	  	#If Deal is not already saved then save it
   	  	if Deal.find_by_guid(latest_deal.guid).nil?
   	   		latest_deal.save
   	   	end
-  	  end
-  	      	  
-	  redirect_to :root, :notice => "Deals have been refreshed!"    
+  	  end  	
   end
   
   def delete_old_deals
