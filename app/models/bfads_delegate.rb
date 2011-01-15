@@ -10,8 +10,8 @@ class BfadsDelegate < ActiveRecord::Base
 	cattr_accessor :result_array
 
 def self.get_breaking_news
-	#doc = Hpricot.XML(open("http://bfads.net/Hot-Deals-RSS"))
-	doc = Hpricot.XML(open("http://passwird.com/n/rss.xml"))
+	doc = Hpricot.XML(open("http://bfads.net/Hot-Deals-RSS"))
+	#doc = Hpricot.XML(open("http://passwird.com/n/rss.xml"))
 	
 	breaking_news = (doc/"item").map do |item|
 	  temp_deal = Deal.new
@@ -31,8 +31,8 @@ def self.get_breaking_news
   	  
 	  unless temp_deal.cost_retail.nil? || temp_deal.cost.nil?
 	  	#Lower profit margin to make a more conservative estimate
-	  	#PROFIT MARGIN = 0.4 * (RETAIL PRICE - BUY PRICE) - SHIPPING
-	  	temp_deal.profit_margin = 0.4 * (temp_deal.cost_retail - temp_deal.cost) - DealAdapter.get_shipping_cost(temp_deal.name)
+	  	#PROFIT MARGIN = 0.375 * (RETAIL PRICE - BUY PRICE) - SHIPPING
+	  	temp_deal.profit_margin = 0.375 * (temp_deal.cost_retail - temp_deal.cost) - DealAdapter.get_shipping_cost(temp_deal.name)
   	  end
 	  
   	  #Reset retail cost and profit margin to 0	if there is no retail cost listed    	  

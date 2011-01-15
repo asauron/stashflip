@@ -20,22 +20,23 @@ class DealAdapter < ActiveRecord::Base
 	def self.get_shipping_cost(name)
 		case name
 		when /Amazon/ then 0
-		when /Lowe's/ then 6
-		when /Tiger/ then 4
-		when /TigerDirect/ then 4					
+		when /Lowe's/ then 0
+		when /Tiger/ then 0
+		when /TigerDirect/ then 0					
 		when /Dell/ then 0
 		when /Buy\.com/ then 0
 		when /Cowboom/ then 5
 		when /DailySteals\.com/ then 5	
-		when /Newegg/ then 5
+		when /Newegg/ then 0
+		when /Mwave/ then 0
 		when /Woot/ then 5
 		when /Walmart/ then 0
 		when /Deep Discount/ then 0
 		when /Office Depot/ then 0
 		when /Office Max/ then 0
 		when /Staples/ then 0
-		when /BestBuy/ then 6
-		when /Best Buy/ then 6							
+		when /BestBuy/ then 0
+		when /Best Buy/ then 0
 		else 
 			0
 		end
