@@ -30,6 +30,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 <br/>	
 				
 				<a name="internaldeals"></a> 
+				<%= render :partial => '/deals/latest_sponsored', :locals => {:deals => Deal.find(:all, :order => 'publish_date DESC', :conditions => ['source != ? and category = ?', 'dealnewshdtv', 'monitor'])} %>
 				<%= render :partial => '/deals/latest_sponsored', :locals => {:deals => Deal.find(:all, :order => 'publish_date DESC', :conditions => ['source != ? and category = ?', 'dealnewshdtv', 'hdtv'])} %>
 				<a name="externaldeals"></a>
 				<%= render :partial => '/deals/latest_passwird', :locals =>{:deals => @deals}  %>	

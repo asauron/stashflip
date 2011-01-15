@@ -72,13 +72,22 @@ def self.get_category(name)
 	  #if title contains Laptop then tag as laptop
 	  if name =~ /Laptop/
 	  	category = "laptop"
+	  #if title contains Netbook then tag as netbook
+  	  elsif name =~ /Netbook/
+  	  	category = "netbook"
 	  #if title contains HDTV then tag as hdtv	  	
   	  elsif name =~ /HDTV/
   	  	category = "hdtv"
-  	  elsif name =~ /LCD/
-  	  	category = "hdtv"
-  	  elsif name =~ /LED/
-  	  	category = "hdtv"
+	  #if title contains Monitor then tag as monitor
+  	  elsif name =~ /Monitor/
+  	  	category = "monitor"
+  	  #Rock Band 3 (PS3, Xbox 360, or Wii) $29.96 at Walmart
+  	  elsif name =~ /PS3/
+  	  	category = "videogame"
+  	  elsif name =~ /Xbox/
+  	  	category = "videogame"
+  	  elsif name =~ /Wii/
+  	  	category = "videogame"
   	  else  	  	
   	  	category = "default"
   	  end
@@ -87,7 +96,9 @@ end
 def self.get_stashflip_status(category, profit_margin)
 	  border_price = case category
   		when "laptop" then 50
+  		when "netbook" then 30
   		when "hdtv" then 100
+  		when "monitor" then 30
   		else 7
   	  end
   	  stashflip_status = "none"

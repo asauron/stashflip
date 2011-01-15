@@ -75,7 +75,7 @@ def self.get_price_retail(price_sale, description)
 		price_retail_value = price_retail[1].to_f
 	end
 	
-	if price_retail_value.nil?
+	if price_retail_value.nil? || price_sale.nil?
 	return 0
 	else
 	return price_retail_value + price_sale
