@@ -24,7 +24,7 @@ class WebsiteController < ApplicationController
   
   def videogamesindex
   	page = params[:page] || 1
-	@deals = Deal.paginate(:page=>page, :per_page=>20, :order => 'publish_date DESC', :conditions => ['source != ? and source != ? and category = ?', 'stashflip', 'cheapgamedeals', 'videogame']) 	
+	@deals = Deal.paginate(:page=>page, :per_page=>20, :order => 'publish_date DESC', :conditions => ['source = ?', 'dealnewsvideogames']) 	
   end  
 
   def hdtvindex
