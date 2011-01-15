@@ -10,7 +10,7 @@ class CheapgamedealsDelegate < ActiveRecord::Base
 	
 	cattr_accessor :result_array
 
-def self.get_breaking_news(min)
+def self.get_breaking_news
 	
 	breaking_news = Twitter.user_timeline("New_Game_Deals").map do |item|
 	#item = Twitter.user_timeline("New_Game_Deals")[2]

@@ -9,10 +9,8 @@ class DealnewsmonitorDelegate < ActiveRecord::Base
 	
 	cattr_accessor :result_array
 
-def self.get_breaking_news(min)
+def self.get_breaking_news
 	doc = Hpricot.XML(open("http://dealnews.com/rss/75"))
-	
-	cutoff_time = Time.now - 60 * min
 	
 	breaking_news = (doc/"item").map do |item|
 	  temp_deal = Deal.new
