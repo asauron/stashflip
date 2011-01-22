@@ -83,12 +83,12 @@ class DealsController < ApplicationController
   end
   
   def post_deal 	
-	  #post_deal_1
-	  #post_deal_2
-	  #post_deal_3
-	  #post_deal_4
-	  #post_deal_5
-	  #post_deal_6	
+	  post_deal_1
+	  post_deal_2
+	  post_deal_3
+	  post_deal_4
+	  post_deal_5
+	  post_deal_6	
 	  post_deal_7  	  	  	  
   	      	  
 	  redirect_to :root, :notice => "Deals have been refreshed!"    
@@ -166,7 +166,7 @@ class DealsController < ApplicationController
   
   def delete_old_deals
 	  # This script deletes all posts that are over 1 week old
-	  deal_ids = Deal.find(:all, :conditions => ["created_at > ? and permadeal = ?", 7.days.ago, 'no'])
+	  deal_ids = Deal.find(:all, :conditions => ["created_at < ?", 7.days.ago])
 	
 	  if deal_ids.size > 0
 	    Deal.destroy(deal_ids)
