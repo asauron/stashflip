@@ -166,7 +166,7 @@ class DealsController < ApplicationController
   
   def delete_old_deals
 	  # This script deletes all posts that are over 1 week old
-	  deal_ids = Deal.find(:all, :conditions => ["created_at < ?", 7.days.ago])
+	  deal_ids = Deal.find(:all, :conditions => ["created_at < ? and permadeal = ?", 7.days.ago, 'no'])
 	
 	  if deal_ids.size > 0
 	    Deal.destroy(deal_ids)
