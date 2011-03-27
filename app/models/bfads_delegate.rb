@@ -9,6 +9,14 @@ class BfadsDelegate < ActiveRecord::Base
 	
 	cattr_accessor :result_array
 
+# reopen the class
+String.class_eval do
+# define new method
+  def to_my_utf8
+    ::Iconv.conv('UTF-8//IGNORE', 'UTF-8', self + ' ')[0..-2]
+  end
+end
+
 def self.get_breaking_news
 	doc = Hpricot.XML(open("http://bfads.net/Hot-Deals-RSS"))
 	#doc = Hpricot.XML(open("http://passwird.com/n/rss.xml"))
@@ -16,7 +24,7 @@ def self.get_breaking_news
 	breaking_news = (doc/"item").map do |item|
 	  temp_deal = Deal.new
 	  temp_deal.name = (item/"title").inner_html
-	  temp_deal.description = (item/"description").inner_text
+	  temp_deal.description = (item/"description").inner_text.to_my_utf8
 	  
 	  #check to see if it comes from amazon to replace affiliate link
 	  if from_amazon(temp_deal.name)
@@ -58,8 +66,8 @@ def self.get_breaking_news
 	  
 	  #check to see if it comes from amazon to remove the link from description
 	  if from_amazon(temp_deal.name) && !temp_deal.buy_link.nil?
-	  	temp_deal.description = remove_amazon_link(temp_deal.description)
-	  	temp_deal.description = temp_deal.description + " <a href=\"" + temp_deal.buy_link + "\"><b>AMAZON</b></a>"
+	  	temp_deal.description = remove_amazon_link(temp_deal.description).to_my_utf8
+	  	temp_deal.description = temp_deal.description + " <a href=\"" + temp_deal.buy_link + "\"><b>AMAZON</b></a>".to_my_utf8
 	  end
 	  
 	  temp_deal

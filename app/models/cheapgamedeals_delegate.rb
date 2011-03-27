@@ -10,6 +10,14 @@ class CheapgamedealsDelegate < ActiveRecord::Base
 	
 	cattr_accessor :result_array
 
+# reopen the class
+String.class_eval do
+# define new method
+  def to_my_utf8
+    ::Iconv.conv('UTF-8//IGNORE', 'UTF-8', self + ' ')[0..-2]
+  end
+end
+
 def self.get_breaking_news
 	
 	breaking_news = Twitter.user_timeline("New_Game_Deals").map do |item|
@@ -30,7 +38,7 @@ def self.get_breaking_news
 	  
 	  #write description
 	  unless partial_name.nil? || temp_deal.cost.nil? || temp_deal.buy_link.nil?
-	  temp_deal.description = "Amazon has the " + partial_name + "for $" + sprintf("%.2f", temp_deal.cost) + ". <a href=" + temp_deal.buy_link + "><b>AMAZON</b></a>" 
+	  temp_deal.description = "Amazon has the " + partial_name + "for $" + sprintf("%.2f", temp_deal.cost) + ". <a href=" + temp_deal.buy_link + "><b>AMAZON</b></a>".to_my_utf8 
   	  end
 	  
 	  unless temp_deal.cost_retail.nil? || temp_deal.cost.nil?
