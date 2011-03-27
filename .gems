@@ -1,7 +1,7 @@
-authlogic --ignore-dependencies
-hpricot --ignore-dependencies
-ajaxful_rating --ignore-dependencies
-mislav-will_paginate -v 2.3.8 -s gems.github.com --ignore-dependencies
-disqus --ignore-dependencies
-twitter --ignore-dependencies
-ferret --ignore-dependencies
+authlogic 
+hpricot
+ajaxful_rating
+mislav-will_paginate -v 2.3.8 -s gems.github.com
+disqus
+twitter
+ferret
