@@ -23,14 +23,14 @@ def self.get_breaking_news
 	
 	breaking_news = (doc/"item").map do |item|
 	  temp_deal = Deal.new
-	  temp_deal.name = (item/"title").inner_html.to_my_utf8
-	  temp_deal.description = (item/"description").inner_text.to_my_utf8
+	  temp_deal.name = (item/"title").inner_html
+	  temp_deal.description = (item/"description").inner_text
 	  
 	  #check to see if it comes from amazon to replace affiliate link
 	  if from_amazon(temp_deal.name)
-	  	temp_deal.buy_link = get_amazon_link(temp_deal.description).to_my_utf8
+	  	temp_deal.buy_link = get_amazon_link(temp_deal.description)
 	  else
-	  	temp_deal.buy_link = get_buy_link(temp_deal.description).to_my_utf8 
+	  	temp_deal.buy_link = get_buy_link(temp_deal.description) 
 	  end
   	  
 	  temp_deal.guid = (item/"guid").inner_html
@@ -68,7 +68,7 @@ def self.get_breaking_news
 	  if from_amazon(temp_deal.name) && !temp_deal.buy_link.nil?
 	  	temp_deal.description = remove_amazon_link(temp_deal.description)
 	  	temp_deal.description = temp_deal.description + " <a href=\"" + temp_deal.buy_link + "\"><b>AMAZON</b></a>"
-	  	temp_deal.description = temp_deal.description.to_my_utf8
+	  	temp_deal.description = temp_deal.description
 	  end
 	  
 	  temp_deal

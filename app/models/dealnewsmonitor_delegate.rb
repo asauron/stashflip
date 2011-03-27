@@ -22,9 +22,9 @@ def self.get_breaking_news
 	
 	breaking_news = (doc/"item").map do |item|
 	  temp_deal = Deal.new
-	  temp_deal.name = (item/"title").inner_html.to_my_utf8
-	  temp_deal.description = (item/"description").inner_text.to_my_utf8
-	  temp_deal.buy_link = get_buy_link( (item/"link").inner_html ).to_my_utf8
+	  temp_deal.name = (item/"title").inner_html
+	  temp_deal.description = (item/"description").inner_text
+	  temp_deal.buy_link = get_buy_link( (item/"link").inner_html )
 	  temp_deal.guid = (item/"guid").inner_html
 	  temp_deal.cost = get_price(temp_deal.name)  
 	  temp_deal.cost_retail = get_price_retail(temp_deal.cost, temp_deal.description)
