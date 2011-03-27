@@ -25,8 +25,8 @@ def self.get_breaking_news
 	  temp_deal = Deal.new
 	  #Mega Man Zero Collection (Nintendo DS) $20.17 [MSRP = $30] http://amzn.to/eRZ2Kr
 	  dealtext = item.text
-	  partial_name = get_title(dealtext).to_my_utf8	  
-	  temp_deal.buy_link = get_buy_link(dealtext).to_my_utf8
+	  partial_name = get_title(dealtext)  
+	  temp_deal.buy_link = get_buy_link(dealtext)
 	  temp_deal.guid = item.id
 	  temp_deal.cost = get_price(dealtext)  
 	  temp_deal.cost_retail = get_price_retail(dealtext)
@@ -34,11 +34,13 @@ def self.get_breaking_news
 	  #add cost and Amazon to name
 	  unless temp_deal.cost.nil?
 	  temp_deal.name = partial_name + ' $' + sprintf("%.2f", temp_deal.cost) + ' shipped at Amazon'
+	  temp_deal.name = temp_deal.name.to_my_utf8
   	  end
 	  
 	  #write description
 	  unless partial_name.nil? || temp_deal.cost.nil? || temp_deal.buy_link.nil?
-	  temp_deal.description = "Amazon has the " + partial_name + "for $" + sprintf("%.2f", temp_deal.cost) + ". <a href=" + temp_deal.buy_link + "><b>AMAZON</b></a>".to_my_utf8 
+	  temp_deal.description = "Amazon has the " + partial_name + "for $" + sprintf("%.2f", temp_deal.cost) + ". <a href=" + temp_deal.buy_link + "><b>AMAZON</b></a>"
+	  temp_deal.description = temp_deal.description.to_my_utf8 
   	  end
 	  
 	  unless temp_deal.cost_retail.nil? || temp_deal.cost.nil?

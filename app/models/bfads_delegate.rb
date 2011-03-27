@@ -66,8 +66,9 @@ def self.get_breaking_news
 	  
 	  #check to see if it comes from amazon to remove the link from description
 	  if from_amazon(temp_deal.name) && !temp_deal.buy_link.nil?
-	  	temp_deal.description = remove_amazon_link(temp_deal.description).to_my_utf8
-	  	temp_deal.description = temp_deal.description + " <a href=\"" + temp_deal.buy_link + "\"><b>AMAZON</b></a>".to_my_utf8
+	  	temp_deal.description = remove_amazon_link(temp_deal.description)
+	  	temp_deal.description = temp_deal.description + " <a href=\"" + temp_deal.buy_link + "\"><b>AMAZON</b></a>"
+	  	temp_deal.description = temp_deal.description.to_my_utf8
 	  end
 	  
 	  temp_deal
