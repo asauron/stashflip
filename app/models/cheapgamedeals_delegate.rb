@@ -25,8 +25,8 @@ def self.get_breaking_news
 	  temp_deal = Deal.new
 	  #Mega Man Zero Collection (Nintendo DS) $20.17 [MSRP = $30] http://amzn.to/eRZ2Kr
 	  dealtext = item.text
-	  partial_name = get_title(dealtext)	  
-	  temp_deal.buy_link = get_buy_link(dealtext)
+	  partial_name = get_title(dealtext).to_my_utf8	  
+	  temp_deal.buy_link = get_buy_link(dealtext).to_my_utf8
 	  temp_deal.guid = item.id
 	  temp_deal.cost = get_price(dealtext)  
 	  temp_deal.cost_retail = get_price_retail(dealtext)
